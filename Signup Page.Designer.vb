@@ -171,11 +171,12 @@ Partial Class Signup_Page
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(690, 674)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(708, 590)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(132, 19)
+        Me.Label2.Size = New System.Drawing.Size(117, 19)
         Me.Label2.TabIndex = 60
-        Me.Label2.Text = "If you're a customer"
+        Me.Label2.Text = "If you're a admin"
         '
         'Button3
         '
@@ -184,9 +185,9 @@ Partial Class Signup_Page
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Blue
-        Me.Button3.Location = New System.Drawing.Point(809, 671)
+        Me.Button3.Location = New System.Drawing.Point(818, 587)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(86, 25)
+        Me.Button3.Size = New System.Drawing.Size(77, 25)
         Me.Button3.TabIndex = 61
         Me.Button3.Text = "click here"
         Me.Button3.UseVisualStyleBackColor = False

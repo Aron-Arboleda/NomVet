@@ -127,9 +127,9 @@ Partial Class Profile_Page
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label10.Location = New System.Drawing.Point(143, 302)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(139, 27)
+        Me.Label10.Size = New System.Drawing.Size(182, 27)
         Me.Label10.TabIndex = 21
-        Me.Label10.Text = "Tarlac, Tarlac"
+        Me.Label10.Text = "Tarlac, Tarlac City"
         '
         'Label11
         '

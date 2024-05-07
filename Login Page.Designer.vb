@@ -66,7 +66,7 @@ Partial Class Login_Page
         Me.Label10.BackColor = System.Drawing.Color.White
         Me.Label10.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(712, 591)
+        Me.Label10.Location = New System.Drawing.Point(716, 591)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(124, 19)
         Me.Label10.TabIndex = 50
@@ -78,11 +78,11 @@ Partial Class Login_Page
         Me.Label11.BackColor = System.Drawing.Color.White
         Me.Label11.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(701, 472)
+        Me.Label11.Location = New System.Drawing.Point(706, 472)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(173, 19)
+        Me.Label11.Size = New System.Drawing.Size(153, 19)
         Me.Label11.TabIndex = 49
-        Me.Label11.Text = "Already have an account?"
+        Me.Label11.Text = "Don't have an account?"
         '
         'Label12
         '
@@ -136,11 +136,11 @@ Partial Class Login_Page
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Blue
-        Me.Button1.Location = New System.Drawing.Point(865, 465)
+        Me.Button1.Location = New System.Drawing.Point(854, 465)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(63, 33)
+        Me.Button1.Size = New System.Drawing.Size(75, 33)
         Me.Button1.TabIndex = 57
-        Me.Button1.Text = "Login"
+        Me.Button1.Text = "Sign up"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button3
