@@ -23,13 +23,13 @@ Partial Class Signup_Page
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Signup_Page))
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.btn_signup = New System.Windows.Forms.Button()
+        Me.txt_signSex = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txt_signAge = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt_signAddress = New System.Windows.Forms.TextBox()
+        Me.txt_signName = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -37,32 +37,36 @@ Partial Class Signup_Page
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txt_signUserName = New System.Windows.Forms.TextBox()
+        Me.txt_signPassword = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'Button2
+        'btn_signup
         '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(720, 393)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(155, 45)
-        Me.Button2.TabIndex = 43
-        Me.Button2.Text = "Sign up"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btn_signup.BackColor = System.Drawing.Color.Transparent
+        Me.btn_signup.BackgroundImage = CType(resources.GetObject("btn_signup.BackgroundImage"), System.Drawing.Image)
+        Me.btn_signup.FlatAppearance.BorderSize = 0
+        Me.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_signup.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_signup.ForeColor = System.Drawing.Color.White
+        Me.btn_signup.Location = New System.Drawing.Point(709, 549)
+        Me.btn_signup.Name = "btn_signup"
+        Me.btn_signup.Size = New System.Drawing.Size(155, 45)
+        Me.btn_signup.TabIndex = 43
+        Me.btn_signup.Text = "Sign up"
+        Me.btn_signup.UseVisualStyleBackColor = False
         '
-        'TextBox4
+        'txt_signSex
         '
-        Me.TextBox4.BackColor = System.Drawing.Color.White
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox4.Location = New System.Drawing.Point(866, 245)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(153, 30)
-        Me.TextBox4.TabIndex = 42
+        Me.txt_signSex.BackColor = System.Drawing.Color.White
+        Me.txt_signSex.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_signSex.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_signSex.Location = New System.Drawing.Point(865, 386)
+        Me.txt_signSex.Name = "txt_signSex"
+        Me.txt_signSex.Size = New System.Drawing.Size(153, 30)
+        Me.txt_signSex.TabIndex = 42
         '
         'Label8
         '
@@ -70,21 +74,21 @@ Partial Class Signup_Page
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.Font = New System.Drawing.Font("Tw Cen MT", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(798, 244)
+        Me.Label8.Location = New System.Drawing.Point(797, 385)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(62, 31)
         Me.Label8.TabIndex = 41
         Me.Label8.Text = "Sex:"
         '
-        'TextBox3
+        'txt_signAge
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.White
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox3.Location = New System.Drawing.Point(640, 246)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(132, 30)
-        Me.TextBox3.TabIndex = 40
+        Me.txt_signAge.BackColor = System.Drawing.Color.White
+        Me.txt_signAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_signAge.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_signAge.Location = New System.Drawing.Point(639, 387)
+        Me.txt_signAge.Name = "txt_signAge"
+        Me.txt_signAge.Size = New System.Drawing.Size(132, 30)
+        Me.txt_signAge.TabIndex = 40
         '
         'Label7
         '
@@ -92,31 +96,31 @@ Partial Class Signup_Page
         Me.Label7.BackColor = System.Drawing.Color.White
         Me.Label7.Font = New System.Drawing.Font("Tw Cen MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(569, 242)
+        Me.Label7.Location = New System.Drawing.Point(568, 383)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(65, 31)
         Me.Label7.TabIndex = 39
         Me.Label7.Text = "Age:"
         '
-        'TextBox2
+        'txt_signAddress
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.White
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox2.Location = New System.Drawing.Point(640, 317)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(379, 30)
-        Me.TextBox2.TabIndex = 38
+        Me.txt_signAddress.BackColor = System.Drawing.Color.White
+        Me.txt_signAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_signAddress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_signAddress.Location = New System.Drawing.Point(639, 458)
+        Me.txt_signAddress.Name = "txt_signAddress"
+        Me.txt_signAddress.Size = New System.Drawing.Size(379, 30)
+        Me.txt_signAddress.TabIndex = 38
         '
-        'TextBox1
+        'txt_signName
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(640, 166)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(379, 30)
-        Me.TextBox1.TabIndex = 37
+        Me.txt_signName.BackColor = System.Drawing.Color.White
+        Me.txt_signName.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_signName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_signName.Location = New System.Drawing.Point(639, 307)
+        Me.txt_signName.Name = "txt_signName"
+        Me.txt_signName.Size = New System.Drawing.Size(379, 30)
+        Me.txt_signName.TabIndex = 37
         '
         'Label5
         '
@@ -124,7 +128,7 @@ Partial Class Signup_Page
         Me.Label5.BackColor = System.Drawing.Color.White
         Me.Label5.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(690, 470)
+        Me.Label5.Location = New System.Drawing.Point(687, 660)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(173, 19)
         Me.Label5.TabIndex = 33
@@ -136,7 +140,7 @@ Partial Class Signup_Page
         Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.Font = New System.Drawing.Font("Tw Cen MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(527, 317)
+        Me.Label4.Location = New System.Drawing.Point(526, 458)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(107, 31)
         Me.Label4.TabIndex = 32
@@ -148,7 +152,7 @@ Partial Class Signup_Page
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(549, 163)
+        Me.Label3.Location = New System.Drawing.Point(548, 304)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 31)
         Me.Label3.TabIndex = 31
@@ -172,7 +176,7 @@ Partial Class Signup_Page
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(708, 590)
+        Me.Label2.Location = New System.Drawing.Point(705, 707)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(117, 19)
         Me.Label2.TabIndex = 60
@@ -185,7 +189,7 @@ Partial Class Signup_Page
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Blue
-        Me.Button3.Location = New System.Drawing.Point(818, 587)
+        Me.Button3.Location = New System.Drawing.Point(815, 704)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(77, 25)
         Me.Button3.TabIndex = 61
@@ -199,12 +203,57 @@ Partial Class Signup_Page
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Blue
-        Me.Button1.Location = New System.Drawing.Point(850, 464)
+        Me.Button1.Location = New System.Drawing.Point(847, 654)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(66, 25)
         Me.Button1.TabIndex = 62
         Me.Button1.Text = "Login"
         Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(506, 171)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(127, 31)
+        Me.Label6.TabIndex = 31
+        Me.Label6.Text = "Username:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.White
+        Me.Label9.Font = New System.Drawing.Font("Tw Cen MT", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(510, 242)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(123, 31)
+        Me.Label9.TabIndex = 31
+        Me.Label9.Text = "Password:"
+        '
+        'txt_signUserName
+        '
+        Me.txt_signUserName.BackColor = System.Drawing.Color.White
+        Me.txt_signUserName.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_signUserName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_signUserName.Location = New System.Drawing.Point(639, 171)
+        Me.txt_signUserName.Name = "txt_signUserName"
+        Me.txt_signUserName.Size = New System.Drawing.Size(379, 30)
+        Me.txt_signUserName.TabIndex = 37
+        '
+        'txt_signPassword
+        '
+        Me.txt_signPassword.BackColor = System.Drawing.Color.White
+        Me.txt_signPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_signPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_signPassword.Location = New System.Drawing.Point(639, 242)
+        Me.txt_signPassword.Name = "txt_signPassword"
+        Me.txt_signPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_signPassword.Size = New System.Drawing.Size(379, 30)
+        Me.txt_signPassword.TabIndex = 37
         '
         'Signup_Page
         '
@@ -218,14 +267,18 @@ Partial Class Signup_Page
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.btn_signup)
+        Me.Controls.Add(Me.txt_signSex)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.txt_signAge)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txt_signAddress)
+        Me.Controls.Add(Me.txt_signPassword)
+        Me.Controls.Add(Me.txt_signUserName)
+        Me.Controls.Add(Me.txt_signName)
         Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
@@ -236,13 +289,13 @@ Partial Class Signup_Page
 
     End Sub
 
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents btn_signup As Button
+    Friend WithEvents txt_signSex As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txt_signAge As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txt_signAddress As TextBox
+    Friend WithEvents txt_signName As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
@@ -250,4 +303,8 @@ Partial Class Signup_Page
     Friend WithEvents Label2 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txt_signUserName As TextBox
+    Friend WithEvents txt_signPassword As TextBox
 End Class

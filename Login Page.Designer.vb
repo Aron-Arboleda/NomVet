@@ -23,42 +23,42 @@ Partial Class Login_Page
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login_Page))
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.txt_userPass = New System.Windows.Forms.TextBox()
+        Me.btn_userLogin = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txt_userName = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox7
+        'txt_userPass
         '
-        Me.TextBox7.BackColor = System.Drawing.Color.White
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox7.Location = New System.Drawing.Point(685, 298)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(330, 38)
-        Me.TextBox7.TabIndex = 55
+        Me.txt_userPass.BackColor = System.Drawing.Color.White
+        Me.txt_userPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_userPass.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_userPass.Location = New System.Drawing.Point(685, 298)
+        Me.txt_userPass.Name = "txt_userPass"
+        Me.txt_userPass.Size = New System.Drawing.Size(330, 38)
+        Me.txt_userPass.TabIndex = 55
         '
-        'Button2
+        'btn_userLogin
         '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(734, 400)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(155, 45)
-        Me.Button2.TabIndex = 53
-        Me.Button2.Text = "Login"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btn_userLogin.BackColor = System.Drawing.Color.Transparent
+        Me.btn_userLogin.BackgroundImage = CType(resources.GetObject("btn_userLogin.BackgroundImage"), System.Drawing.Image)
+        Me.btn_userLogin.FlatAppearance.BorderSize = 0
+        Me.btn_userLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_userLogin.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_userLogin.ForeColor = System.Drawing.Color.White
+        Me.btn_userLogin.Location = New System.Drawing.Point(734, 400)
+        Me.btn_userLogin.Name = "btn_userLogin"
+        Me.btn_userLogin.Size = New System.Drawing.Size(155, 45)
+        Me.btn_userLogin.TabIndex = 53
+        Me.btn_userLogin.Text = "Login"
+        Me.btn_userLogin.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -119,15 +119,15 @@ Partial Class Login_Page
         Me.Label14.TabIndex = 46
         Me.Label14.Text = "LOGIN"
         '
-        'TextBox1
+        'txt_userName
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(685, 218)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(330, 38)
-        Me.TextBox1.TabIndex = 56
+        Me.txt_userName.BackColor = System.Drawing.Color.White
+        Me.txt_userName.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_userName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_userName.Location = New System.Drawing.Point(685, 218)
+        Me.txt_userName.Name = "txt_userName"
+        Me.txt_userName.Size = New System.Drawing.Size(330, 38)
+        Me.txt_userName.TabIndex = 56
         '
         'Button1
         '
@@ -165,9 +165,9 @@ Partial Class Login_Page
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1114, 749)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.txt_userName)
+        Me.Controls.Add(Me.txt_userPass)
+        Me.Controls.Add(Me.btn_userLogin)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label12)
@@ -183,14 +183,14 @@ Partial Class Login_Page
 
     End Sub
 
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents txt_userPass As TextBox
+    Friend WithEvents btn_userLogin As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txt_userName As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button3 As Button
 End Class

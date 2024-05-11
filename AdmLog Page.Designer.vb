@@ -29,8 +29,8 @@ Partial Class AdmLog_Page
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.txt_admPassword = New System.Windows.Forms.TextBox()
+        Me.txt_admUsername = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -79,8 +79,8 @@ Partial Class AdmLog_Page
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.TextBox7)
-        Me.Panel1.Controls.Add(Me.TextBox8)
+        Me.Panel1.Controls.Add(Me.txt_admPassword)
+        Me.Panel1.Controls.Add(Me.txt_admUsername)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.Button1)
@@ -114,25 +114,25 @@ Partial Class AdmLog_Page
         Me.Button3.Text = "click here"
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'TextBox7
+        'txt_admPassword
         '
-        Me.TextBox7.BackColor = System.Drawing.Color.White
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft YaHei", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox7.Location = New System.Drawing.Point(175, 250)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(262, 43)
-        Me.TextBox7.TabIndex = 28
+        Me.txt_admPassword.BackColor = System.Drawing.Color.White
+        Me.txt_admPassword.Font = New System.Drawing.Font("Microsoft YaHei", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_admPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_admPassword.Location = New System.Drawing.Point(175, 250)
+        Me.txt_admPassword.Name = "txt_admPassword"
+        Me.txt_admPassword.Size = New System.Drawing.Size(262, 43)
+        Me.txt_admPassword.TabIndex = 28
         '
-        'TextBox8
+        'txt_admUsername
         '
-        Me.TextBox8.BackColor = System.Drawing.Color.White
-        Me.TextBox8.Font = New System.Drawing.Font("Microsoft YaHei", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox8.Location = New System.Drawing.Point(175, 188)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(262, 43)
-        Me.TextBox8.TabIndex = 27
+        Me.txt_admUsername.BackColor = System.Drawing.Color.White
+        Me.txt_admUsername.Font = New System.Drawing.Font("Microsoft YaHei", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_admUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.txt_admUsername.Location = New System.Drawing.Point(175, 188)
+        Me.txt_admUsername.Name = "txt_admUsername"
+        Me.txt_admUsername.Size = New System.Drawing.Size(262, 43)
+        Me.txt_admUsername.TabIndex = 27
         '
         'Label12
         '
@@ -213,8 +213,8 @@ Partial Class AdmLog_Page
     Friend WithEvents Label5 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents txt_admPassword As TextBox
+    Friend WithEvents txt_admUsername As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Button3 As Button
