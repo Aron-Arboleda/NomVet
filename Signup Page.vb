@@ -106,7 +106,7 @@ Public Class PetOwner
     Public Sub SavePets()
         Using writer As StreamWriter = File.AppendText(strUsername + ".txt")
             For Each pet In petsList
-                'writer.WriteLine(pet.strName & "," & petOwnerObject.getPassword & "," & petOwnerObject.strName & "," & petOwnerObject.intAge & "," & petOwnerObject.strSex & "," & petOwnerObject.strAddress)
+                writer.WriteLine(pet.strName & "," & pet.intAge & "," & pet.strBirthday & "," & pet.dblWeight & "," & pet.strType & "," & pet.boolVaccinated)
             Next
         End Using
     End Sub
