@@ -39,7 +39,9 @@ Partial Class Booking_Page
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
@@ -63,12 +65,10 @@ Partial Class Booking_Page
         Me.Button5 = New System.Windows.Forms.Button()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -281,6 +281,22 @@ Partial Class Booking_Page
         Me.Panel2.Size = New System.Drawing.Size(450, 356)
         Me.Panel2.TabIndex = 23
         '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.Transparent
+        Me.Button9.BackgroundImage = CType(resources.GetObject("Button9.BackgroundImage"), System.Drawing.Image)
+        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
+        Me.Button9.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button9.Location = New System.Drawing.Point(237, 300)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(130, 34)
+        Me.Button9.TabIndex = 40
+        Me.Button9.Text = "Add another"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -294,6 +310,22 @@ Partial Class Booking_Page
         Me.Label1.Size = New System.Drawing.Size(89, 22)
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "null/ ""date"""
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.Transparent
+        Me.Button8.BackgroundImage = CType(resources.GetObject("Button8.BackgroundImage"), System.Drawing.Image)
+        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button8.FlatAppearance.BorderSize = 0
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
+        Me.Button8.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button8.Location = New System.Drawing.Point(373, 300)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(52, 34)
+        Me.Button8.TabIndex = 39
+        Me.Button8.Text = "OK"
+        Me.Button8.UseVisualStyleBackColor = False
         '
         'ComboBox2
         '
@@ -542,7 +574,7 @@ Partial Class Booking_Page
         '
         'MonthCalendar1
         '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(710, 234)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(706, 266)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 36
         '
@@ -555,54 +587,6 @@ Partial Class Booking_Page
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1113, 75)
         Me.Panel3.TabIndex = 37
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.Transparent
-        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
-        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button7.Location = New System.Drawing.Point(745, 671)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(156, 34)
-        Me.Button7.TabIndex = 38
-        Me.Button7.Text = "Book and Pay"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.Transparent
-        Me.Button8.BackgroundImage = CType(resources.GetObject("Button8.BackgroundImage"), System.Drawing.Image)
-        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button8.Location = New System.Drawing.Point(373, 300)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(52, 34)
-        Me.Button8.TabIndex = 39
-        Me.Button8.Text = "OK"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.Color.Transparent
-        Me.Button9.BackgroundImage = CType(resources.GetObject("Button9.BackgroundImage"), System.Drawing.Image)
-        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button9.FlatAppearance.BorderSize = 0
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button9.Location = New System.Drawing.Point(237, 300)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(130, 34)
-        Me.Button9.TabIndex = 40
-        Me.Button9.Text = "Add another"
-        Me.Button9.UseVisualStyleBackColor = False
         '
         'Panel7
         '
@@ -637,6 +621,22 @@ Partial Class Booking_Page
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 19
         Me.PictureBox5.TabStop = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.Transparent
+        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
+        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button7.FlatAppearance.BorderSize = 0
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
+        Me.Button7.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button7.Location = New System.Drawing.Point(745, 671)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(156, 34)
+        Me.Button7.TabIndex = 38
+        Me.Button7.Text = "Book and Pay"
+        Me.Button7.UseVisualStyleBackColor = False
         '
         'Booking_Page
         '
