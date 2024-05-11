@@ -42,8 +42,10 @@ Partial Class Login_Page
         Me.txt_userPass.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.txt_userPass.Location = New System.Drawing.Point(685, 298)
         Me.txt_userPass.Name = "txt_userPass"
+        Me.txt_userPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_userPass.Size = New System.Drawing.Size(330, 38)
         Me.txt_userPass.TabIndex = 55
+        Me.txt_userPass.UseSystemPasswordChar = True
         '
         'btn_userLogin
         '
@@ -176,7 +178,9 @@ Partial Class Login_Page
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button3)
         Me.DoubleBuffered = True
+        Me.MaximizeBox = False
         Me.Name = "Login_Page"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login_Page"
         Me.ResumeLayout(False)
         Me.PerformLayout()

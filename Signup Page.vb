@@ -24,10 +24,25 @@ Public Class Signup_Page
             Dim petOwnerObject As New PetOwner(username, password, name, age, sex, address, Nothing)
             SaveUser(petOwnerObject)
             MessageBox.Show("User created successfully!")
+            Me.Hide()
+            Login_Page.Show()
         Else
             MessageBox.Show("Please fill in all fields.")
         End If
     End Sub
+
+    Public Shared Function ReadPetOwners()
+        Dim petOwnersList As List(Of String)
+        Using reader As New System.IO.StreamReader("database.txt")
+            Dim line As String
+            Do While reader.Peek() >= 0
+                line = reader.ReadLine()
+                petOwnersList.Add(line)
+            Loop
+        End Using
+        Return petOwnersList
+    End Function
+
 
     Private Sub SaveUser(petOwnerObject As PetOwner)
         createDataBaseFile(petOwnerObject.getUsername & ".txt")
@@ -38,12 +53,26 @@ Public Class Signup_Page
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Login_Page.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        AdmLog_Page.Close()
-        Me.Close()
+        AdmLog_Page.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Signup_Page_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If (Login_Page.isClosing = False) Then
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If result = DialogResult.Yes Then
+                Login_Page.isClosing = True
+                ' Close all forms and terminate the application
+                Application.Exit()
+            Else
+                ' Cancel the form closing
+                e.Cancel = True
+            End If
+        End If
     End Sub
 End Class
 

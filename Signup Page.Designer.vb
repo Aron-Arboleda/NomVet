@@ -283,6 +283,7 @@ Partial Class Signup_Page
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
         Me.Name = "Signup_Page"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Signup_Page"
         Me.ResumeLayout(False)
         Me.PerformLayout()
