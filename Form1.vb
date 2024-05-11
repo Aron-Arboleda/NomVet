@@ -7,7 +7,7 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If ProgressBar2.Value < ProgressBar2.Maximum Then
-            ProgressBar2.Value += 50
+            ProgressBar2.Value += 1
             Login_Page.Show()
             Me.Hide()
         Else

@@ -55,6 +55,7 @@ Partial Class LoadPg
         '
         'Timer1
         '
+        Me.Timer1.Enabled = True
         '
         'ProgressBar2
         '
