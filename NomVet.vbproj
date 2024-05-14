@@ -103,6 +103,7 @@
     <Compile Include="Booking Page.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CoreClasses.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
