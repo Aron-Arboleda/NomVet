@@ -26,7 +26,7 @@ Public Class AdmLog_Page
         If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(password) Then
             If ValidateLogin(username, password) Then
                 HomePage.Show()
-                Me.Close()
+                Me.Hide()
             Else
                 MessageBox.Show("Invalid username or password.")
             End If
@@ -37,6 +37,11 @@ Public Class AdmLog_Page
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Login_Page.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
+
+    Private Sub AdmLog_Page_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        closingApplication(e)
+    End Sub
+
 End Class

@@ -111,6 +111,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUIHandler.vb" />
     <Compile Include="HomePage.Designer.vb">
       <DependentUpon>HomePage.vb</DependentUpon>
     </Compile>

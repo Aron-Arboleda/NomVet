@@ -1,7 +1,6 @@
 ﻿Imports System.IO
 
 Public Class Login_Page
-    Public isClosing As Boolean = False
     Public activeAccount As PetOwner
     Private Function ValidateLogin(username As String, password As String) As Boolean
         Dim validLogin As Boolean = False
@@ -82,16 +81,6 @@ Public Class Login_Page
     End Sub
 
     Private Sub Login_Page_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        If (isClosing = False) Then
-            Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If result = DialogResult.Yes Then
-                isClosing = True
-                ' Close all forms and terminate the application
-                Application.Exit()
-            Else
-                ' Cancel the form closing
-                e.Cancel = True
-            End If
-        End If
+        closingApplication(e)
     End Sub
 End Class
