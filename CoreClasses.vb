@@ -31,7 +31,7 @@ Public Module CoreClasses
         Public Sub SavePets()
             Using writer As StreamWriter = File.AppendText(strUsername + ".txt")
                 For Each pet In petsList
-                    writer.WriteLine(pet.strName & "," & pet.intAge & "," & pet.strBirthday & "," & pet.dblWeight & "," & pet.strType & "," & pet.boolVaccinated)
+                    writer.WriteLine(pet.strName & "," & pet.intAge & "," & pet.dateBirthday & "," & pet.dblWeight & "," & pet.strType & "," & pet.boolVaccinated & "," & pet.strProcedure & "," & pet.dateAppointment)
                 Next
             End Using
         End Sub
@@ -41,18 +41,24 @@ Public Module CoreClasses
     Public Class Pet
         Public strName As String
         Public intAge As Integer
-        Public strBirthday As String
+        Public dateBirthday As Date
         Public dblWeight As Double
         Public strType As String
-        Public boolVaccinated As Boolean
+        Public boolVaccinated As String
+        Public strProcedure As String
+        Public dateAppointment As Date
 
-        Public Sub New(ByVal strName As String, ByVal intAge As Integer, ByVal strBirthday As String, ByVal dblWeight As Double, ByVal strType As String, boolVaccinated As Boolean)
+        Public Sub New(ByVal strName As String, ByVal intAge As Integer, ByVal dateBirthday As Date, ByVal dblWeight As Double, ByVal strType As String, ByVal boolVaccinated As String, ByVal strProcedure As String, dateAppointment As Date)
             Me.strName = strName
             Me.intAge = intAge
-            Me.strBirthday = strBirthday
+            Me.dateBirthday = dateBirthday
             Me.dblWeight = dblWeight
             Me.strType = strType
             Me.boolVaccinated = boolVaccinated
+            Me.strProcedure = strProcedure
+            Me.dateAppointment = dateAppointment
         End Sub
     End Class
+
+
 End Module

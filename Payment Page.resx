@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBack.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGgAAABWCAYAAAAjbNN8AAAABGdBTUEAALGPC/xhBQAAAv9JREFUeF7t
         ndFNG0EURV0CHYQOQge4g9AB6SB0AB2QDkgHKcElpISU4BKce+1nKSBibOaOeZHOkeaDtRmk8+Sdu292
@@ -136,13 +136,10 @@
         MdvpLg4XrB+F5Htd8ubdS1wY9/f45HRBxXDSu9b4VIcAAOB/YrH4A9ZUkH3jXkhyAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="TableLayoutPanel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="TableLayoutPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA2UAAAIiCAYAAABIXGAzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAFUJJREFUeF7t3euPJNddx+Hs2mDnYhFsRyTGkZyQgEFRMCQgvwiSkaLI5EIsk4AR
+        wAAADsABataJCQAAFUJJREFUeF7t3euPJNddx+Hs2mDnYhFsRyTGkZyQgEFRMCQgvwiSkaLI5EIsk4AR
         VmKBCVFk4lzWFxzHzt9NVZ3mHLNj99T+ZufWM9/pmefF86J/21V9qupNfTTb1R/bbDY3yWeW1v5mnpcf
         /u+03Ol+BwAAXA3TtPyq36u/uCzta61tHivu56+lcniNiDAAANhfd/q9/A/GPf24t1/d618b5XDPPdQv
         2tf7xfuP4qICAAB7aJqW9/s9/ivL0v5q3POvGmCvlcM9dLu1zZ+Oiu4X693qIgIAANdDv+f/zbj37w3w
@@ -792,13 +789,10 @@
         Z1C+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="TableLayoutPanel2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="TableLayoutPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA2UAAAIiCAYAAABIXGAzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAFUJJREFUeF7t3euPJNddx+Hs2mDnYhFsRyTGkZyQgEFRMCQgvwiSkaLI5EIsk4AR
+        vwAADr8BOAVTJAAAFUJJREFUeF7t3euPJNddx+Hs2mDnYhFsRyTGkZyQgEFRMCQgvwiSkaLI5EIsk4AR
         VmKBCVFk4lzWFxzHzt9NVZ3mHLNj99T+ZufWM9/pmefF86J/21V9qupNfTTb1R/bbDY3yWeW1v5mnpcf
         /u+03Ol+BwAAXA3TtPyq36u/uCzta61tHivu56+lcniNiDAAANhfd/q9/A/GPf24t1/d618b5XDPPdQv
         2tf7xfuP4qICAAB7aJqW9/s9/ivL0v5q3POvGmCvlcM9dLu1zZ+Oiu4X693qIgIAANdDv+f/zbj37w3w

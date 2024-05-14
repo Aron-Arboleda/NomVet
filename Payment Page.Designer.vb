@@ -23,7 +23,7 @@ Partial Class Payment_Page
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payment_Page))
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -42,9 +42,9 @@ Partial Class Payment_Page
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
+        Me.lblCheckupFee = New System.Windows.Forms.Label()
+        Me.lblVaccineFee = New System.Windows.Forms.Label()
+        Me.lblTotalFee = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -67,17 +67,17 @@ Partial Class Payment_Page
         Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnBack
         '
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(42, 42)
-        Me.Button1.TabIndex = 3
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnBack.BackgroundImage = CType(resources.GetObject("btnBack.BackgroundImage"), System.Drawing.Image)
+        Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBack.FlatAppearance.BorderSize = 0
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Location = New System.Drawing.Point(12, 12)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(42, 42)
+        Me.btnBack.TabIndex = 3
+        Me.btnBack.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel1
         '
@@ -103,7 +103,7 @@ Partial Class Payment_Page
         Me.TableLayoutPanel1.Controls.Add(Me.Label6, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.Label5, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(600, 172)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(600, 139)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 4
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -111,7 +111,7 @@ Partial Class Payment_Page
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(394, 221)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(394, 217)
         Me.TableLayoutPanel1.TabIndex = 4
         '
         'Label22
@@ -308,16 +308,16 @@ Partial Class Payment_Page
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label32)
-        Me.Panel1.Controls.Add(Me.Label26)
-        Me.Panel1.Controls.Add(Me.Label27)
-        Me.Panel1.Controls.Add(Me.Label28)
+        Me.Panel1.Controls.Add(Me.lblCheckupFee)
+        Me.Panel1.Controls.Add(Me.lblVaccineFee)
+        Me.Panel1.Controls.Add(Me.lblTotalFee)
         Me.Panel1.Controls.Add(Me.Label31)
         Me.Panel1.Controls.Add(Me.Label30)
         Me.Panel1.Controls.Add(Me.Label29)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Location = New System.Drawing.Point(82, 76)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(455, 629)
+        Me.Panel1.Size = New System.Drawing.Size(455, 532)
         Me.Panel1.TabIndex = 28
         '
         'Button4
@@ -329,7 +329,7 @@ Partial Class Payment_Page
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Segoe UI Black", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(176, 546)
+        Me.Button4.Location = New System.Drawing.Point(181, 452)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(244, 45)
         Me.Button4.TabIndex = 39
@@ -356,41 +356,41 @@ Partial Class Payment_Page
         Me.Label32.TabIndex = 36
         Me.Label32.Text = "Payment"
         '
-        'Label26
+        'lblCheckupFee
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.BackColor = System.Drawing.Color.Transparent
-        Me.Label26.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label26.Location = New System.Drawing.Point(292, 115)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(68, 29)
-        Me.Label26.TabIndex = 35
-        Me.Label26.Text = " 500.00"
+        Me.lblCheckupFee.AutoSize = True
+        Me.lblCheckupFee.BackColor = System.Drawing.Color.Transparent
+        Me.lblCheckupFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
+        Me.lblCheckupFee.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblCheckupFee.Location = New System.Drawing.Point(292, 115)
+        Me.lblCheckupFee.Name = "lblCheckupFee"
+        Me.lblCheckupFee.Size = New System.Drawing.Size(68, 29)
+        Me.lblCheckupFee.TabIndex = 35
+        Me.lblCheckupFee.Text = " 500.00"
         '
-        'Label27
+        'lblVaccineFee
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.BackColor = System.Drawing.Color.Transparent
-        Me.Label27.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label27.Location = New System.Drawing.Point(288, 155)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(77, 29)
-        Me.Label27.TabIndex = 34
-        Me.Label27.Text = "1,000.00"
+        Me.lblVaccineFee.AutoSize = True
+        Me.lblVaccineFee.BackColor = System.Drawing.Color.Transparent
+        Me.lblVaccineFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
+        Me.lblVaccineFee.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblVaccineFee.Location = New System.Drawing.Point(288, 155)
+        Me.lblVaccineFee.Name = "lblVaccineFee"
+        Me.lblVaccineFee.Size = New System.Drawing.Size(77, 29)
+        Me.lblVaccineFee.TabIndex = 34
+        Me.lblVaccineFee.Text = "1,000.00"
         '
-        'Label28
+        'lblTotalFee
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.BackColor = System.Drawing.Color.Transparent
-        Me.Label28.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.Label28.ForeColor = System.Drawing.Color.DarkCyan
-        Me.Label28.Location = New System.Drawing.Point(288, 224)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(91, 29)
-        Me.Label28.TabIndex = 33
-        Me.Label28.Text = "1,500.00"
+        Me.lblTotalFee.AutoSize = True
+        Me.lblTotalFee.BackColor = System.Drawing.Color.Transparent
+        Me.lblTotalFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
+        Me.lblTotalFee.ForeColor = System.Drawing.Color.DarkCyan
+        Me.lblTotalFee.Location = New System.Drawing.Point(288, 224)
+        Me.lblTotalFee.Name = "lblTotalFee"
+        Me.lblTotalFee.Size = New System.Drawing.Size(91, 29)
+        Me.lblTotalFee.TabIndex = 33
+        Me.lblTotalFee.Text = "1,500.00"
         '
         'Label31
         '
@@ -452,7 +452,7 @@ Partial Class Payment_Page
         Me.TableLayoutPanel2.Controls.Add(Me.Label23, 1, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Label24, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.Label25, 1, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(600, 420)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(600, 387)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 4
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -644,7 +644,7 @@ Partial Class Payment_Page
         Me.Label33.BackColor = System.Drawing.Color.Transparent
         Me.Label33.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 40.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label33.Location = New System.Drawing.Point(725, 109)
+        Me.Label33.Location = New System.Drawing.Point(725, 76)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(149, 48)
         Me.Label33.TabIndex = 40
@@ -655,12 +655,12 @@ Partial Class Payment_Page
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1114, 749)
+        Me.ClientSize = New System.Drawing.Size(1114, 674)
         Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnBack)
         Me.Name = "Payment_Page"
         Me.Text = "Payment_Page"
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -674,7 +674,7 @@ Partial Class Payment_Page
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBack As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
@@ -691,9 +691,9 @@ Partial Class Payment_Page
     Friend WithEvents Label21 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label32 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label28 As Label
+    Friend WithEvents lblCheckupFee As Label
+    Friend WithEvents lblVaccineFee As Label
+    Friend WithEvents lblTotalFee As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Label30 As Label
     Friend WithEvents Label29 As Label
