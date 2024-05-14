@@ -104,6 +104,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CoreClasses.vb" />
+    <Compile Include="FileManipulator.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

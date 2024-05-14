@@ -1,14 +1,7 @@
 ﻿Imports System.IO
 
 Public Class Signup_Page
-    Dim databaseFilePath As String
-    Sub createDataBaseFile(filename As String)
-        databaseFilePath = filename
 
-        If Not File.Exists(databaseFilePath) Then
-            File.Create(databaseFilePath).Dispose()
-        End If
-    End Sub
     Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles btn_signup.Click
         Dim username As String = txt_signUserName.Text
         Dim password As String = txt_signPassword.Text
@@ -22,7 +15,7 @@ Public Class Signup_Page
            Not String.IsNullOrEmpty(sex) AndAlso Not String.IsNullOrEmpty(address) Then
 
             Dim petOwnerObject As New PetOwner(username, password, name, age, sex, address, Nothing)
-            SaveUser(petOwnerObject)
+            FileManipulator.SaveUser(petOwnerObject)
             MessageBox.Show("User created successfully!")
             Me.Hide()
             Login_Page.Show()
@@ -31,25 +24,10 @@ Public Class Signup_Page
         End If
     End Sub
 
-    Public Shared Function ReadPetOwners()
-        Dim petOwnersList As List(Of String)
-        Using reader As New System.IO.StreamReader("database.txt")
-            Dim line As String
-            Do While reader.Peek() >= 0
-                line = reader.ReadLine()
-                petOwnersList.Add(line)
-            Loop
-        End Using
-        Return petOwnersList
-    End Function
 
 
-    Private Sub SaveUser(petOwnerObject As PetOwner)
-        createDataBaseFile(petOwnerObject.getUsername & ".txt")
-        Using writer As StreamWriter = File.AppendText("database.txt")
-            writer.WriteLine(petOwnerObject.getUsername & "," & petOwnerObject.getPassword & "," & petOwnerObject.strName & "," & petOwnerObject.intAge & "," & petOwnerObject.strSex & "," & petOwnerObject.strAddress)
-        End Using
-    End Sub
+
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Login_Page.Show()
