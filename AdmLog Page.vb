@@ -23,15 +23,11 @@ Public Class AdmLog_Page
         Dim username As String = txt_admUsername.Text
         Dim password As String = txt_admPassword.Text
 
-        If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(password) Then
-            If ValidateLogin(username, password) Then
-                HomePage.Show()
-                Me.Hide()
-            Else
-                MessageBox.Show("Invalid username or password.")
-            End If
+        If username = "admin" And password = "admin" Then
+            Rcd_Page.Show()
+            Me.Hide()
         Else
-            MessageBox.Show("Please enter both username and password.")
+            MessageBox.Show("Invalid input.")
         End If
     End Sub
 

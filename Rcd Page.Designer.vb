@@ -1416,6 +1416,7 @@ Partial Class Rcd_Page
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Panel16)
         Me.Name = "Rcd_Page"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel16.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

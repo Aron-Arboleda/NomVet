@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Public Class Login_Page
-    Public activeAccount As PetOwner
+
 
     Private Sub btn_userLogin_Click(sender As Object, e As EventArgs) Handles btn_userLogin.Click
         Dim username As String = txt_userName.Text
@@ -9,6 +9,7 @@ Public Class Login_Page
 
         If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(password) Then
             If FileManipulator.ValidateLogin(username, password) Then
+                loadActiveAccount(activeAccount)
                 HomePage.Show()
                 Me.Hide()
             Else
@@ -17,6 +18,10 @@ Public Class Login_Page
         Else
             MessageBox.Show("Please enter both username and password.")
         End If
+    End Sub
+
+    Public Sub loadActiveAccount(activeAcc As PetOwner)
+        HomePage.btnProfileNameDisplay.Text = activeAcc.strName
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
