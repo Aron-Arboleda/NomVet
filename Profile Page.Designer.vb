@@ -61,14 +61,6 @@ Partial Class Profile_Page
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,10 +72,6 @@ Partial Class Profile_Page
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel8.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel6.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -102,7 +90,7 @@ Partial Class Profile_Page
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Location = New System.Drawing.Point(28, 114)
+        Me.Panel1.Location = New System.Drawing.Point(28, 39)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(360, 623)
         Me.Panel1.TabIndex = 3
@@ -245,7 +233,7 @@ Partial Class Profile_Page
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(412, 114)
+        Me.Label2.Location = New System.Drawing.Point(413, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(188, 35)
         Me.Label2.TabIndex = 9
@@ -257,7 +245,7 @@ Partial Class Profile_Page
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(412, 437)
+        Me.Label3.Location = New System.Drawing.Point(413, 362)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(222, 35)
         Me.Label3.TabIndex = 11
@@ -270,7 +258,7 @@ Partial Class Profile_Page
         Me.Panel2.Controls.Add(Me.Button4)
         Me.Panel2.Controls.Add(Me.PictureBox3)
         Me.Panel2.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(418, 161)
+        Me.Panel2.Location = New System.Drawing.Point(419, 86)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(316, 65)
         Me.Panel2.TabIndex = 20
@@ -309,7 +297,7 @@ Partial Class Profile_Page
         Me.Panel3.Controls.Add(Me.Button5)
         Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(418, 240)
+        Me.Panel3.Location = New System.Drawing.Point(419, 165)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(316, 65)
         Me.Panel3.TabIndex = 21
@@ -348,7 +336,7 @@ Partial Class Profile_Page
         Me.Panel4.Controls.Add(Me.Button6)
         Me.Panel4.Controls.Add(Me.PictureBox2)
         Me.Panel4.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel4.Location = New System.Drawing.Point(774, 161)
+        Me.Panel4.Location = New System.Drawing.Point(775, 86)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(316, 65)
         Me.Panel4.TabIndex = 21
@@ -387,7 +375,7 @@ Partial Class Profile_Page
         Me.Panel5.Controls.Add(Me.Button7)
         Me.Panel5.Controls.Add(Me.PictureBox4)
         Me.Panel5.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel5.Location = New System.Drawing.Point(774, 240)
+        Me.Panel5.Location = New System.Drawing.Point(775, 165)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(316, 65)
         Me.Panel5.TabIndex = 21
@@ -421,7 +409,7 @@ Partial Class Profile_Page
         '
         'MonthCalendar1
         '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(431, 481)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(432, 406)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 21
         '
@@ -439,7 +427,7 @@ Partial Class Profile_Page
         Me.Panel8.Controls.Add(Me.Label16)
         Me.Panel8.Controls.Add(Me.Label15)
         Me.Panel8.Controls.Add(Me.Label14)
-        Me.Panel8.Location = New System.Drawing.Point(491, 325)
+        Me.Panel8.Location = New System.Drawing.Point(492, 250)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(529, 91)
         Me.Panel8.TabIndex = 24
@@ -554,117 +542,12 @@ Partial Class Profile_Page
         Me.Label14.TabIndex = 0
         Me.Label14.Text = "Moonlight"
         '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.Panel7)
-        Me.Panel6.Controls.Add(Me.TableLayoutPanel1)
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1113, 75)
-        Me.Panel6.TabIndex = 38
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.Button8)
-        Me.Panel7.Controls.Add(Me.PictureBox5)
-        Me.Panel7.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel7.Location = New System.Drawing.Point(855, 4)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(257, 67)
-        Me.Panel7.TabIndex = 28
-        '
-        'Button8
-        '
-        Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button8.Location = New System.Drawing.Point(68, 17)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(186, 32)
-        Me.Button8.TabIndex = 39
-        Me.Button8.Text = "Tiana Rhiel Madsen"
-        Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 19
-        Me.PictureBox5.TabStop = False
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.TableLayoutPanel1.ColumnCount = 4
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.Controls.Add(Me.Button3, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button1, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button2, 3, 0)
-        Me.TableLayoutPanel1.Font = New System.Drawing.Font("Segoe UI Black", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(538, 75)
-        Me.TableLayoutPanel1.TabIndex = 27
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(4, 4)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(172, 67)
-        Me.Button3.TabIndex = 0
-        Me.Button3.Text = "BOOKING"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(183, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(172, 67)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "ABOUT"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(363, 4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(172, 67)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "PRICING"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'Profile_Page
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1114, 749)
-        Me.Controls.Add(Me.Panel6)
+        Me.ClientSize = New System.Drawing.Size(1114, 674)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.MonthCalendar1)
         Me.Controls.Add(Me.Panel3)
@@ -689,10 +572,6 @@ Partial Class Profile_Page
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel7.ResumeLayout(False)
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -735,12 +614,4 @@ Partial Class Profile_Page
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button8 As Button
 End Class

@@ -10,7 +10,8 @@ Public Class Login_Page
         If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(password) Then
             If FileManipulator.ValidateLogin(username, password) Then
                 loadActiveAccount(activeAccount)
-                HomePage.Show()
+                NavigatorPage.Show()
+                NavigatorPage.btnHome.PerformClick()
                 Me.Hide()
             Else
                 MessageBox.Show("Invalid username or password.")
@@ -21,7 +22,7 @@ Public Class Login_Page
     End Sub
 
     Public Sub loadActiveAccount(activeAcc As PetOwner)
-        HomePage.btnProfileNameDisplay.Text = activeAcc.strName
+        NavigatorPage.btnProfileDisplayName.Text = activeAcc.strName
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -31,6 +32,7 @@ Public Class Login_Page
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         AdmLog_Page.Show()
+
         Me.Hide()
     End Sub
 
