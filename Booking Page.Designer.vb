@@ -116,10 +116,10 @@ Partial Class Booking_Page
         '
         Me.cbProcedure.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProcedure.FormattingEnabled = True
-        Me.cbProcedure.Items.AddRange(New Object() {"Check-Up", "Vaccine", "Check-Up & Vaccine"})
+        Me.cbProcedure.Items.AddRange(New Object() {"Check-Up", "Vaccine", "Both"})
         Me.cbProcedure.Location = New System.Drawing.Point(107, 81)
         Me.cbProcedure.Name = "cbProcedure"
-        Me.cbProcedure.Size = New System.Drawing.Size(80, 28)
+        Me.cbProcedure.Size = New System.Drawing.Size(139, 28)
         Me.cbProcedure.TabIndex = 38
         '
         'Label1
@@ -190,7 +190,7 @@ Partial Class Booking_Page
         Me.cbVaccineStatus.Items.AddRange(New Object() {"Complete", "Incomplete"})
         Me.cbVaccineStatus.Location = New System.Drawing.Point(592, 43)
         Me.cbVaccineStatus.Name = "cbVaccineStatus"
-        Me.cbVaccineStatus.Size = New System.Drawing.Size(80, 28)
+        Me.cbVaccineStatus.Size = New System.Drawing.Size(170, 28)
         Me.cbVaccineStatus.TabIndex = 32
         '
         'Label19

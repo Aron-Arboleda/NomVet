@@ -18,6 +18,7 @@
 
     Private Sub btnProfileDisplayName_Click(sender As Object, e As EventArgs) Handles btnProfileDisplayName.Click
         childForm(Profile_Page)
+        Profile_Page.loadProfile()
     End Sub
 
     Private Sub NavigatorPage_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -27,4 +28,6 @@
     Private Sub btnPricing_Click(sender As Object, e As EventArgs) Handles btnPricing.Click
         childForm(PricingPage)
     End Sub
+
+
 End Class

@@ -1,6 +1,35 @@
 ﻿Public Class Payment_Page
+
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         NavigatorPage.childForm(Booking_Page)
         Booking_Page.tempPetObject = Nothing
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim dblPayment As Double = txtPayment.Text
+        If dblPayment >= Booking_Page.totalFee Then
+            loadReceipt()
+            FileManipulator.SavePet(activeAccount, Booking_Page.tempPetObject)
+            FileManipulator.SaveBooking(Booking_Page.tempPetObject.dateAppointment)
+            NavigatorPage.childForm(Receipt_Page)
+        Else
+            MsgBox("Insufficient funds", vbCritical)
+        End If
+    End Sub
+
+    Public Sub loadReceipt()
+        Receipt_Page.lblMessage.Text = "Hi " & activeAccount.strName & ", Your appoinment has been confirmed!"
+        Receipt_Page.lblPetOwnerName.Text = activeAccount.strName
+        Receipt_Page.lblPetOwnerAddress.Text = activeAccount.strAddress
+        Receipt_Page.lblPetName.Text = Booking_Page.tempPetObject.strName
+        Receipt_Page.lblPetType.Text = Booking_Page.tempPetObject.strType
+        Receipt_Page.lblDateOfAppointment.Text = Booking_Page.tempPetObject.dateAppointment
+        Receipt_Page.lblPetType2.Text = Booking_Page.tempPetObject.strType
+        Receipt_Page.lblPetType3.Text = Booking_Page.tempPetObject.strType
+        Receipt_Page.lblCheckupFee.Text = Me.lblCheckupFee.Text
+        Receipt_Page.lblVaccineFee.Text = Me.lblVaccineFee.Text
+        Receipt_Page.lblTotalFee.Text = Me.lblTotalFee.Text
+        Receipt_Page.lblAmountPaid.Text = "₱" & Me.txtPayment.Text
+        Receipt_Page.lblChange.Text = "₱" & (Val(Me.txtPayment.Text) - Booking_Page.totalFee)
     End Sub
 End Class

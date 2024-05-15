@@ -23,53 +23,38 @@ Partial Class Receipt_Page
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Receipt_Page))
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblMessage = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
+        Me.lblPetType3 = New System.Windows.Forms.Label()
+        Me.lblPetType2 = New System.Windows.Forms.Label()
+        Me.lblDateOfAppointment = New System.Windows.Forms.Label()
+        Me.lblChange = New System.Windows.Forms.Label()
+        Me.lblAmountPaid = New System.Windows.Forms.Label()
+        Me.lblTotalFee = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
+        Me.lblVaccineFee = New System.Windows.Forms.Label()
+        Me.lblCheckupFee = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblPetType = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblPetName = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblPetOwnerAddress = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblPetOwnerName = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnBackToHome = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(40, 40)
-        Me.Button1.TabIndex = 2
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -82,15 +67,15 @@ Partial Class Receipt_Page
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Thank you for choosing Nom Veterinary Clinic!"
         '
-        'Label2
+        'lblMessage
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(338, 146)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(345, 20)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Hi Tiana, Your appoinment has been confirmed!"
+        Me.lblMessage.AutoSize = True
+        Me.lblMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMessage.Location = New System.Drawing.Point(338, 146)
+        Me.lblMessage.Name = "lblMessage"
+        Me.lblMessage.Size = New System.Drawing.Size(345, 20)
+        Me.lblMessage.TabIndex = 5
+        Me.lblMessage.Text = "Hi Tiana, Your appoinment has been confirmed!"
         '
         'Panel1
         '
@@ -98,112 +83,109 @@ Partial Class Receipt_Page
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Label29)
-        Me.Panel1.Controls.Add(Me.Label28)
-        Me.Panel1.Controls.Add(Me.Label12)
-        Me.Panel1.Controls.Add(Me.Label27)
-        Me.Panel1.Controls.Add(Me.Label26)
-        Me.Panel1.Controls.Add(Me.Label25)
+        Me.Panel1.Controls.Add(Me.lblPetType3)
+        Me.Panel1.Controls.Add(Me.lblPetType2)
+        Me.Panel1.Controls.Add(Me.lblDateOfAppointment)
+        Me.Panel1.Controls.Add(Me.lblChange)
+        Me.Panel1.Controls.Add(Me.lblAmountPaid)
+        Me.Panel1.Controls.Add(Me.lblTotalFee)
         Me.Panel1.Controls.Add(Me.Label24)
         Me.Panel1.Controls.Add(Me.Label23)
         Me.Panel1.Controls.Add(Me.Label22)
-        Me.Panel1.Controls.Add(Me.Label21)
-        Me.Panel1.Controls.Add(Me.Label20)
+        Me.Panel1.Controls.Add(Me.lblVaccineFee)
+        Me.Panel1.Controls.Add(Me.lblCheckupFee)
         Me.Panel1.Controls.Add(Me.Label19)
-        Me.Panel1.Controls.Add(Me.Label18)
-        Me.Panel1.Controls.Add(Me.Label17)
-        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.Label15)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.lblPetType)
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.lblPetName)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.lblPetOwnerAddress)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.lblPetOwnerName)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.lblMessage)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(53, 99)
+        Me.Panel1.Location = New System.Drawing.Point(54, 68)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1009, 574)
         Me.Panel1.TabIndex = 0
         '
-        'Label29
+        'lblPetType3
         '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label29.Location = New System.Drawing.Point(119, 426)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(46, 17)
-        Me.Label29.TabIndex = 87
-        Me.Label29.Text = "Feline"
+        Me.lblPetType3.AutoSize = True
+        Me.lblPetType3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPetType3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.lblPetType3.Location = New System.Drawing.Point(295, 426)
+        Me.lblPetType3.Name = "lblPetType3"
+        Me.lblPetType3.Size = New System.Drawing.Size(46, 17)
+        Me.lblPetType3.TabIndex = 87
+        Me.lblPetType3.Text = "Feline"
         '
-        'Label28
+        'lblPetType2
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label28.Location = New System.Drawing.Point(119, 330)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(46, 17)
-        Me.Label28.TabIndex = 86
-        Me.Label28.Text = "Feline"
+        Me.lblPetType2.AutoSize = True
+        Me.lblPetType2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPetType2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.lblPetType2.Location = New System.Drawing.Point(295, 330)
+        Me.lblPetType2.Name = "lblPetType2"
+        Me.lblPetType2.Size = New System.Drawing.Size(46, 17)
+        Me.lblPetType2.TabIndex = 86
+        Me.lblPetType2.Text = "Feline"
         '
-        'Label12
+        'lblDateOfAppointment
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label12.Location = New System.Drawing.Point(830, 211)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(106, 20)
-        Me.Label12.TabIndex = 70
-        Me.Label12.Text = "April 29, 2024"
+        Me.lblDateOfAppointment.AutoSize = True
+        Me.lblDateOfAppointment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.lblDateOfAppointment.Location = New System.Drawing.Point(830, 211)
+        Me.lblDateOfAppointment.Name = "lblDateOfAppointment"
+        Me.lblDateOfAppointment.Size = New System.Drawing.Size(106, 20)
+        Me.lblDateOfAppointment.TabIndex = 70
+        Me.lblDateOfAppointment.Text = "April 29, 2024"
         '
-        'Label27
+        'lblChange
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label27.Location = New System.Drawing.Point(830, 536)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(58, 20)
-        Me.Label27.TabIndex = 85
-        Me.Label27.Text = "500.00"
+        Me.lblChange.AutoSize = True
+        Me.lblChange.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChange.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblChange.Location = New System.Drawing.Point(622, 531)
+        Me.lblChange.Name = "lblChange"
+        Me.lblChange.Size = New System.Drawing.Size(58, 20)
+        Me.lblChange.TabIndex = 85
+        Me.lblChange.Text = "500.00"
         '
-        'Label26
+        'lblAmountPaid
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label26.Location = New System.Drawing.Point(830, 510)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(71, 20)
-        Me.Label26.TabIndex = 84
-        Me.Label26.Text = "2,000.00"
+        Me.lblAmountPaid.AutoSize = True
+        Me.lblAmountPaid.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAmountPaid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblAmountPaid.Location = New System.Drawing.Point(622, 505)
+        Me.lblAmountPaid.Name = "lblAmountPaid"
+        Me.lblAmountPaid.Size = New System.Drawing.Size(71, 20)
+        Me.lblAmountPaid.TabIndex = 84
+        Me.lblAmountPaid.Text = "2,000.00"
         '
-        'Label25
+        'lblTotalFee
         '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label25.Location = New System.Drawing.Point(830, 484)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(71, 20)
-        Me.Label25.TabIndex = 83
-        Me.Label25.Text = "1,500.00"
+        Me.lblTotalFee.AutoSize = True
+        Me.lblTotalFee.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalFee.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTotalFee.Location = New System.Drawing.Point(622, 479)
+        Me.lblTotalFee.Name = "lblTotalFee"
+        Me.lblTotalFee.Size = New System.Drawing.Size(71, 20)
+        Me.lblTotalFee.TabIndex = 83
+        Me.lblTotalFee.Text = "1,500.00"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label24.Location = New System.Drawing.Point(476, 536)
+        Me.Label24.Location = New System.Drawing.Point(465, 531)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(69, 20)
         Me.Label24.TabIndex = 82
@@ -214,7 +196,7 @@ Partial Class Receipt_Page
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label23.Location = New System.Drawing.Point(476, 510)
+        Me.Label23.Location = New System.Drawing.Point(465, 505)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(104, 20)
         Me.Label23.TabIndex = 81
@@ -225,82 +207,50 @@ Partial Class Receipt_Page
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label22.Location = New System.Drawing.Point(476, 484)
+        Me.Label22.Location = New System.Drawing.Point(465, 479)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(48, 20)
         Me.Label22.TabIndex = 80
         Me.Label22.Text = "Total:"
         '
-        'Label21
+        'lblVaccineFee
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(830, 406)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(71, 20)
-        Me.Label21.TabIndex = 79
-        Me.Label21.Text = "1,000.00"
+        Me.lblVaccineFee.AutoSize = True
+        Me.lblVaccineFee.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVaccineFee.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.lblVaccineFee.Location = New System.Drawing.Point(619, 406)
+        Me.lblVaccineFee.Name = "lblVaccineFee"
+        Me.lblVaccineFee.Size = New System.Drawing.Size(71, 20)
+        Me.lblVaccineFee.TabIndex = 79
+        Me.lblVaccineFee.Text = "1,000.00"
         '
-        'Label20
+        'lblCheckupFee
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label20.Location = New System.Drawing.Point(830, 310)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(58, 20)
-        Me.Label20.TabIndex = 78
-        Me.Label20.Text = "500.00"
+        Me.lblCheckupFee.AutoSize = True
+        Me.lblCheckupFee.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCheckupFee.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.lblCheckupFee.Location = New System.Drawing.Point(619, 310)
+        Me.lblCheckupFee.Name = "lblCheckupFee"
+        Me.lblCheckupFee.Size = New System.Drawing.Size(58, 20)
+        Me.lblCheckupFee.TabIndex = 78
+        Me.lblCheckupFee.Text = "500.00"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(830, 275)
+        Me.Label19.Location = New System.Drawing.Point(619, 275)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(64, 19)
         Me.Label19.TabIndex = 77
         Me.Label19.Text = "Amount"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label18.Location = New System.Drawing.Point(490, 406)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(28, 20)
-        Me.Label18.TabIndex = 76
-        Me.Label18.Text = "(1)"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(490, 310)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(28, 20)
-        Me.Label17.TabIndex = 75
-        Me.Label17.Text = "(1)"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(470, 275)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(68, 19)
-        Me.Label16.TabIndex = 74
-        Me.Label16.Text = "Quantity"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label15.Location = New System.Drawing.Point(118, 406)
+        Me.Label15.Location = New System.Drawing.Point(294, 406)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(73, 20)
         Me.Label15.TabIndex = 73
@@ -311,7 +261,7 @@ Partial Class Receipt_Page
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(118, 310)
+        Me.Label14.Location = New System.Drawing.Point(294, 310)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(88, 20)
         Me.Label14.TabIndex = 72
@@ -321,7 +271,7 @@ Partial Class Receipt_Page
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(101, 275)
+        Me.Label13.Location = New System.Drawing.Point(277, 275)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(125, 19)
         Me.Label13.TabIndex = 71
@@ -338,15 +288,15 @@ Partial Class Receipt_Page
         Me.Label11.TabIndex = 69
         Me.Label11.Text = "Date of Appointment"
         '
-        'Label10
+        'lblPetType
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label10.Location = New System.Drawing.Point(631, 211)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 20)
-        Me.Label10.TabIndex = 68
-        Me.Label10.Text = "Feline"
+        Me.lblPetType.AutoSize = True
+        Me.lblPetType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.lblPetType.Location = New System.Drawing.Point(631, 211)
+        Me.lblPetType.Name = "lblPetType"
+        Me.lblPetType.Size = New System.Drawing.Size(52, 20)
+        Me.lblPetType.TabIndex = 68
+        Me.lblPetType.Text = "Feline"
         '
         'Label9
         '
@@ -359,15 +309,15 @@ Partial Class Receipt_Page
         Me.Label9.TabIndex = 67
         Me.Label9.Text = "Pet Type"
         '
-        'Label8
+        'lblPetName
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label8.Location = New System.Drawing.Point(465, 211)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(60, 20)
-        Me.Label8.TabIndex = 66
-        Me.Label8.Text = "Eclipse"
+        Me.lblPetName.AutoSize = True
+        Me.lblPetName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.lblPetName.Location = New System.Drawing.Point(465, 211)
+        Me.lblPetName.Name = "lblPetName"
+        Me.lblPetName.Size = New System.Drawing.Size(60, 20)
+        Me.lblPetName.TabIndex = 66
+        Me.lblPetName.Text = "Eclipse"
         '
         'Label7
         '
@@ -380,15 +330,15 @@ Partial Class Receipt_Page
         Me.Label7.TabIndex = 65
         Me.Label7.Text = "Pet Name"
         '
-        'Label6
+        'lblPetOwnerAddress
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label6.Location = New System.Drawing.Point(251, 211)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(133, 20)
-        Me.Label6.TabIndex = 64
-        Me.Label6.Text = "Tarlac, Tarlac City"
+        Me.lblPetOwnerAddress.AutoSize = True
+        Me.lblPetOwnerAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.lblPetOwnerAddress.Location = New System.Drawing.Point(251, 211)
+        Me.lblPetOwnerAddress.Name = "lblPetOwnerAddress"
+        Me.lblPetOwnerAddress.Size = New System.Drawing.Size(133, 20)
+        Me.lblPetOwnerAddress.TabIndex = 64
+        Me.lblPetOwnerAddress.Text = "Tarlac, Tarlac City"
         '
         'Label5
         '
@@ -401,15 +351,15 @@ Partial Class Receipt_Page
         Me.Label5.TabIndex = 63
         Me.Label5.Text = "Address"
         '
-        'Label4
+        'lblPetOwnerName
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label4.Location = New System.Drawing.Point(15, 211)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(149, 20)
-        Me.Label4.TabIndex = 62
-        Me.Label4.Text = "Tiana Rhiel Madsen"
+        Me.lblPetOwnerName.AutoSize = True
+        Me.lblPetOwnerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.lblPetOwnerName.Location = New System.Drawing.Point(15, 211)
+        Me.lblPetOwnerName.Name = "lblPetOwnerName"
+        Me.lblPetOwnerName.Size = New System.Drawing.Size(149, 20)
+        Me.lblPetOwnerName.TabIndex = 62
+        Me.lblPetOwnerName.Text = "Tiana Rhiel Madsen"
         '
         'Label3
         '
@@ -433,13 +383,29 @@ Partial Class Receipt_Page
         Me.PictureBox2.TabIndex = 60
         Me.PictureBox2.TabStop = False
         '
+        'btnBackToHome
+        '
+        Me.btnBackToHome.BackColor = System.Drawing.Color.Transparent
+        Me.btnBackToHome.BackgroundImage = CType(resources.GetObject("btnBackToHome.BackgroundImage"), System.Drawing.Image)
+        Me.btnBackToHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBackToHome.FlatAppearance.BorderSize = 0
+        Me.btnBackToHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBackToHome.Font = New System.Drawing.Font("Segoe UI Black", 11.25!)
+        Me.btnBackToHome.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBackToHome.Location = New System.Drawing.Point(12, 12)
+        Me.btnBackToHome.Name = "btnBackToHome"
+        Me.btnBackToHome.Size = New System.Drawing.Size(147, 34)
+        Me.btnBackToHome.TabIndex = 40
+        Me.btnBackToHome.Text = "Back to Home"
+        Me.btnBackToHome.UseVisualStyleBackColor = False
+        '
         'Receipt_Page
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1114, 749)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(1114, 674)
+        Me.Controls.Add(Me.btnBackToHome)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Receipt_Page"
         Me.Text = "Receipt_Page"
@@ -450,36 +416,33 @@ Partial Class Receipt_Page
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblMessage As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label25 As Label
+    Friend WithEvents lblDateOfAppointment As Label
+    Friend WithEvents lblChange As Label
+    Friend WithEvents lblAmountPaid As Label
+    Friend WithEvents lblTotalFee As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label22 As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Label20 As Label
+    Friend WithEvents lblVaccineFee As Label
+    Friend WithEvents lblCheckupFee As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label16 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblPetType As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lblPetName As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblPetOwnerAddress As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblPetOwnerName As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label29 As Label
-    Friend WithEvents Label28 As Label
+    Friend WithEvents lblPetType3 As Label
+    Friend WithEvents lblPetType2 As Label
+    Friend WithEvents btnBackToHome As Button
 End Class

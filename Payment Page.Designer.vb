@@ -40,7 +40,7 @@ Partial Class Payment_Page
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtPayment = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.lblCheckupFee = New System.Windows.Forms.Label()
         Me.lblVaccineFee = New System.Windows.Forms.Label()
@@ -306,7 +306,7 @@ Partial Class Payment_Page
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.txtPayment)
         Me.Panel1.Controls.Add(Me.Label32)
         Me.Panel1.Controls.Add(Me.lblCheckupFee)
         Me.Panel1.Controls.Add(Me.lblVaccineFee)
@@ -336,13 +336,13 @@ Partial Class Payment_Page
         Me.Button4.Text = "Pay and Show Receipt"
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'txtPayment
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(86, 379)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(283, 38)
-        Me.TextBox1.TabIndex = 37
+        Me.txtPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPayment.Location = New System.Drawing.Point(86, 379)
+        Me.txtPayment.Name = "txtPayment"
+        Me.txtPayment.Size = New System.Drawing.Size(283, 38)
+        Me.txtPayment.TabIndex = 37
         '
         'Label32
         '
@@ -689,7 +689,7 @@ Partial Class Payment_Page
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtPayment As TextBox
     Friend WithEvents Label32 As Label
     Friend WithEvents lblCheckupFee As Label
     Friend WithEvents lblVaccineFee As Label

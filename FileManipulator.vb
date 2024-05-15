@@ -44,8 +44,22 @@ Public Class FileManipulator
         Dim age = parsedStringsList(3)
         Dim sex = parsedStringsList(4)
         Dim address = parsedStringsList(5)
-        Dim petOwnerObject As New PetOwner(username, password, name, age, sex, address, Nothing)
+        Dim petOwnerObject As New PetOwner(username, password, name, age, sex, address, New List(Of Pet))
         Return petOwnerObject
+    End Function
+
+    Public Shared Function parseAsPet(line As String) As Pet
+        Dim parsedStringsList() As String = line.Split(","c)
+        Dim name = parsedStringsList(0)
+        Dim age = parsedStringsList(1)
+        Dim bday = parsedStringsList(2)
+        Dim weight = parsedStringsList(3)
+        Dim type = parsedStringsList(4)
+        Dim vaccineStatus = parsedStringsList(5)
+        Dim procedure = parsedStringsList(6)
+        Dim dateAppointment = parsedStringsList(7)
+        Dim petObject As New Pet(name, age, bday, weight, type, vaccineStatus, procedure, dateAppointment)
+        Return petObject
     End Function
     Public Shared Sub createDataBaseFile(filename As String)
         Dim databaseFilePath As String = filename
@@ -58,13 +72,23 @@ Public Class FileManipulator
     Public Shared Sub SaveUser(petOwnerObject As PetOwner)
         'creating user's own database for pets
         Dim petOwnerFileName As String = petOwnerObject.getUsername & ".txt"
-        If Not (File.Exists(petOwnerObject.getUsername & ".txt")) Then
-            FileManipulator.createDataBaseFile(petOwnerFileName)
-        End If
+        createDataBaseFile(petOwnerFileName)
 
         'saving to accounts database
-        Using writer As StreamWriter = File.AppendText(FileManipulator.accountsDatabaseFilePath)
+        Using writer As StreamWriter = File.AppendText(accountsDatabaseFilePath)
             writer.WriteLine(petOwnerObject.getUsername & "," & petOwnerObject.getPassword & "," & petOwnerObject.strName & "," & petOwnerObject.intAge & "," & petOwnerObject.strSex & "," & petOwnerObject.strAddress)
+        End Using
+    End Sub
+
+    Public Shared Sub SavePet(petOwnerObject As PetOwner, petObject As Pet)
+        Using writer As StreamWriter = File.AppendText(petOwnerObject.getUsername + ".txt")
+            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & petObject.strProcedure & "," & petObject.dateAppointment)
+        End Using
+    End Sub
+
+    Public Shared Sub SaveBooking(booking As Date)
+        Using writer As StreamWriter = File.AppendText("nomVetBookings.txt")
+            writer.WriteLine(booking)
         End Using
     End Sub
 

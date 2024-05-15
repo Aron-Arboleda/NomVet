@@ -28,14 +28,6 @@ Public Module CoreClasses
             Return strPassword
         End Function
 
-        Public Sub SavePets()
-            Using writer As StreamWriter = File.AppendText(strUsername + ".txt")
-                For Each pet In petsList
-                    writer.WriteLine(pet.strName & "," & pet.intAge & "," & pet.dateBirthday & "," & pet.dblWeight & "," & pet.strType & "," & pet.boolVaccinated & "," & pet.strProcedure & "," & pet.dateAppointment)
-                Next
-            End Using
-        End Sub
-
     End Class
 
     Public Class Pet
