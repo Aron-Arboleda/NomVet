@@ -313,6 +313,7 @@ Partial Class Booking_Page
         Me.Controls.Add(Me.btnBookAndPay)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label5)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Booking_Page"
         Me.Text = "Booking_Page"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

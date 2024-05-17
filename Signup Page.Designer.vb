@@ -282,6 +282,7 @@ Partial Class Signup_Page
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Signup_Page"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Signup_Page"

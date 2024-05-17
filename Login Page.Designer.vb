@@ -178,6 +178,7 @@ Partial Class Login_Page
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button3)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Login_Page"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
