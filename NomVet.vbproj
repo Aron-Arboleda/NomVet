@@ -268,5 +268,8 @@
   <ItemGroup>
     <None Include="Resources\nomVetLoadingScreenBackground.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cow-removebg %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
