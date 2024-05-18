@@ -177,10 +177,40 @@
     <Compile Include="Receipt Page.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SessionHandlingPage.Designer.vb">
+      <DependentUpon>SessionHandlingPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SessionHandlingPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Signup Page.Designer.vb">
       <DependentUpon>Signup Page.vb</DependentUpon>
     </Compile>
     <Compile Include="Signup Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrashForm.Designer.vb">
+      <DependentUpon>TrashForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TrashForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WalkinBillingPage.Designer.vb">
+      <DependentUpon>WalkinBillingPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WalkinBillingPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WalkInForm.Designer.vb">
+      <DependentUpon>WalkInForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WalkInForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WalkInReceiptPage.Designer.vb">
+      <DependentUpon>WalkInReceiptPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WalkInReceiptPage.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -225,8 +255,23 @@
     <EmbeddedResource Include="Receipt Page.resx">
       <DependentUpon>Receipt Page.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SessionHandlingPage.resx">
+      <DependentUpon>SessionHandlingPage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Signup Page.resx">
       <DependentUpon>Signup Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrashForm.resx">
+      <DependentUpon>TrashForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WalkinBillingPage.resx">
+      <DependentUpon>WalkinBillingPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WalkInForm.resx">
+      <DependentUpon>WalkInForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WalkInReceiptPage.resx">
+      <DependentUpon>WalkInReceiptPage.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

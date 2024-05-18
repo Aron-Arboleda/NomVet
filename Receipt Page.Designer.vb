@@ -23,8 +23,7 @@ Partial Class Receipt_Page
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Receipt_Page))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblMessage = New System.Windows.Forms.Label()
+        Me.btnBackToHome = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblPetType3 = New System.Windows.Forms.Label()
         Me.lblPetType2 = New System.Windows.Forms.Label()
@@ -51,31 +50,27 @@ Partial Class Receipt_Page
         Me.lblPetOwnerName = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnBackToHome = New System.Windows.Forms.Button()
+        Me.lblMessage = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'btnBackToHome
         '
-        Me.Label1.AccessibleName = ""
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(266, 114)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(488, 32)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Thank you for choosing Nom Veterinary Clinic!"
-        '
-        'lblMessage
-        '
-        Me.lblMessage.AutoSize = True
-        Me.lblMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMessage.Location = New System.Drawing.Point(338, 146)
-        Me.lblMessage.Name = "lblMessage"
-        Me.lblMessage.Size = New System.Drawing.Size(345, 20)
-        Me.lblMessage.TabIndex = 5
-        Me.lblMessage.Text = "Hi Tiana, Your appoinment has been confirmed!"
+        Me.btnBackToHome.BackColor = System.Drawing.Color.Transparent
+        Me.btnBackToHome.BackgroundImage = CType(resources.GetObject("btnBackToHome.BackgroundImage"), System.Drawing.Image)
+        Me.btnBackToHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBackToHome.FlatAppearance.BorderSize = 0
+        Me.btnBackToHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBackToHome.Font = New System.Drawing.Font("Segoe UI Black", 11.25!)
+        Me.btnBackToHome.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBackToHome.Location = New System.Drawing.Point(12, 12)
+        Me.btnBackToHome.Name = "btnBackToHome"
+        Me.btnBackToHome.Size = New System.Drawing.Size(147, 34)
+        Me.btnBackToHome.TabIndex = 40
+        Me.btnBackToHome.Text = "Back to Home"
+        Me.btnBackToHome.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -110,10 +105,10 @@ Partial Class Receipt_Page
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.lblMessage)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(54, 68)
+        Me.Panel1.Location = New System.Drawing.Point(53, 50)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1009, 574)
-        Me.Panel1.TabIndex = 0
+        Me.Panel1.TabIndex = 43
         '
         'lblPetType3
         '
@@ -263,9 +258,9 @@ Partial Class Receipt_Page
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(72, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(294, 310)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(88, 20)
+        Me.Label14.Size = New System.Drawing.Size(92, 20)
         Me.Label14.TabIndex = 72
-        Me.Label14.Text = "Check-Up"
+        Me.Label14.Text = "PetName1"
         '
         'Label13
         '
@@ -383,21 +378,26 @@ Partial Class Receipt_Page
         Me.PictureBox2.TabIndex = 60
         Me.PictureBox2.TabStop = False
         '
-        'btnBackToHome
+        'lblMessage
         '
-        Me.btnBackToHome.BackColor = System.Drawing.Color.Transparent
-        Me.btnBackToHome.BackgroundImage = CType(resources.GetObject("btnBackToHome.BackgroundImage"), System.Drawing.Image)
-        Me.btnBackToHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBackToHome.FlatAppearance.BorderSize = 0
-        Me.btnBackToHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBackToHome.Font = New System.Drawing.Font("Segoe UI Black", 11.25!)
-        Me.btnBackToHome.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBackToHome.Location = New System.Drawing.Point(12, 12)
-        Me.btnBackToHome.Name = "btnBackToHome"
-        Me.btnBackToHome.Size = New System.Drawing.Size(147, 34)
-        Me.btnBackToHome.TabIndex = 40
-        Me.btnBackToHome.Text = "Back to Home"
-        Me.btnBackToHome.UseVisualStyleBackColor = False
+        Me.lblMessage.AutoSize = True
+        Me.lblMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMessage.Location = New System.Drawing.Point(338, 146)
+        Me.lblMessage.Name = "lblMessage"
+        Me.lblMessage.Size = New System.Drawing.Size(328, 20)
+        Me.lblMessage.TabIndex = 5
+        Me.lblMessage.Text = "Hi Tiana, We hope good health for you pet(s)!"
+        '
+        'Label1
+        '
+        Me.Label1.AccessibleName = ""
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(266, 114)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(488, 32)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Thank you for choosing Nom Veterinary Clinic!"
         '
         'Receipt_Page
         '
@@ -405,8 +405,8 @@ Partial Class Receipt_Page
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1114, 674)
-        Me.Controls.Add(Me.btnBackToHome)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.btnBackToHome)
         Me.Name = "Receipt_Page"
         Me.Text = "Receipt_Page"
         Me.Panel1.ResumeLayout(False)
@@ -416,10 +416,10 @@ Partial Class Receipt_Page
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As Label
-    Friend WithEvents lblMessage As Label
+    Friend WithEvents btnBackToHome As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents lblPetType3 As Label
+    Friend WithEvents lblPetType2 As Label
     Friend WithEvents lblDateOfAppointment As Label
     Friend WithEvents lblChange As Label
     Friend WithEvents lblAmountPaid As Label
@@ -442,7 +442,7 @@ Partial Class Receipt_Page
     Friend WithEvents Label5 As Label
     Friend WithEvents lblPetOwnerName As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents lblPetType3 As Label
-    Friend WithEvents lblPetType2 As Label
-    Friend WithEvents btnBackToHome As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents lblMessage As Label
+    Friend WithEvents Label1 As Label
 End Class
