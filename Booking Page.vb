@@ -12,7 +12,9 @@
         Dim petVaccineStatus As String = cbVaccineStatus.SelectedItem
         Dim petProcedure As String = cbProcedure.SelectedItem
         Dim petDateOfAppointment As Date = dtpAppointmentDate.Value.Date
-        Dim petObject As New Pet(petName, petAge, petBirthday, petWeight, petType, petVaccineStatus, petProcedure, petDateOfAppointment)
+        Dim petAppointment As New Appointment(petProcedure, petDateOfAppointment)
+        Dim petObject As New Pet(petName, petAge, petBirthday, petWeight, petType, petVaccineStatus)
+        petObject.appointment = petAppointment
         tempPetObject = petObject
 
         If petProcedure = "Both" Then

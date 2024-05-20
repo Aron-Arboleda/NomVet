@@ -41,7 +41,7 @@ Partial Class RegisterPetsPage
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btnAddPet = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnRegisterPets = New System.Windows.Forms.Button()
         Me.petDetailsPanel.SuspendLayout()
         Me.petInputPanel.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -118,14 +118,14 @@ Partial Class RegisterPetsPage
         Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Complete", "Incomplete"})
-        Me.ComboBox2.Location = New System.Drawing.Point(672, 25)
+        Me.ComboBox2.Location = New System.Drawing.Point(672, 23)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(150, 28)
         Me.ComboBox2.TabIndex = 32
         '
         'NumericUpDown2
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(595, 25)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(595, 23)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(64, 20)
         Me.NumericUpDown2.TabIndex = 35
@@ -138,7 +138,7 @@ Partial Class RegisterPetsPage
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(672, 4)
+        Me.Label2.Location = New System.Drawing.Point(672, 2)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(86, 16)
         Me.Label2.TabIndex = 16
@@ -151,7 +151,7 @@ Partial Class RegisterPetsPage
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(5, 4)
+        Me.Label3.Location = New System.Drawing.Point(5, 2)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 16)
         Me.Label3.TabIndex = 13
@@ -159,7 +159,7 @@ Partial Class RegisterPetsPage
         '
         'NumericUpDown3
         '
-        Me.NumericUpDown3.Location = New System.Drawing.Point(523, 25)
+        Me.NumericUpDown3.Location = New System.Drawing.Point(523, 23)
         Me.NumericUpDown3.Name = "NumericUpDown3"
         Me.NumericUpDown3.Size = New System.Drawing.Size(64, 20)
         Me.NumericUpDown3.TabIndex = 34
@@ -172,7 +172,7 @@ Partial Class RegisterPetsPage
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label12.Location = New System.Drawing.Point(595, 4)
+        Me.Label12.Location = New System.Drawing.Point(595, 2)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(69, 16)
         Me.Label12.TabIndex = 19
@@ -182,7 +182,7 @@ Partial Class RegisterPetsPage
         '
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(5, 25)
+        Me.TextBox1.Location = New System.Drawing.Point(5, 23)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(153, 26)
@@ -190,7 +190,7 @@ Partial Class RegisterPetsPage
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(166, 25)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(166, 23)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(196, 20)
         Me.DateTimePicker1.TabIndex = 33
@@ -202,7 +202,7 @@ Partial Class RegisterPetsPage
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label13.Location = New System.Drawing.Point(166, 4)
+        Me.Label13.Location = New System.Drawing.Point(166, 2)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(74, 16)
         Me.Label13.TabIndex = 18
@@ -215,7 +215,7 @@ Partial Class RegisterPetsPage
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(523, 4)
+        Me.Label14.Location = New System.Drawing.Point(523, 2)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(51, 16)
         Me.Label14.TabIndex = 14
@@ -226,7 +226,7 @@ Partial Class RegisterPetsPage
         Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"Feline", "Canine", "Reptile"})
-        Me.ComboBox3.Location = New System.Drawing.Point(370, 25)
+        Me.ComboBox3.Location = New System.Drawing.Point(370, 23)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(145, 28)
         Me.ComboBox3.TabIndex = 31
@@ -238,7 +238,7 @@ Partial Class RegisterPetsPage
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Microsoft YaHei", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label15.Location = New System.Drawing.Point(370, 4)
+        Me.Label15.Location = New System.Drawing.Point(370, 2)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(35, 16)
         Me.Label15.TabIndex = 15
@@ -273,22 +273,22 @@ Partial Class RegisterPetsPage
         Me.Label5.TabIndex = 45
         Me.Label5.Text = "PET REGISTRATION"
         '
-        'Button1
+        'btnRegisterPets
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(480, 576)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(188, 55)
-        Me.Button1.TabIndex = 48
-        Me.Button1.Text = "Register Pet(s)"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnRegisterPets.BackColor = System.Drawing.Color.Transparent
+        Me.btnRegisterPets.BackgroundImage = CType(resources.GetObject("btnRegisterPets.BackgroundImage"), System.Drawing.Image)
+        Me.btnRegisterPets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRegisterPets.FlatAppearance.BorderSize = 0
+        Me.btnRegisterPets.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegisterPets.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegisterPets.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnRegisterPets.Location = New System.Drawing.Point(480, 576)
+        Me.btnRegisterPets.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.btnRegisterPets.Name = "btnRegisterPets"
+        Me.btnRegisterPets.Size = New System.Drawing.Size(188, 55)
+        Me.btnRegisterPets.TabIndex = 48
+        Me.btnRegisterPets.Text = "Register Pet(s)"
+        Me.btnRegisterPets.UseVisualStyleBackColor = False
         '
         'RegisterPetsPage
         '
@@ -298,7 +298,7 @@ Partial Class RegisterPetsPage
         Me.ClientSize = New System.Drawing.Size(1114, 674)
         Me.Controls.Add(Me.petDetailsPanel)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnRegisterPets)
         Me.Name = "RegisterPetsPage"
         Me.Text = "RegisterPetsPage"
         Me.petDetailsPanel.ResumeLayout(False)
@@ -331,5 +331,5 @@ Partial Class RegisterPetsPage
     Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents Label15 As Label
     Friend WithEvents btnAddPet As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnRegisterPets As Button
 End Class

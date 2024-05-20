@@ -9,8 +9,6 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        NavigatorPage.childForm(RegisterPetsPage)
-        RegisterPetsPage.petInputPanel.Controls.Clear()
-        RegisterPetsPage.petInputPanel.Controls.Add(New RegisterPetPanel())
+        RegisterPetsPage.loadRegisterPetsPage()
     End Sub
 End Class

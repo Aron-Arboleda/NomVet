@@ -9,6 +9,7 @@ Public Class Login_Page
 
         If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(password) Then
             If FileManipulator.ValidateLogin(username, password) Then
+                activeAccount.petsList = FileManipulator.ReadPets(activeAccount)
                 loadActiveAccount(activeAccount)
                 NavigatorPage.Show()
                 NavigatorPage.btnHome.PerformClick()

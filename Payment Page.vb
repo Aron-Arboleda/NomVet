@@ -10,7 +10,7 @@
         If dblPayment >= Booking_Page.totalFee Then
             loadReceipt()
             FileManipulator.SavePet(activeAccount, Booking_Page.tempPetObject)
-            FileManipulator.SaveBooking(Booking_Page.tempPetObject.dateAppointment)
+            FileManipulator.SaveBooking(Booking_Page.tempPetObject.appointment.dateAppointment)
             NavigatorPage.childForm(Receipt_Page)
         Else
             MsgBox("Insufficient funds", vbCritical)
@@ -23,7 +23,7 @@
         Receipt_Page.lblPetOwnerAddress.Text = activeAccount.strAddress
         Receipt_Page.lblPetName.Text = Booking_Page.tempPetObject.strName
         Receipt_Page.lblPetType.Text = Booking_Page.tempPetObject.strType
-        Receipt_Page.lblDateOfAppointment.Text = Booking_Page.tempPetObject.dateAppointment
+        Receipt_Page.lblDateOfAppointment.Text = Booking_Page.tempPetObject.appointment.dateAppointment
         Receipt_Page.lblPetType2.Text = Booking_Page.tempPetObject.strType
         Receipt_Page.lblPetType3.Text = Booking_Page.tempPetObject.strType
         Receipt_Page.lblCheckupFee.Text = Me.lblCheckupFee.Text

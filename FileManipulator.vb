@@ -58,7 +58,9 @@ Public Class FileManipulator
         Dim vaccineStatus = parsedStringsList(5)
         Dim procedure = parsedStringsList(6)
         Dim dateAppointment = parsedStringsList(7)
-        Dim petObject As New Pet(name, age, bday, weight, type, vaccineStatus, procedure, dateAppointment)
+        Dim petAppointment As New Appointment(procedure, dateAppointment)
+        Dim petObject As New Pet(name, age, bday, weight, type, vaccineStatus)
+        petObject.appointment = petAppointment
         Return petObject
     End Function
     Public Shared Sub createDataBaseFile(filename As String)
@@ -80,9 +82,12 @@ Public Class FileManipulator
         End Using
     End Sub
 
+    Public Shared Sub ClearPets(petOwnerObject As PetOwner)
+        File.WriteAllText(petOwnerObject.getUsername + ".txt", String.Empty)
+    End Sub
     Public Shared Sub SavePet(petOwnerObject As PetOwner, petObject As Pet)
         Using writer As StreamWriter = File.AppendText(petOwnerObject.getUsername + ".txt")
-            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & petObject.strProcedure & "," & petObject.dateAppointment)
+            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & "Nothing" & "," & "1/1/1000")
         End Using
     End Sub
 
@@ -102,5 +107,15 @@ Public Class FileManipulator
             Loop
         End Using
         Return petOwnersList
+    End Function
+
+    Public Shared Function ReadPets(activeAccount As PetOwner)
+        Dim lines() As String = readData(activeAccount.getUsername() & ".txt")
+        Dim petsList As New List(Of Pet)
+        For Each line As String In lines
+            Dim petObject As Pet = parseAsPet(line)
+            petsList.Add(petObject)
+        Next
+        Return petsList
     End Function
 End Class

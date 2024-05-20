@@ -143,7 +143,7 @@
         Z1C+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRegisterPets.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAuIAAACOCAYAAAB0Sm03AAAABGdBTUEAALGPC/xhBQAABHZJREFUeF7t
         3b1t21AYhlGOoEaUgTQewSO4CSBRjTewGwM22XgTZwOPpBE0gkZIeGXmT2YS2Rb9FjkfcKpLUe2Di0uy

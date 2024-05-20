@@ -37,18 +37,15 @@ Public Module CoreClasses
         Public dblWeight As Double
         Public strType As String
         Public boolVaccinated As String
-        Public strProcedure As String
-        Public dateAppointment As Date
+        Public appointment As Appointment
 
-        Public Sub New(ByVal strName As String, ByVal intAge As Integer, ByVal dateBirthday As Date, ByVal dblWeight As Double, ByVal strType As String, ByVal boolVaccinated As String, ByVal strProcedure As String, dateAppointment As Date)
+        Public Sub New(ByVal strName As String, ByVal intAge As Integer, ByVal dateBirthday As Date, ByVal dblWeight As Double, ByVal strType As String, ByVal boolVaccinated As String)
             Me.strName = strName
             Me.intAge = intAge
             Me.dateBirthday = dateBirthday
             Me.dblWeight = dblWeight
             Me.strType = strType
             Me.boolVaccinated = boolVaccinated
-            Me.strProcedure = strProcedure
-            Me.dateAppointment = dateAppointment
         End Sub
     End Class
 
