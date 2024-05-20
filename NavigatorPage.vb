@@ -14,6 +14,7 @@
 
     Private Sub btnBooking_Click(sender As Object, e As EventArgs) Handles btnBooking.Click
         childForm(Booking_Page)
+        Booking_Page.loadBookingPage()
     End Sub
 
     Private Sub btnProfileDisplayName_Click(sender As Object, e As EventArgs) Handles btnProfileDisplayName.Click

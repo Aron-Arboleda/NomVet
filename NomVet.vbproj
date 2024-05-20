@@ -119,6 +119,7 @@
     <Compile Include="HomePage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LogicHandler.vb" />
     <Compile Include="Login Page.Designer.vb">
       <DependentUpon>Login Page.vb</DependentUpon>
     </Compile>

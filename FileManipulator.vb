@@ -91,6 +91,12 @@ Public Class FileManipulator
         End Using
     End Sub
 
+    Public Shared Sub SaveAppointment(petOwnerObject As PetOwner, petObject As Pet)
+        Using writer As StreamWriter = File.AppendText(petOwnerObject.getUsername + ".txt")
+            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & petObject.appointment.strProcedure & "," & petObject.appointment.dateAppointment)
+        End Using
+    End Sub
+
     Public Shared Sub SaveBooking(booking As Date)
         Using writer As StreamWriter = File.AppendText("nomVetBookings.txt")
             writer.WriteLine(booking)
