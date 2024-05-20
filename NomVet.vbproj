@@ -177,6 +177,12 @@
     <Compile Include="Receipt Page.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="RegisterPetsPage.Designer.vb">
+      <DependentUpon>RegisterPetsPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterPetsPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SessionHandlingPage.Designer.vb">
       <DependentUpon>SessionHandlingPage.vb</DependentUpon>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Receipt Page.resx">
       <DependentUpon>Receipt Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterPetsPage.resx">
+      <DependentUpon>RegisterPetsPage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SessionHandlingPage.resx">
       <DependentUpon>SessionHandlingPage.vb</DependentUpon>

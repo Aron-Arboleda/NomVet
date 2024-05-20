@@ -29,5 +29,9 @@
         childForm(PricingPage)
     End Sub
 
-
+    Private Sub btnRegisterPet_Click(sender As Object, e As EventArgs) Handles btnRegisterPet.Click
+        childForm(RegisterPetsPage)
+        RegisterPetsPage.petInputPanel.Controls.Clear()
+        RegisterPetsPage.petInputPanel.Controls.Add(New RegisterPetPanel())
+    End Sub
 End Class

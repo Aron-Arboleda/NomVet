@@ -26,16 +26,17 @@ Partial Class NavigatorPage
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.btnProfileDisplayName = New System.Windows.Forms.Button()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnHome = New System.Windows.Forms.Button()
-        Me.btnPricing = New System.Windows.Forms.Button()
         Me.btnBooking = New System.Windows.Forms.Button()
+        Me.btnPricing = New System.Windows.Forms.Button()
+        Me.btnRegisterPet = New System.Windows.Forms.Button()
         Me.displayPanel = New System.Windows.Forms.Panel()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel3.SuspendLayout()
         Me.Panel7.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel3
@@ -72,25 +73,37 @@ Partial Class NavigatorPage
         Me.btnProfileDisplayName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnProfileDisplayName.UseVisualStyleBackColor = True
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 19
+        Me.PictureBox5.TabStop = False
+        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.TableLayoutPanel1.ColumnCount = 4
+        Me.TableLayoutPanel1.ColumnCount = 5
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.btnHome, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnPricing, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnBooking, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnPricing, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnRegisterPet, 2, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Segoe UI Black", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(538, 75)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(759, 75)
         Me.TableLayoutPanel1.TabIndex = 27
         '
         'btnHome
@@ -106,19 +119,6 @@ Partial Class NavigatorPage
         Me.btnHome.Text = "HOME"
         Me.btnHome.UseVisualStyleBackColor = False
         '
-        'btnPricing
-        '
-        Me.btnPricing.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.btnPricing.FlatAppearance.BorderSize = 0
-        Me.btnPricing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPricing.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPricing.Location = New System.Drawing.Point(363, 4)
-        Me.btnPricing.Name = "btnPricing"
-        Me.btnPricing.Size = New System.Drawing.Size(172, 67)
-        Me.btnPricing.TabIndex = 2
-        Me.btnPricing.Text = "PRICING"
-        Me.btnPricing.UseVisualStyleBackColor = False
-        '
         'btnBooking
         '
         Me.btnBooking.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -132,6 +132,32 @@ Partial Class NavigatorPage
         Me.btnBooking.Text = "BOOKING"
         Me.btnBooking.UseVisualStyleBackColor = False
         '
+        'btnPricing
+        '
+        Me.btnPricing.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btnPricing.FlatAppearance.BorderSize = 0
+        Me.btnPricing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPricing.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPricing.Location = New System.Drawing.Point(585, 4)
+        Me.btnPricing.Name = "btnPricing"
+        Me.btnPricing.Size = New System.Drawing.Size(169, 67)
+        Me.btnPricing.TabIndex = 2
+        Me.btnPricing.Text = "PRICING"
+        Me.btnPricing.UseVisualStyleBackColor = False
+        '
+        'btnRegisterPet
+        '
+        Me.btnRegisterPet.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btnRegisterPet.FlatAppearance.BorderSize = 0
+        Me.btnRegisterPet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegisterPet.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegisterPet.Location = New System.Drawing.Point(362, 4)
+        Me.btnRegisterPet.Name = "btnRegisterPet"
+        Me.btnRegisterPet.Size = New System.Drawing.Size(216, 67)
+        Me.btnRegisterPet.TabIndex = 3
+        Me.btnRegisterPet.Text = "REGISTER PET"
+        Me.btnRegisterPet.UseVisualStyleBackColor = False
+        '
         'displayPanel
         '
         Me.displayPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -139,16 +165,6 @@ Partial Class NavigatorPage
         Me.displayPanel.Name = "displayPanel"
         Me.displayPanel.Size = New System.Drawing.Size(1122, 680)
         Me.displayPanel.TabIndex = 40
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 19
-        Me.PictureBox5.TabStop = False
         '
         'NavigatorPage
         '
@@ -164,8 +180,8 @@ Partial Class NavigatorPage
         Me.Text = "NavigatorPage"
         Me.Panel3.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -179,4 +195,5 @@ Partial Class NavigatorPage
     Friend WithEvents btnPricing As Button
     Friend WithEvents btnBooking As Button
     Friend WithEvents displayPanel As Panel
+    Friend WithEvents btnRegisterPet As Button
 End Class

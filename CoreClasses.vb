@@ -52,5 +52,14 @@ Public Module CoreClasses
         End Sub
     End Class
 
+    Public Class Appointment
+        Public strProcedure As String
+        Public dateAppointment As Date
+
+        Public Sub New(ByVal strProcedure As String, ByVal dateAppointment As Date)
+            Me.strProcedure = strProcedure
+            Me.dateAppointment = dateAppointment
+        End Sub
+    End Class
 
 End Module
