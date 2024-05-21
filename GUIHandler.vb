@@ -347,6 +347,116 @@
 
     End Class
 
+    Public Class SessionNextVisitPanel
+        Inherits TableLayoutPanel
+
+        Public lblPetName As New PetLabel
+        Public lblNextVisitChooser As New PetLabel
+        Public lblNextVisitDate As New PetLabel
+        Public lblPetVaccineStatus As New PetLabel
+        Public lblProcedure As New PetLabel
+
+        Public rbYes As New RadioButton
+        Public rbNo As New RadioButton
+        Public dtpNextVisitDate As New DateTimePicker
+        Public cbPetProcedure As New ComboBox
+        Public cbPetVacStatus As New ComboBox
+
+
+        Public Sub New(petWithProcedureString As String)
+
+            Me.BackColor = Color.White
+            'Me.Size = New System.Drawing.Size(769, 67)
+            Me.AutoSize = True
+            Me.Padding = New Padding(10, 10, 10, 10)
+            Me.Margin = New Padding(0, 0, 0, 5)
+            Me.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
+            Me.ColumnCount = 2
+            Me.RowCount = 1
+
+
+            'For i As Integer = 1 To Me.ColumnCount
+            '    Me.ColumnStyles.Add(New ColumnStyle(SizeType.AutoSize))
+            'Next
+
+            'For i As Integer = 1 To Me.RowCount
+            '    Me.RowStyles.Add(New RowStyle(SizeType.AutoSize))
+            'Next
+
+            'Labels
+
+            lblPetName.Text = petWithProcedureString.Split("#"c)(0)
+            lblPetName.Font = New Font("Microsoft Sans Serif", 18, FontStyle.Bold)
+            lblPetName.AutoSize = True
+            lblPetName.Anchor = AnchorStyles.Left
+
+            Me.Controls.Add(lblPetName, 0, 0)
+
+
+            lblNextVisitChooser.Text = "Next Visit?:"
+            lblNextVisitDate.Text = "Date of Next Visit:"
+            lblPetVaccineStatus.Text = "Vaccine Status:"
+            lblProcedure.Text = "Procedure:"
+
+            Dim PetLabels() As PetLabel = {lblNextVisitChooser, lblNextVisitDate, lblPetVaccineStatus, lblProcedure}
+
+
+            'Inputs
+
+            rbYes.Text = "Yes"
+            rbNo.Text = "No"
+            rbYes.AutoSize = True
+            rbNo.AutoSize = True
+
+            dtpNextVisitDate.Size = New System.Drawing.Size(196, 20)
+
+            cbPetProcedure.Size = New System.Drawing.Size(145, 28)
+            cbPetProcedure.Items.Add("Check-Up")
+            cbPetProcedure.Items.Add("Vaccine")
+            cbPetProcedure.Items.Add("Both")
+
+            cbPetVacStatus.Size = New System.Drawing.Size(150, 28)
+            cbPetVacStatus.Items.Add("Complete")
+            cbPetVacStatus.Items.Add("Incomplete")
+
+            Dim propertiesPanel As New TableLayoutPanel
+            propertiesPanel.AutoSize = True
+            propertiesPanel.Padding = New Padding(5, 5, 5, 5)
+            propertiesPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
+            propertiesPanel.ColumnCount = 4
+            propertiesPanel.RowCount = 2
+
+            Me.Controls.Add(propertiesPanel, 1, 0)
+
+            With propertiesPanel
+                For i = 0 To PetLabels.Length - 1
+                    PetLabels(i).AutoSize = True
+                    PetLabels(i).Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+                    .Controls.Add(PetLabels(i), i, 0)
+                Next
+                Dim radioPanel As New FlowLayoutPanel
+                radioPanel.AutoSize = True
+                radioPanel.Controls.Add(rbYes)
+                radioPanel.Controls.Add(rbNo)
+                .Controls.Add(radioPanel, 0, 1)
+                .Controls.Add(dtpNextVisitDate, 1, 1)
+                .Controls.Add(cbPetProcedure, 2, 1)
+                .Controls.Add(cbPetVacStatus, 3, 1)
+            End With
+
+
+
+
+        End Sub
+
+        'Public Overridable Function getPetObject() As Pet
+        '    petObject = New Pet(txtPetName.Text, numPetAge.Text, dtpPetBirthday.Value.Date, numPetWeight.Text, cbPetType.SelectedItem, cbPetVacStatus.SelectedItem)
+
+        '    Return petObject
+        'End Function
+
+    End Class
+
     Public Class PetLabel
         Inherits Label
 

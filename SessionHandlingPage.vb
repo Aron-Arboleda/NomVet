@@ -15,7 +15,8 @@
 
     Public Sub loadSessionHandlingPage()
         loadListView()
-
+        petsAndProceduresPanel.Controls.Clear()
+        nextVisitFlowParentPanel.Controls.Clear()
     End Sub
 
     Public Sub loadPets()
@@ -27,6 +28,17 @@
             For Each aPetString In selectedSession.petWithProcedureList
                 Dim petPanel As New SessionPetPanel(aPetString)
                 petsAndProceduresPanel.Controls.Add(petPanel)
+            Next
+        End If
+    End Sub
+
+    Public Sub loadNextVisits()
+        nextVisitFlowParentPanel.Controls.Clear()
+        If lstViewSessions.SelectedIndices.Count > 0 Then
+            Dim selectedSession = sessionsList.Item(lstViewSessions.SelectedIndices.Item(0))
+            For Each aPetString In selectedSession.petWithProcedureList
+                Dim petPanel As New SessionNextVisitPanel(aPetString)
+                nextVisitFlowParentPanel.Controls.Add(petPanel)
             Next
         End If
     End Sub
@@ -57,12 +69,13 @@
 
     End Sub
 
-    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles nextVisitFlowParentPanel.Paint
 
     End Sub
 
     Private Sub lstViewSessions_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstViewSessions.SelectedIndexChanged
         loadPets()
+        loadNextVisits()
     End Sub
 
 

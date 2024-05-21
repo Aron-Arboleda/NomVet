@@ -24,7 +24,7 @@ Partial Class SessionHandlingPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SessionHandlingPage))
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.nextVisitFlowParentPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -40,15 +40,15 @@ Partial Class SessionHandlingPage
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.petsAndProceduresPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lblPetOwner = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnBookAndPay = New System.Windows.Forms.Button()
         Me.lstViewSessions = New System.Windows.Forms.ListView()
-        Me.lblPetOwner = New System.Windows.Forms.Label()
-        Me.petsAndProceduresPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.nextVisitFlowParentPanel.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.petsAndProceduresPanel.SuspendLayout()
@@ -67,13 +67,16 @@ Partial Class SessionHandlingPage
         Me.Label5.TabIndex = 19
         Me.Label5.Text = "Updating Session"
         '
-        'FlowLayoutPanel1
+        'nextVisitFlowParentPanel
         '
-        Me.FlowLayoutPanel1.Controls.Add(Me.FlowLayoutPanel2)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(317, 301)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(777, 268)
-        Me.FlowLayoutPanel1.TabIndex = 21
+        Me.nextVisitFlowParentPanel.AutoSize = True
+        Me.nextVisitFlowParentPanel.BackColor = System.Drawing.Color.White
+        Me.nextVisitFlowParentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.nextVisitFlowParentPanel.Controls.Add(Me.FlowLayoutPanel2)
+        Me.nextVisitFlowParentPanel.Location = New System.Drawing.Point(317, 301)
+        Me.nextVisitFlowParentPanel.Name = "nextVisitFlowParentPanel"
+        Me.nextVisitFlowParentPanel.Size = New System.Drawing.Size(777, 268)
+        Me.nextVisitFlowParentPanel.TabIndex = 21
         '
         'FlowLayoutPanel2
         '
@@ -249,6 +252,54 @@ Partial Class SessionHandlingPage
         Me.Panel1.Size = New System.Drawing.Size(785, 157)
         Me.Panel1.TabIndex = 40
         '
+        'petsAndProceduresPanel
+        '
+        Me.petsAndProceduresPanel.AutoScroll = True
+        Me.petsAndProceduresPanel.Controls.Add(Me.TableLayoutPanel1)
+        Me.petsAndProceduresPanel.Location = New System.Drawing.Point(130, 37)
+        Me.petsAndProceduresPanel.Name = "petsAndProceduresPanel"
+        Me.petsAndProceduresPanel.Padding = New System.Windows.Forms.Padding(5)
+        Me.petsAndProceduresPanel.Size = New System.Drawing.Size(642, 103)
+        Me.petsAndProceduresPanel.TabIndex = 45
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 1)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 8)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.11765!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.88235!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(135, 85)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.78295!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.21706!))
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 32)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(129, 50)
+        Me.TableLayoutPanel2.TabIndex = 0
+        '
+        'lblPetOwner
+        '
+        Me.lblPetOwner.AutoSize = True
+        Me.lblPetOwner.BackColor = System.Drawing.Color.Transparent
+        Me.lblPetOwner.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPetOwner.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblPetOwner.Location = New System.Drawing.Point(14, 37)
+        Me.lblPetOwner.Name = "lblPetOwner"
+        Me.lblPetOwner.Size = New System.Drawing.Size(51, 26)
+        Me.lblPetOwner.TabIndex = 44
+        Me.lblPetOwner.Text = "N/A"
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -299,54 +350,6 @@ Partial Class SessionHandlingPage
         Me.lstViewSessions.TabIndex = 42
         Me.lstViewSessions.UseCompatibleStateImageBehavior = False
         '
-        'lblPetOwner
-        '
-        Me.lblPetOwner.AutoSize = True
-        Me.lblPetOwner.BackColor = System.Drawing.Color.Transparent
-        Me.lblPetOwner.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPetOwner.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblPetOwner.Location = New System.Drawing.Point(14, 37)
-        Me.lblPetOwner.Name = "lblPetOwner"
-        Me.lblPetOwner.Size = New System.Drawing.Size(51, 26)
-        Me.lblPetOwner.TabIndex = 44
-        Me.lblPetOwner.Text = "N/A"
-        '
-        'petsAndProceduresPanel
-        '
-        Me.petsAndProceduresPanel.AutoScroll = True
-        Me.petsAndProceduresPanel.Controls.Add(Me.TableLayoutPanel1)
-        Me.petsAndProceduresPanel.Location = New System.Drawing.Point(130, 37)
-        Me.petsAndProceduresPanel.Name = "petsAndProceduresPanel"
-        Me.petsAndProceduresPanel.Padding = New System.Windows.Forms.Padding(5)
-        Me.petsAndProceduresPanel.Size = New System.Drawing.Size(642, 103)
-        Me.petsAndProceduresPanel.TabIndex = 45
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 1)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 8)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.11765!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.88235!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(135, 85)
-        Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 2
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.78295!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.21706!))
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 31)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(129, 51)
-        Me.TableLayoutPanel2.TabIndex = 0
-        '
         'SessionHandlingPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -358,11 +361,11 @@ Partial Class SessionHandlingPage
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.nextVisitFlowParentPanel)
         Me.Controls.Add(Me.Label5)
         Me.Name = "SessionHandlingPage"
         Me.Text = "SessionHandlingPage"
-        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.nextVisitFlowParentPanel.ResumeLayout(False)
         Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.FlowLayoutPanel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -375,7 +378,7 @@ Partial Class SessionHandlingPage
     End Sub
 
     Friend WithEvents Label5 As Label
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents nextVisitFlowParentPanel As FlowLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents Label3 As Label
