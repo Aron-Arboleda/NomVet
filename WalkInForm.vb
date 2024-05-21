@@ -38,15 +38,19 @@
         Dim petOwnerPassword As String = txtPetOwnerPassword.Text
 
         Dim petOwnerListOfPets As New List(Of Pet)
+        Dim petWithProcedureList As New List(Of String)
 
-        For Each petPanel In walkinListOfPetsInput
+        For Each petPanel As WalkInPetInputPanel In walkinListOfPetsInput
             petOwnerListOfPets.Add(petPanel.getPetObject())
+            petWithProcedureList.Add(petPanel.txtPetName.Text & "#" & petPanel.cbPetType.SelectedItem.ToString & "#" & petPanel.cbPetProcedure.SelectedItem)
         Next
 
         Dim petOwner As New PetOwner(petOwnerUsername, petOwnerPassword, petOwnerName, petOwnerAge, petOwnerSex, petOwnerAddress, petOwnerListOfPets)
         FileManipulator.SavePetOwner(petOwner)
 
-        Dim session As New Session(petOwner, Date.Now)
+
+
+        Dim session As New Session(petOwner, Date.Now, petWithProcedureList)
         FileManipulator.SaveSession(session)
 
         MsgBox("Information Saved.", vbOKOnly + vbInformation, "NOMVC Saving")

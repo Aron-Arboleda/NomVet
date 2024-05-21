@@ -65,10 +65,12 @@ Public Module CoreClasses
     Public Class Session
         Public petOwner As PetOwner
         Public dateMade As Date
+        Public petWithProcedureList As List(Of String)
 
-        Public Sub New(ByVal petOwner As PetOwner, ByVal dateMade As Date)
+        Public Sub New(ByVal petOwner As PetOwner, ByVal dateMade As Date, ByVal petWithProcedureList As List(Of String))
             Me.petOwner = petOwner
             Me.dateMade = dateMade
+            Me.petWithProcedureList = petWithProcedureList
         End Sub
     End Class
 

@@ -1,7 +1,5 @@
 ﻿Public Class SessionHandlingPage
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstBoxPendingSessions.SelectedIndexChanged
-
-    End Sub
+    Dim sessionsList As List(Of Session)
 
     Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
 
@@ -16,20 +14,56 @@
     End Sub
 
     Public Sub loadSessionHandlingPage()
-        lstBoxPendingSessions.Items.Clear()
-
-        Dim sessionsList As List(Of Session) = FileManipulator.ReadSessions()
-        For Each session In sessionsList
-            lstBoxPendingSessions.Items.Add("Name: " & session.petOwner.strName & " | " & session.dateMade.Date)
-        Next
+        loadListView()
 
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+    Public Sub loadPets()
+        petsAndProceduresPanel.Controls.Clear()
+        lblPetOwner.Text = "N/A"
+        If lstViewSessions.SelectedIndices.Count > 0 Then
+            Dim selectedSession = sessionsList.Item(lstViewSessions.SelectedIndices.Item(0))
+            lblPetOwner.Text = selectedSession.petOwner.strName
+            For Each aPetString In selectedSession.petWithProcedureList
+                Dim petPanel As New SessionPetPanel(aPetString)
+                petsAndProceduresPanel.Controls.Add(petPanel)
+            Next
+        End If
+    End Sub
+
+    Private Sub loadListView()
+        With lstViewSessions
+            .Items.Clear()
+
+            .View = View.Details
+            .GridLines = True
+            .FullRowSelect = True
+
+            .Columns.Clear()
+            .Columns.Add("Pet Owner", 80)
+            .Columns.Add("Session Created", 150)
+
+            sessionsList = FileManipulator.ReadSessions()
+            counter = 0
+            For Each session In sessionsList
+                .Items.Add(session.petOwner.strName)
+                .Items(counter).SubItems.Add(session.dateMade.Date)
+                counter += 1
+            Next
+        End With
+    End Sub
+
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
     Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
 
     End Sub
+
+    Private Sub lstViewSessions_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstViewSessions.SelectedIndexChanged
+        loadPets()
+    End Sub
+
+
 End Class

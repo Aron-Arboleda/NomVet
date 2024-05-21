@@ -24,7 +24,6 @@ Partial Class SessionHandlingPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SessionHandlingPage))
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.lstBoxPendingSessions = New System.Windows.Forms.ListBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -41,14 +40,19 @@ Partial Class SessionHandlingPage
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnBookAndPay = New System.Windows.Forms.Button()
+        Me.lstViewSessions = New System.Windows.Forms.ListView()
+        Me.lblPetOwner = New System.Windows.Forms.Label()
+        Me.petsAndProceduresPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.petsAndProceduresPanel.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label5
@@ -62,17 +66,6 @@ Partial Class SessionHandlingPage
         Me.Label5.Size = New System.Drawing.Size(280, 48)
         Me.Label5.TabIndex = 19
         Me.Label5.Text = "Updating Session"
-        '
-        'lstBoxPendingSessions
-        '
-        Me.lstBoxPendingSessions.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
-        Me.lstBoxPendingSessions.FormattingEnabled = True
-        Me.lstBoxPendingSessions.ItemHeight = 20
-        Me.lstBoxPendingSessions.Items.AddRange(New Object() {"List of Sessions"})
-        Me.lstBoxPendingSessions.Location = New System.Drawing.Point(20, 92)
-        Me.lstBoxPendingSessions.Name = "lstBoxPendingSessions"
-        Me.lstBoxPendingSessions.Size = New System.Drawing.Size(259, 484)
-        Me.lstBoxPendingSessions.TabIndex = 20
         '
         'FlowLayoutPanel1
         '
@@ -247,8 +240,8 @@ Partial Class SessionHandlingPage
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
-        Me.Panel1.Controls.Add(Me.TextBox4)
+        Me.Panel1.Controls.Add(Me.petsAndProceduresPanel)
+        Me.Panel1.Controls.Add(Me.lblPetOwner)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Location = New System.Drawing.Point(317, 92)
@@ -256,38 +249,13 @@ Partial Class SessionHandlingPage
         Me.Panel1.Size = New System.Drawing.Size(785, 157)
         Me.Panel1.TabIndex = 40
         '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(187, 37)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 3
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(575, 99)
-        Me.TableLayoutPanel1.TabIndex = 43
-        '
-        'TextBox4
-        '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(18, 37)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(139, 26)
-        Me.TextBox4.TabIndex = 42
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(183, 11)
+        Me.Label11.Location = New System.Drawing.Point(126, 11)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(288, 20)
         Me.Label11.TabIndex = 40
@@ -321,18 +289,76 @@ Partial Class SessionHandlingPage
         Me.btnBookAndPay.Text = "Bill Customer"
         Me.btnBookAndPay.UseVisualStyleBackColor = False
         '
+        'lstViewSessions
+        '
+        Me.lstViewSessions.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+        Me.lstViewSessions.HideSelection = False
+        Me.lstViewSessions.Location = New System.Drawing.Point(38, 92)
+        Me.lstViewSessions.Name = "lstViewSessions"
+        Me.lstViewSessions.Size = New System.Drawing.Size(254, 477)
+        Me.lstViewSessions.TabIndex = 42
+        Me.lstViewSessions.UseCompatibleStateImageBehavior = False
+        '
+        'lblPetOwner
+        '
+        Me.lblPetOwner.AutoSize = True
+        Me.lblPetOwner.BackColor = System.Drawing.Color.Transparent
+        Me.lblPetOwner.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPetOwner.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblPetOwner.Location = New System.Drawing.Point(14, 37)
+        Me.lblPetOwner.Name = "lblPetOwner"
+        Me.lblPetOwner.Size = New System.Drawing.Size(51, 26)
+        Me.lblPetOwner.TabIndex = 44
+        Me.lblPetOwner.Text = "N/A"
+        '
+        'petsAndProceduresPanel
+        '
+        Me.petsAndProceduresPanel.AutoScroll = True
+        Me.petsAndProceduresPanel.Controls.Add(Me.TableLayoutPanel1)
+        Me.petsAndProceduresPanel.Location = New System.Drawing.Point(130, 37)
+        Me.petsAndProceduresPanel.Name = "petsAndProceduresPanel"
+        Me.petsAndProceduresPanel.Padding = New System.Windows.Forms.Padding(5)
+        Me.petsAndProceduresPanel.Size = New System.Drawing.Size(642, 103)
+        Me.petsAndProceduresPanel.TabIndex = 45
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 1)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(8, 8)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.11765!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.88235!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(135, 85)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.78295!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.21706!))
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 31)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(129, 51)
+        Me.TableLayoutPanel2.TabIndex = 0
+        '
         'SessionHandlingPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1114, 674)
+        Me.Controls.Add(Me.lstViewSessions)
         Me.Controls.Add(Me.btnBookAndPay)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.FlowLayoutPanel1)
-        Me.Controls.Add(Me.lstBoxPendingSessions)
         Me.Controls.Add(Me.Label5)
         Me.Name = "SessionHandlingPage"
         Me.Text = "SessionHandlingPage"
@@ -341,13 +367,14 @@ Partial Class SessionHandlingPage
         Me.FlowLayoutPanel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.petsAndProceduresPanel.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label5 As Label
-    Friend WithEvents lstBoxPendingSessions As ListBox
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
@@ -366,7 +393,10 @@ Partial Class SessionHandlingPage
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents btnBookAndPay As Button
+    Friend WithEvents lstViewSessions As ListView
+    Friend WithEvents petsAndProceduresPanel As FlowLayoutPanel
+    Friend WithEvents lblPetOwner As Label
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
 End Class

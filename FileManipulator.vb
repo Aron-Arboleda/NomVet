@@ -180,17 +180,24 @@ Public Class FileManipulator
 
     Public Shared Sub SaveSession(ByVal session As Session)
         Using writer As StreamWriter = File.AppendText(sessionsDatabaseFilePath)
-            writer.WriteLine(session.petOwner.strName & "," & session.dateMade.Date)
+            Dim str As String = ""
+            str &= session.petWithProcedureList.Item(0)
+            For i = 1 To session.petWithProcedureList.Count - 1
+                str &= ("%" & session.petWithProcedureList.Item(i))
+            Next
+            writer.WriteLine(session.petOwner.strName & "," & session.dateMade.Date & "," & str)
         End Using
     End Sub
 
     Public Shared Function ReadSessions() As List(Of Session)
         Dim lines() As String = readData(sessionsDatabaseFilePath)
         Dim sessionsList As New List(Of Session)
-        For Each line As String In lines
-            Dim sessionObject As Session = parseAsSession(line)
-            sessionsList.Add(sessionObject)
-        Next
+        If (lines.Length > 0) Then
+            For Each line As String In lines
+                Dim sessionObject As Session = parseAsSession(line)
+                sessionsList.Add(sessionObject)
+            Next
+        End If
         Return sessionsList
     End Function
 
@@ -198,11 +205,12 @@ Public Class FileManipulator
         Dim parsedStringsList() As String = line.Split(","c)
         Dim petOwnerName As String = parsedStringsList(0)
         Dim dateMade As String = parsedStringsList(1)
+        Dim petsList As List(Of String) = parsedStringsList(2).Split("%"c).ToList()
+
         Dim lines() As String = readData(accountsDatabaseFilePath)
         Dim petOwnerObject As PetOwner = findPetOwnerWithName(lines, petOwnerName)
-        Dim sessionObject As New Session(petOwnerObject, dateMade)
+
+        Dim sessionObject As New Session(petOwnerObject, dateMade, petsList)
         Return sessionObject
     End Function
-
-
 End Class

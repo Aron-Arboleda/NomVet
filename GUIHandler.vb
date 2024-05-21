@@ -289,7 +289,63 @@
         End Function
     End Class
 
+    Public Class SessionPetPanel
+        Inherits TableLayoutPanel
 
+
+        Public Sub New(petWithProcedureString As String)
+
+            Me.BackColor = Color.FromArgb(251, 254, 249)
+            Me.AutoSize = True
+            Me.Padding = New Padding(1, 1, 1, 1)
+            Me.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
+            Me.ColumnCount = 1
+            Me.RowCount = 2
+
+
+            Dim lblPetName As New PetLabel
+            lblPetName.Text = petWithProcedureString.Split("#"c)(0)
+            lblPetName.Font = New Font("Microsoft Sans Serif", 18, FontStyle.Bold)
+            lblPetName.AutoSize = True
+            lblPetName.Anchor = AnchorStyles.Bottom
+
+            Me.Controls.Add(lblPetName, 0, 0)
+
+            Dim lblTypeLabel As New PetLabel
+            lblTypeLabel.Text = "Type:"
+            Dim lblTypeValue As New PetLabel
+            lblTypeValue.Text = petWithProcedureString.Split("#"c)(1)
+
+            Dim lblProcedureLabel As New PetLabel
+            lblProcedureLabel.Text = "Procedure:"
+            Dim lblProcedureValue As New PetLabel
+            lblProcedureValue.Text = petWithProcedureString.Split("#"c)(2)
+
+            Dim PetLabels() As PetLabel = {lblTypeLabel, lblProcedureLabel}
+            Dim PetValues() As PetLabel = {lblTypeValue, lblProcedureValue}
+
+            Dim propertiesPanel As New TableLayoutPanel
+            propertiesPanel.AutoSize = True
+            propertiesPanel.Padding = New Padding(5, 5, 5, 5)
+            propertiesPanel.ColumnCount = 2
+            propertiesPanel.RowCount = 2
+
+            Me.Controls.Add(propertiesPanel, 0, 1)
+
+            With propertiesPanel
+                For i = 0 To PetLabels.Length - 1
+                    PetLabels(i).AutoSize = True
+                    PetLabels(i).Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+                    .Controls.Add(PetLabels(i), 0, i)
+
+                    PetValues(i).AutoSize = True
+                    PetValues(i).Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+                    .Controls.Add(PetValues(i), 1, i)
+                Next
+            End With
+        End Sub
+
+    End Class
 
     Public Class PetLabel
         Inherits Label
