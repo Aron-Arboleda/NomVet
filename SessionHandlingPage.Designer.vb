@@ -24,7 +24,7 @@ Partial Class SessionHandlingPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SessionHandlingPage))
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.lstBoxPendingSessions = New System.Windows.Forms.ListBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -41,10 +41,10 @@ Partial Class SessionHandlingPage
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.btnBookAndPay = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
@@ -63,14 +63,16 @@ Partial Class SessionHandlingPage
         Me.Label5.TabIndex = 19
         Me.Label5.Text = "Updating Session"
         '
-        'ListBox1
+        'lstBoxPendingSessions
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Items.AddRange(New Object() {"List of Sessions"})
-        Me.ListBox1.Location = New System.Drawing.Point(20, 92)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(259, 485)
-        Me.ListBox1.TabIndex = 20
+        Me.lstBoxPendingSessions.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
+        Me.lstBoxPendingSessions.FormattingEnabled = True
+        Me.lstBoxPendingSessions.ItemHeight = 20
+        Me.lstBoxPendingSessions.Items.AddRange(New Object() {"List of Sessions"})
+        Me.lstBoxPendingSessions.Location = New System.Drawing.Point(20, 92)
+        Me.lstBoxPendingSessions.Name = "lstBoxPendingSessions"
+        Me.lstBoxPendingSessions.Size = New System.Drawing.Size(259, 484)
+        Me.lstBoxPendingSessions.TabIndex = 20
         '
         'FlowLayoutPanel1
         '
@@ -254,17 +256,30 @@ Partial Class SessionHandlingPage
         Me.Panel1.Size = New System.Drawing.Size(785, 157)
         Me.Panel1.TabIndex = 40
         '
-        'Label10
+        'TableLayoutPanel1
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(14, 11)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(89, 20)
-        Me.Label10.TabIndex = 39
-        Me.Label10.Text = "Pet Owner:"
+        Me.TableLayoutPanel1.ColumnCount = 3
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(187, 37)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(575, 99)
+        Me.TableLayoutPanel1.TabIndex = 43
+        '
+        'TextBox4
+        '
+        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(18, 37)
+        Me.TextBox4.Multiline = True
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(139, 26)
+        Me.TextBox4.TabIndex = 42
         '
         'Label11
         '
@@ -278,30 +293,17 @@ Partial Class SessionHandlingPage
         Me.Label11.TabIndex = 40
         Me.Label11.Text = "Pets Registered with their Procedures:"
         '
-        'TextBox4
+        'Label10
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(18, 37)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(139, 26)
-        Me.TextBox4.TabIndex = 42
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(188, 39)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 3
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(575, 99)
-        Me.TableLayoutPanel1.TabIndex = 43
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label10.Location = New System.Drawing.Point(14, 11)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(89, 20)
+        Me.Label10.TabIndex = 39
+        Me.Label10.Text = "Pet Owner:"
         '
         'btnBookAndPay
         '
@@ -330,7 +332,7 @@ Partial Class SessionHandlingPage
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.FlowLayoutPanel1)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.lstBoxPendingSessions)
         Me.Controls.Add(Me.Label5)
         Me.Name = "SessionHandlingPage"
         Me.Text = "SessionHandlingPage"
@@ -345,7 +347,7 @@ Partial Class SessionHandlingPage
     End Sub
 
     Friend WithEvents Label5 As Label
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents lstBoxPendingSessions As ListBox
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel

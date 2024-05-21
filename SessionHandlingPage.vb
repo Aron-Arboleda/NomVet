@@ -1,5 +1,5 @@
 ﻿Public Class SessionHandlingPage
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstBoxPendingSessions.SelectedIndexChanged
 
     End Sub
 
@@ -15,11 +15,21 @@
 
     End Sub
 
-    Private Sub SessionHandlingPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub loadSessionHandlingPage()
+        lstBoxPendingSessions.Items.Clear()
+
+        Dim sessionsList As List(Of Session) = FileManipulator.ReadSessions()
+        For Each session In sessionsList
+            lstBoxPendingSessions.Items.Add("Name: " & session.petOwner.strName & " | " & session.dateMade.Date)
+        Next
 
     End Sub
 
     Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+
+    End Sub
+
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
 
     End Sub
 End Class

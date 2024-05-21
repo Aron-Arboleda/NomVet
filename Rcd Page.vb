@@ -25,6 +25,9 @@ Public Class Rcd_Page
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         childForm(SessionHandlingPage)
+
+        SessionHandlingPage.loadSessionHandlingPage()
+
     End Sub
 
     Private Sub btnLoginPage_Click(sender As Object, e As EventArgs) Handles btnLoginPage.Click

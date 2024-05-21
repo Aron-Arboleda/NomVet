@@ -29,6 +29,17 @@ Public Class FileManipulator
         Return Nothing
     End Function
 
+    Public Shared Function findPetOwnerWithName(lines() As String, petOwnerName As String) As PetOwner
+        Dim petOwnerObject As PetOwner
+        For Each line As String In lines
+            petOwnerObject = parseAsPetOwner(line)
+            If petOwnerObject.strName = petOwnerName Then
+                Return petOwnerObject
+            End If
+        Next
+        Return Nothing
+    End Function
+
     Public Shared Function readData(fileName As String)
         Dim lines() As String = {}
         If File.Exists(fileName) Then
@@ -172,6 +183,26 @@ Public Class FileManipulator
             writer.WriteLine(session.petOwner.strName & "," & session.dateMade.Date)
         End Using
     End Sub
+
+    Public Shared Function ReadSessions() As List(Of Session)
+        Dim lines() As String = readData(sessionsDatabaseFilePath)
+        Dim sessionsList As New List(Of Session)
+        For Each line As String In lines
+            Dim sessionObject As Session = parseAsSession(line)
+            sessionsList.Add(sessionObject)
+        Next
+        Return sessionsList
+    End Function
+
+    Public Shared Function parseAsSession(line As String) As Session
+        Dim parsedStringsList() As String = line.Split(","c)
+        Dim petOwnerName As String = parsedStringsList(0)
+        Dim dateMade As String = parsedStringsList(1)
+        Dim lines() As String = readData(accountsDatabaseFilePath)
+        Dim petOwnerObject As PetOwner = findPetOwnerWithName(lines, petOwnerName)
+        Dim sessionObject As New Session(petOwnerObject, dateMade)
+        Return sessionObject
+    End Function
 
 
 End Class
