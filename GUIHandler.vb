@@ -68,7 +68,7 @@
             Dim PetValues() As PetLabel = {lblTypeValue, lblBdayValue, lblAgeValue, lblWeightValue, lblPetStatusValue}
 
             Dim propertiesPanel As New TableLayoutPanel
-            propertiesPanel.Size = New System.Drawing.Size(170, 107)
+            propertiesPanel.AutoSize = True
             propertiesPanel.Padding = New Padding(5, 5, 5, 5)
             propertiesPanel.ColumnCount = 2
             propertiesPanel.RowCount = 5
@@ -91,30 +91,63 @@
     End Class
 
     Public Class AppointmentPanel
-        Inherits FlowLayoutPanel
+        Inherits TableLayoutPanel
 
         Public appointment As Appointment
         Public Sub New(appointment As Appointment)
             Me.appointment = appointment
 
-            Me.BackColor = Color.White
-            Me.Size = New System.Drawing.Size(645, 40)
+            Me.BackColor = Color.FromArgb(251, 254, 249)
+            Me.AutoSize = True
             Me.Padding = New Padding(10, 10, 10, 10)
-            Me.Margin = New Padding(0, 10, 0, 10)
+            Me.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
+            Me.ColumnCount = 1
+            Me.RowCount = 2
 
+            Dim headerPanel As New TableLayoutPanel
+            headerPanel.Size = New System.Drawing.Size(216, 31)
+            headerPanel.ColumnCount = 2
+            headerPanel.RowCount = 1
 
-            Dim lblPetName As New PetLabel
-            lblPetName.Text = "Pet: " & appointment.pet
-            Dim lblPetProcedure As New PetLabel
-            lblPetProcedure.Text = "Procedure: " & appointment.strProcedure
+            Me.Controls.Add(headerPanel, 0, 0)
+
+            Dim iconPicture As New PictureBox
+            iconPicture.Image = My.Resources.calendarIcon
+            iconPicture.SizeMode = PictureBoxSizeMode.Zoom
+            iconPicture.Size = New System.Drawing.Size(37, 28)
+            iconPicture.Margin = New Padding(5, 0, 5, 10)
+            headerPanel.Controls.Add(iconPicture, 0, 0)
+
             Dim lblPetAppointment As New PetLabel
-            lblPetAppointment.Text = "Date of Appointment: " & appointment.dateAppointment.ToString("MMMM d, yyyy")
+            lblPetAppointment.Text = appointment.dateAppointment.ToString("MMMM d, yyyy")
+            lblPetAppointment.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Bold)
+            lblPetAppointment.AutoSize = True
+            lblPetAppointment.Margin = New Padding(0, 0, 5, 5)
+            headerPanel.Controls.Add(lblPetAppointment, 1, 0)
 
-            With Me
-                .Controls.Add(lblPetName)
-                .Controls.Add(lblPetProcedure)
-                .Controls.Add(lblPetAppointment)
-            End With
+            Dim infoPanel As New TableLayoutPanel
+            infoPanel.AutoSize = True
+            infoPanel.Padding = New Padding(5, 5, 5, 5)
+            infoPanel.ColumnCount = 2
+            infoPanel.RowCount = 2
+
+
+            Dim lblPetNameLabel As New PetLabel
+            lblPetNameLabel.Text = "Pet: "
+            Dim lblPetNameValue As New PetLabel
+            lblPetNameValue.Text = appointment.pet
+
+            Dim lblPetProcedureLabel As New PetLabel
+            lblPetProcedureLabel.Text = "Procedure: "
+            Dim lblPetProcedureValue As New PetLabel
+            lblPetProcedureValue.Text = appointment.strProcedure
+
+            infoPanel.Controls.Add(lblPetNameLabel, 0, 0)
+            infoPanel.Controls.Add(lblPetNameValue, 1, 0)
+            infoPanel.Controls.Add(lblPetProcedureLabel, 0, 1)
+            infoPanel.Controls.Add(lblPetProcedureValue, 1, 1)
+
+            Me.Controls.Add(infoPanel, 0, 1)
         End Sub
 
     End Class
