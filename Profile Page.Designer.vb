@@ -40,7 +40,11 @@ Partial Class Profile_Page
         Me.Label1 = New System.Windows.Forms.Label()
         Me.schedulesPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnBackToHome = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1.SuspendLayout()
+        Me.registeredPetsPanel.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -211,9 +215,11 @@ Partial Class Profile_Page
         'registeredPetsPanel
         '
         Me.registeredPetsPanel.AutoScroll = True
-        Me.registeredPetsPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.registeredPetsPanel.BackColor = System.Drawing.Color.White
+        Me.registeredPetsPanel.Controls.Add(Me.TableLayoutPanel1)
         Me.registeredPetsPanel.Location = New System.Drawing.Point(420, 95)
         Me.registeredPetsPanel.Name = "registeredPetsPanel"
+        Me.registeredPetsPanel.Padding = New System.Windows.Forms.Padding(10)
         Me.registeredPetsPanel.Size = New System.Drawing.Size(665, 214)
         Me.registeredPetsPanel.TabIndex = 25
         '
@@ -232,7 +238,7 @@ Partial Class Profile_Page
         'schedulesPanel
         '
         Me.schedulesPanel.AutoScroll = True
-        Me.schedulesPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.schedulesPanel.BackColor = System.Drawing.Color.White
         Me.schedulesPanel.Location = New System.Drawing.Point(419, 418)
         Me.schedulesPanel.Name = "schedulesPanel"
         Me.schedulesPanel.Size = New System.Drawing.Size(665, 214)
@@ -254,6 +260,35 @@ Partial Class Profile_Page
         Me.btnBackToHome.Text = "Log Out"
         Me.btnBackToHome.UseVisualStyleBackColor = False
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 1)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(13, 13)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.28042!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.71957!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(176, 189)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 47)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 4
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(170, 107)
+        Me.TableLayoutPanel2.TabIndex = 0
+        '
         'Profile_Page
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -270,6 +305,8 @@ Partial Class Profile_Page
         Me.Text = "Profile_Page"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.registeredPetsPanel.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -291,4 +328,6 @@ Partial Class Profile_Page
     Friend WithEvents Label1 As Label
     Friend WithEvents schedulesPanel As FlowLayoutPanel
     Friend WithEvents btnBackToHome As Button
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
 End Class

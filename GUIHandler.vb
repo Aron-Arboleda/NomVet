@@ -15,38 +15,76 @@
     End Sub
 
     Public Class PetPanel
-        Inherits FlowLayoutPanel
+        Inherits TableLayoutPanel
 
         Public petObject As Pet
         Public Sub New(petObject As Pet)
             Me.petObject = petObject
 
-            Me.BackColor = Color.White
-            Me.Size = New System.Drawing.Size(645, 55)
+            Me.BackColor = Color.FromArgb(251, 254, 249)
+            Me.AutoSize = True
             Me.Padding = New Padding(10, 10, 10, 10)
-            Me.Margin = New Padding(0, 10, 0, 10)
+            Me.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
+            Me.ColumnCount = 1
+            Me.RowCount = 2
 
 
             Dim lblPetName As New PetLabel
-            lblPetName.Text = "Name: " & petObject.strName
-            Dim lblPetType As New PetLabel
-            lblPetType.Text = petObject.strType.ToUpper()
-            Dim lblPetBday As New PetLabel
-            lblPetBday.Text = "Birthdate: " & petObject.dateBirthday
-            Dim lblPetAge As New PetLabel
-            lblPetAge.Text = petObject.intAge & " yr(s) old"
-            Dim lblPetWeight As New PetLabel
-            lblPetWeight.Text = petObject.dblWeight & " kg"
-            Dim lblPetVaccineStatus As New PetLabel
-            lblPetVaccineStatus.Text = "Vaccine Status: " & petObject.boolVaccinated
+            lblPetName.Text = petObject.strName
+            lblPetName.Font = New Font("Microsoft Sans Serif", 18, FontStyle.Bold)
+            lblPetName.AutoSize = True
+            lblPetName.Anchor = AnchorStyles.Bottom
 
-            With Me
-                .Controls.Add(lblPetName)
-                .Controls.Add(lblPetType)
-                .Controls.Add(lblPetBday)
-                .Controls.Add(lblPetAge)
-                .Controls.Add(lblPetWeight)
-                .Controls.Add(lblPetVaccineStatus)
+            Me.Controls.Add(lblPetName, 0, 0)
+
+
+            Dim lblTypeLabel As New PetLabel
+            lblTypeLabel.Text = "Type:"
+            Dim lblTypeValue As New PetLabel
+            lblTypeValue.Text = petObject.strType.ToUpper()
+
+            Dim lblBdayLabel As New PetLabel
+            lblBdayLabel.Text = "Birthdate:"
+            Dim lblBdayValue As New PetLabel
+            lblBdayValue.Text = petObject.dateBirthday
+
+            Dim lblAgeLabel As New PetLabel
+            lblAgeLabel.Text = "Age:"
+            Dim lblAgeValue As New PetLabel
+            lblAgeValue.Text = petObject.intAge & " yr(s) old"
+
+            Dim lblWeightLabel As New PetLabel
+            lblWeightLabel.Text = "Weight:"
+            Dim lblWeightValue As New PetLabel
+            lblWeightValue.Text = petObject.dblWeight & " kg"
+
+            Dim lblPetStatusLabel As New PetLabel
+            lblPetStatusLabel.Text = "Vac Status:"
+            Dim lblPetStatusValue As New PetLabel
+            lblPetStatusValue.Text = petObject.boolVaccinated
+
+
+            Dim PetLabels() As PetLabel = {lblTypeLabel, lblBdayLabel, lblAgeLabel, lblWeightLabel, lblPetStatusLabel}
+            Dim PetValues() As PetLabel = {lblTypeValue, lblBdayValue, lblAgeValue, lblWeightValue, lblPetStatusValue}
+
+            Dim propertiesPanel As New TableLayoutPanel
+            propertiesPanel.Size = New System.Drawing.Size(170, 107)
+            propertiesPanel.Padding = New Padding(5, 5, 5, 5)
+            propertiesPanel.ColumnCount = 2
+            propertiesPanel.RowCount = 5
+
+            Me.Controls.Add(propertiesPanel, 0, 1)
+
+            With propertiesPanel
+                For i = 0 To PetLabels.Length - 1
+                    PetLabels(i).AutoSize = True
+                    PetLabels(i).Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+                    .Controls.Add(PetLabels(i), 0, i)
+
+                    PetValues(i).AutoSize = True
+                    PetValues(i).Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+                    .Controls.Add(PetValues(i), 1, i)
+                Next
             End With
         End Sub
 
