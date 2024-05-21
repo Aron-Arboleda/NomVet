@@ -24,11 +24,15 @@
 
     Public Sub refreshBookingPage()
         cbPet.Items.Clear()
+        Dim listOfBookings As List(Of Appointment) = FileManipulator.ReadBookings()
+        Dim listOfPetNames As List(Of String) = FileManipulator.getListOfPetsName(listOfBookings)
+
         For Each pet In activeAccount.petsList
-            If pet.appointment.strProcedure = "Nothing" Then
+            If Not (listOfPetNames.Contains(pet.strName)) Then
                 cbPet.Items.Add(pet.strName)
             End If
         Next
+
         cbPet.Text = ""
         cbProcedure.Text = ""
         dtpAppointmentDate.Value = DateTime.Now
@@ -43,13 +47,16 @@
     End Sub
 
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
-        FileManipulator.ClearPets(activeAccount)
+        Dim procedure As String = cbProcedure.SelectedItem
+        Dim dateOfApppointment As Date = dtpAppointmentDate.Value.Date
+        Dim petName As String = cbPet.SelectedItem
+
         For Each pet In activeAccount.petsList
-            Dim procedure As String = cbProcedure.SelectedItem
-            Dim dateOfApppointment As Date = dtpAppointmentDate.Value.Date
-            Dim petAppointment As New Appointment(procedure, dateOfApppointment)
-            pet.appointment = petAppointment
-            FileManipulator.SaveAppointment(activeAccount, pet)
+            If petName = pet.strName Then
+                Dim petAppointment As New Appointment(activeAccount.strName, pet.strName, procedure, dateOfApppointment)
+                FileManipulator.SaveBooking(petAppointment)
+                Exit For
+            End If
         Next
 
         refreshBookingPage()

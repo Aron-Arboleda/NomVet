@@ -39,10 +39,6 @@
             lblPetWeight.Text = petObject.dblWeight & " kg"
             Dim lblPetVaccineStatus As New PetLabel
             lblPetVaccineStatus.Text = "Vaccine Status: " & petObject.boolVaccinated
-            Dim lblPetProcedure As New PetLabel
-            lblPetProcedure.Text = "Procedure: " & petObject.appointment.strProcedure
-            Dim lblPetAppointment As New PetLabel
-            lblPetAppointment.Text = "Date of Appointment: " & petObject.appointment.dateAppointment
 
             With Me
                 .Controls.Add(lblPetName)
@@ -51,8 +47,6 @@
                 .Controls.Add(lblPetAge)
                 .Controls.Add(lblPetWeight)
                 .Controls.Add(lblPetVaccineStatus)
-                .Controls.Add(lblPetProcedure)
-                .Controls.Add(lblPetAppointment)
             End With
         End Sub
 
@@ -61,9 +55,9 @@
     Public Class AppointmentPanel
         Inherits FlowLayoutPanel
 
-        Public petObject As Pet
-        Public Sub New(petObject As Pet)
-            Me.petObject = petObject
+        Public appointment As Appointment
+        Public Sub New(appointment As Appointment)
+            Me.appointment = appointment
 
             Me.BackColor = Color.White
             Me.Size = New System.Drawing.Size(645, 40)
@@ -72,11 +66,11 @@
 
 
             Dim lblPetName As New PetLabel
-            lblPetName.Text = "Pet: " & petObject.strName
+            lblPetName.Text = "Pet: " & appointment.pet
             Dim lblPetProcedure As New PetLabel
-            lblPetProcedure.Text = "Procedure: " & petObject.appointment.strProcedure
+            lblPetProcedure.Text = "Procedure: " & appointment.strProcedure
             Dim lblPetAppointment As New PetLabel
-            lblPetAppointment.Text = "Date of Appointment: " & petObject.appointment.dateAppointment.ToString("MMMM d, yyyy")
+            lblPetAppointment.Text = "Date of Appointment: " & appointment.dateAppointment.ToString("MMMM d, yyyy")
 
             With Me
                 .Controls.Add(lblPetName)

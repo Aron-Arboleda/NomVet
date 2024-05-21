@@ -21,12 +21,12 @@
             For Each line In lines
                 Dim petObject As Pet = FileManipulator.parseAsPet(line)
                 Dim petPanel As New PetPanel(petObject)
-                Dim apptPanel As New AppointmentPanel(petObject)
+                'Dim apptPanel As New AppointmentPanel(petObject)
                 With registeredPetsPanel
                     .Controls.Add(petPanel)
                 End With
                 With schedulesPanel
-                    .Controls.Add(apptPanel)
+                    '.Controls.Add(apptPanel)
                 End With
             Next
         Else

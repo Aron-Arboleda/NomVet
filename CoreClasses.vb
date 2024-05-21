@@ -37,7 +37,6 @@ Public Module CoreClasses
         Public dblWeight As Double
         Public strType As String
         Public boolVaccinated As String
-        Public appointment As Appointment
 
         Public Sub New(ByVal strName As String, ByVal intAge As Integer, ByVal dateBirthday As Date, ByVal dblWeight As Double, ByVal strType As String, ByVal boolVaccinated As String)
             Me.strName = strName
@@ -52,8 +51,12 @@ Public Module CoreClasses
     Public Class Appointment
         Public strProcedure As String
         Public dateAppointment As Date
+        Public petOwner As String
+        Public pet As String
 
-        Public Sub New(ByVal strProcedure As String, ByVal dateAppointment As Date)
+        Public Sub New(ByVal petOwner As String, ByVal pet As String, ByVal strProcedure As String, ByVal dateAppointment As Date)
+            Me.petOwner = petOwner
+            Me.pet = pet
             Me.strProcedure = strProcedure
             Me.dateAppointment = dateAppointment
         End Sub

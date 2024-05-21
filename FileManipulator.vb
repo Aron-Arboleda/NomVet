@@ -2,6 +2,7 @@
 
 Public Class FileManipulator
     Public Shared accountsDatabaseFilePath As String = "nomVetAccounts.txt"
+    Public Shared bookingsDatabaseFilePath As String = "nomVetBookings.txt"
     Public Shared Function ValidateLogin(username As String, password As String) As Boolean
         Dim validLogin As Boolean = False
 
@@ -56,11 +57,7 @@ Public Class FileManipulator
         Dim weight = parsedStringsList(3)
         Dim type = parsedStringsList(4)
         Dim vaccineStatus = parsedStringsList(5)
-        Dim procedure = parsedStringsList(6)
-        Dim dateAppointment = parsedStringsList(7)
-        Dim petAppointment As New Appointment(procedure, dateAppointment)
         Dim petObject As New Pet(name, age, bday, weight, type, vaccineStatus)
-        petObject.appointment = petAppointment
         Return petObject
     End Function
     Public Shared Sub createDataBaseFile(filename As String)
@@ -87,21 +84,51 @@ Public Class FileManipulator
     End Sub
     Public Shared Sub SavePet(petOwnerObject As PetOwner, petObject As Pet)
         Using writer As StreamWriter = File.AppendText(petOwnerObject.getUsername + ".txt")
-            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & "Nothing" & "," & "1/1/1000")
+            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated)
         End Using
     End Sub
 
-    Public Shared Sub SaveAppointment(petOwnerObject As PetOwner, petObject As Pet)
-        Using writer As StreamWriter = File.AppendText(petOwnerObject.getUsername + ".txt")
-            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & petObject.appointment.strProcedure & "," & petObject.appointment.dateAppointment)
+    'Public Shared Sub SaveAppointment(petOwnerObject As PetOwner, petObject As Pet)
+    '    Using writer As StreamWriter = File.AppendText(petOwnerObject.getUsername + ".txt")
+    '        writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & petObject.appointment.strProcedure & "," & petObject.appointment.dateAppointment)
+    '    End Using
+    'End Sub
+
+    Public Shared Sub SaveBooking(appointment As Appointment)
+        Using writer As StreamWriter = File.AppendText(bookingsDatabaseFilePath)
+            writer.WriteLine(appointment.petOwner & "," & appointment.pet & "," & appointment.strProcedure & "," & appointment.dateAppointment)
         End Using
     End Sub
 
-    Public Shared Sub SaveBooking(booking As Date)
-        Using writer As StreamWriter = File.AppendText("nomVetBookings.txt")
-            writer.WriteLine(booking)
-        End Using
-    End Sub
+    Public Shared Function ReadBookings() As List(Of Appointment)
+        Dim lines() As String = readData(bookingsDatabaseFilePath)
+        Dim bookingsList As New List(Of Appointment)
+        For Each line As String In lines
+            Dim bookingObject As Appointment = parseAsBooking(line)
+            bookingsList.Add(bookingObject)
+        Next
+        Return bookingsList
+    End Function
+
+    Public Shared Function getListOfPetsName(ByVal bookingLists As List(Of Appointment)) As List(Of String)
+        Dim petsNameLists As New List(Of String)
+        For Each book In bookingLists
+            petsNameLists.Add(book.pet)
+        Next
+        Return petsNameLists
+    End Function
+
+    Public Shared Function parseAsBooking(line As String) As Appointment
+        Dim parsedStringsList() As String = line.Split(","c)
+        Dim petOwnerName As String = parsedStringsList(0)
+        Dim petName = parsedStringsList(1)
+        Dim procedure = parsedStringsList(2)
+        Dim dateOfAppointment = parsedStringsList(3)
+        Dim bookingObject As New Appointment(petOwnerName, petName, procedure, dateOfAppointment)
+        Return bookingObject
+    End Function
+
+
 
     Public Shared Function ReadPetOwners()
         Dim petOwnersList As New List(Of String)

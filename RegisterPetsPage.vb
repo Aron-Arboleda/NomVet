@@ -24,11 +24,7 @@
 
         FileManipulator.ClearPets(activeAccount)
         For Each pet In activeAccount.petsList
-            If IsNothing(pet.appointment) Then
-                FileManipulator.SavePet(activeAccount, pet)
-            Else
-                FileManipulator.SaveAppointment(activeAccount, pet)
-            End If
+            FileManipulator.SavePet(activeAccount, pet)
         Next
         MsgBox("Pets Registered!", vbOKOnly + vbInformation, "Pet Registration")
     End Sub
