@@ -62,4 +62,14 @@ Public Module CoreClasses
         End Sub
     End Class
 
+    Public Class Session
+        Public petOwner As PetOwner
+        Public dateMade As Date
+
+        Public Sub New(ByVal petOwner As PetOwner, ByVal dateMade As Date)
+            Me.petOwner = petOwner
+            Me.dateMade = dateMade
+        End Sub
+    End Class
+
 End Module

@@ -3,6 +3,8 @@
 Public Class FileManipulator
     Public Shared accountsDatabaseFilePath As String = "nomVetAccounts.txt"
     Public Shared bookingsDatabaseFilePath As String = "nomVetBookings.txt"
+    Public Shared sessionsDatabaseFilePath As String = "nomVetSessions.txt"
+
     Public Shared Function ValidateLogin(username As String, password As String) As Boolean
         Dim validLogin As Boolean = False
 
@@ -105,7 +107,9 @@ Public Class FileManipulator
         Dim bookingsList As New List(Of Appointment)
         For Each line As String In lines
             Dim bookingObject As Appointment = parseAsBooking(line)
-            bookingsList.Add(bookingObject)
+            If bookingObject.petOwner = activeAccount.strName Then
+                bookingsList.Add(bookingObject)
+            End If
         Next
         Return bookingsList
     End Function
@@ -128,7 +132,18 @@ Public Class FileManipulator
         Return bookingObject
     End Function
 
+    Public Shared Sub SavePetOwner(petOwner As PetOwner)
+        Dim petOwnerFileName As String = petOwner.getUsername & ".txt"
+        createDataBaseFile(petOwnerFileName)
 
+        Using writer As StreamWriter = File.AppendText(accountsDatabaseFilePath)
+            writer.WriteLine(petOwner.getUsername() & "," & petOwner.getPassword() & "," & petOwner.strName & "," & petOwner.intAge & "," & petOwner.strSex & "," & petOwner.strAddress)
+        End Using
+
+        For Each pet In petOwner.petsList
+            SavePet(petOwner, pet)
+        Next
+    End Sub
 
     Public Shared Function ReadPetOwners()
         Dim petOwnersList As New List(Of String)
@@ -151,4 +166,12 @@ Public Class FileManipulator
         Next
         Return petsList
     End Function
+
+    Public Shared Sub SaveSession(ByVal session As Session)
+        Using writer As StreamWriter = File.AppendText(sessionsDatabaseFilePath)
+            writer.WriteLine(session.petOwner.strName & "," & session.dateMade.Date)
+        End Using
+    End Sub
+
+
 End Class

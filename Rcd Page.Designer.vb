@@ -27,6 +27,8 @@ Partial Class Rcd_Page
         Me.btnWalkinForm = New System.Windows.Forms.Button()
         Me.btnRecords = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.rcdDisplayPanel = New System.Windows.Forms.Panel()
+        Me.btnLoginPage = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
@@ -92,11 +94,35 @@ Partial Class Rcd_Page
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.Panel7.Controls.Add(Me.btnLoginPage)
         Me.Panel7.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1113, 75)
         Me.Panel7.TabIndex = 33
+        '
+        'rcdDisplayPanel
+        '
+        Me.rcdDisplayPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.rcdDisplayPanel.Location = New System.Drawing.Point(-2, 74)
+        Me.rcdDisplayPanel.Name = "rcdDisplayPanel"
+        Me.rcdDisplayPanel.Size = New System.Drawing.Size(1122, 680)
+        Me.rcdDisplayPanel.TabIndex = 41
+        '
+        'btnLoginPage
+        '
+        Me.btnLoginPage.BackColor = System.Drawing.Color.White
+        Me.btnLoginPage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btnLoginPage.FlatAppearance.BorderSize = 0
+        Me.btnLoginPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLoginPage.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLoginPage.ForeColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btnLoginPage.Location = New System.Drawing.Point(934, 9)
+        Me.btnLoginPage.Name = "btnLoginPage"
+        Me.btnLoginPage.Size = New System.Drawing.Size(168, 59)
+        Me.btnLoginPage.TabIndex = 24
+        Me.btnLoginPage.Text = "Login Page"
+        Me.btnLoginPage.UseVisualStyleBackColor = False
         '
         'Rcd_Page
         '
@@ -105,6 +131,7 @@ Partial Class Rcd_Page
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1114, 749)
+        Me.Controls.Add(Me.rcdDisplayPanel)
         Me.Controls.Add(Me.Panel7)
         Me.Name = "Rcd_Page"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -118,4 +145,6 @@ Partial Class Rcd_Page
     Friend WithEvents btnWalkinForm As Button
     Friend WithEvents btnRecords As Button
     Friend WithEvents Panel7 As Panel
+    Friend WithEvents rcdDisplayPanel As Panel
+    Friend WithEvents btnLoginPage As Button
 End Class

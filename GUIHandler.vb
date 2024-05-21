@@ -156,8 +156,8 @@
         Inherits TableLayoutPanel
 
         Public lblPetName As New PetLabel
-        Public lblPetProcedure As New PetLabel
-        Public lblPetAppointment As New PetLabel
+        Public lblPetBirthday As New PetLabel
+        Public lblPetType As New PetLabel
         Public lblPetAge As New PetLabel
         Public lblPetWeight As New PetLabel
         Public lblPetVaccineStatus As New PetLabel
@@ -175,7 +175,7 @@
             Me.petObject = petObject
 
             Me.BackColor = Color.White
-            Me.Size = New System.Drawing.Size(957, 70)
+            Me.AutoSize = True
             Me.Padding = New Padding(10, 10, 10, 10)
             Me.Margin = New Padding(0, 0, 0, 5)
             Me.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
@@ -193,13 +193,13 @@
             'Labels
 
             lblPetName.Text = "Pet Name:"
-            lblPetProcedure.Text = "Pet Birthday: "
-            lblPetAppointment.Text = "Type: "
+            lblPetBirthday.Text = "Pet Birthday: "
+            lblPetType.Text = "Type: "
             lblPetAge.Text = "Pet Age:"
             lblPetWeight.Text = "Pet Weight(kg):"
             lblPetVaccineStatus.Text = "Vaccine Status: "
 
-            Dim PetLabels() As PetLabel = {lblPetName, lblPetProcedure, lblPetAppointment, lblPetAge, lblPetWeight, lblPetVaccineStatus}
+            Dim PetLabels() As PetLabel = {lblPetName, lblPetBirthday, lblPetType, lblPetAge, lblPetWeight, lblPetVaccineStatus}
 
 
             'Inputs
@@ -238,13 +238,13 @@
 
         End Sub
 
-        Public Function getPetObject() As Pet
+        Public Overridable Function getPetObject() As Pet
             petObject = New Pet(txtPetName.Text, numPetAge.Text, dtpPetBirthday.Value.Date, numPetWeight.Text, cbPetType.SelectedItem, cbPetVacStatus.SelectedItem)
 
             Return petObject
         End Function
 
-        Public Sub setPetObject(petObject As Pet)
+        Public Overridable Sub setPetObject(petObject As Pet)
             Me.txtPetName.Text = petObject.strName
             Me.numPetAge.Value = petObject.intAge
             Me.dtpPetBirthday.Value = petObject.dateBirthday
@@ -254,6 +254,42 @@
         End Sub
 
     End Class
+
+    Public Class WalkInPetInputPanel
+        Inherits RegisterPetPanel
+
+        Public lblPetProcedure As New PetLabel
+        Public cbPetProcedure As New ComboBox
+
+
+        Public Sub New()
+            Me.ColumnCount = 7
+
+            lblPetProcedure.Text = "Procedure:"
+            lblPetProcedure.AutoSize = True
+            lblPetProcedure.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+            Me.Controls.Add(lblPetProcedure, 7, 0)
+
+            cbPetProcedure.Size = New System.Drawing.Size(100, 28)
+            cbPetProcedure.Items.Add("Check-Up")
+            cbPetProcedure.Items.Add("Vaccine")
+            cbPetProcedure.Items.Add("Both")
+            Me.Controls.Add(cbPetProcedure, 7, 1)
+
+            cbPetType.Size = New System.Drawing.Size(125, 28)
+            cbPetVacStatus.Size = New System.Drawing.Size(125, 28)
+
+
+        End Sub
+
+        Public Overrides Function getPetObject() As Pet
+            petObject = New Pet(txtPetName.Text, numPetAge.Text, dtpPetBirthday.Value.Date, numPetWeight.Text, cbPetType.SelectedItem, cbPetVacStatus.SelectedItem)
+
+            Return petObject
+        End Function
+    End Class
+
+
 
     Public Class PetLabel
         Inherits Label
