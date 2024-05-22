@@ -406,7 +406,7 @@
 
 
             'Inputs
-            rbYes.Select()
+
             rbYes.Text = "Yes"
             rbNo.Text = "No"
             rbYes.AutoSize = True
@@ -449,15 +449,16 @@
                 .Controls.Add(dtpNextVisitDate, 1, 1)
                 .Controls.Add(cbPetVacStatus, 2, 1)
                 .Controls.Add(cbPetProcedure, 3, 1)
+                rbYes.PerformClick()
             End With
         End Sub
 
         Public Function getNextVistObject() As NextVisit
             Dim nextVisitObject As NextVisit
             If rbYes.Checked Then
-                nextVisitObject = New NextVisit(lblPetName.Text, dtpNextVisitDate.Value.Date, cbPetVacStatus.SelectedItem, cbPetProcedure.SelectedItem)
+                nextVisitObject = New NextVisit(lblPetName.Text, rbYes.Checked, dtpNextVisitDate.Value.Date, cbPetVacStatus.SelectedItem, cbPetProcedure.SelectedItem)
             Else
-                nextVisitObject = New NextVisit(lblPetName.Text, "N/A", cbPetVacStatus.SelectedItem, cbPetProcedure.SelectedItem)
+                nextVisitObject = New NextVisit(lblPetName.Text, rbYes.Checked, "N/A", cbPetVacStatus.SelectedItem, cbPetProcedure.SelectedItem)
             End If
             Return nextVisitObject
         End Function
@@ -465,12 +466,14 @@
         Private Sub rbYes_CheckedChanged(sender As Object, e As EventArgs)
             If rbYes.Checked Then
                 dtpNextVisitDate.Enabled = True
+                cbPetProcedure.Enabled = True
             End If
         End Sub
 
         Private Sub rbNo_CheckedChanged(sender As Object, e As EventArgs)
             If rbNo.Checked Then
                 dtpNextVisitDate.Enabled = False
+                cbPetProcedure.Enabled = False
             End If
         End Sub
     End Class

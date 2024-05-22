@@ -10,6 +10,40 @@
         WalkInReceiptPage.loadWalkInReceiptPage()
         updatePets(SessionHandlingPage.selectedSession.petOwner.strName, SessionHandlingPage.nextVisitsList)
         updateSessions(SessionHandlingPage.selectedSession)
+        makeNewSessionOrBookIfNeeded(SessionHandlingPage.nextVisitsList)
+    End Sub
+
+    Public Sub makeNewSessionOrBookIfNeeded(nextVisitsList As List(Of NextVisit))
+        For Each nextVisit In nextVisitsList
+            If nextVisit.boolNextVisit = True Then
+                Dim selectedSession As Session = SessionHandlingPage.selectedSession
+
+                Dim id As Integer = Session.ranCode()
+                Dim petOwner As String = selectedSession.petOwner.strName
+                Dim pet As String = nextVisit.petName
+                Dim procedure As String = nextVisit.procedure
+                Dim dateOfNextVisit As String = nextVisit.dateOfNextVisit
+                Dim appointment As New Appointment(id, petOwner, pet, procedure, dateOfNextVisit)
+                FileManipulator.SaveBooking(appointment)
+
+                Dim owner As PetOwner = FileManipulator.findPetOwnerWithName(petOwner)
+                Dim petsProclist As New List(Of String)
+                For Each nv In nextVisitsList
+                    If nv.boolNextVisit = True Then
+                        For Each petProc In selectedSession.petWithProcedureList
+                            Dim petType = petProc.Split("#"c)(1)
+                            If petProc.Split("#"c)(0) = nv.petName Then
+                                petsProclist.Add(Session.createPetProcedure(nv.petName, petType, procedure))
+                                Exit For
+                            End If
+                        Next
+
+                    End If
+                Next
+                Dim sessionObj As New Session(id, owner, dateOfNextVisit, petsProclist)
+                FileManipulator.SaveSession(sessionObj)
+            End If
+        Next
     End Sub
 
     Public Sub updatePets(petOwner As String, nextVisitsList As List(Of NextVisit))

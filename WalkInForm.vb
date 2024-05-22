@@ -42,14 +42,14 @@
 
         For Each petPanel As WalkInPetInputPanel In walkinListOfPetsInput
             petOwnerListOfPets.Add(petPanel.getPetObject())
-            petWithProcedureList.Add(petPanel.txtPetName.Text & "#" & petPanel.cbPetType.SelectedItem.ToString & "#" & petPanel.cbPetProcedure.SelectedItem)
+            petWithProcedureList.Add(Session.createPetProcedure(petPanel.txtPetName.Text, petPanel.cbPetType.SelectedItem.ToString, petPanel.cbPetProcedure.SelectedItem))
         Next
 
         Dim petOwner As New PetOwner(petOwnerUsername, petOwnerPassword, petOwnerName, petOwnerAge, petOwnerSex, petOwnerAddress, petOwnerListOfPets)
         FileManipulator.SavePetOwner(petOwner)
 
-        Dim session As New Session(Session.ranCode, petOwner, Date.Now, petWithProcedureList)
-        FileManipulator.SaveSession(session)
+        Dim sessionObj As New Session(Session.ranCode, petOwner, Date.Now, petWithProcedureList)
+        FileManipulator.SaveSession(sessionObj)
 
         MsgBox("Information Saved.", vbOKOnly + vbInformation, "NOMVC Saving")
         loadWalkInForm()

@@ -82,15 +82,21 @@ Public Module CoreClasses
         Public Shared Function ranCode()
             Return Int((100 * Rnd()) + 1)
         End Function
+
+        Public Shared Function createPetProcedure(petName As String, petType As String, petProcedure As String) As String
+            Return (petName & "#" & petType & "#" & petProcedure)
+        End Function
     End Class
 
     Public Class NextVisit
         Public petName As String
+        Public boolNextVisit As Boolean
         Public dateOfNextVisit As String
         Public vacStatus As String
         Public procedure As String
 
-        Public Sub New(ByVal petName As String, ByVal dateOfNextVisit As String, ByVal vacStatus As String, ByVal procedure As String)
+        Public Sub New(ByVal petName As String, ByVal boolNextVisit As Boolean, ByVal dateOfNextVisit As String, ByVal vacStatus As String, ByVal procedure As String)
+            Me.boolNextVisit = boolNextVisit
             Me.petName = petName
             Me.dateOfNextVisit = dateOfNextVisit
             Me.vacStatus = vacStatus
