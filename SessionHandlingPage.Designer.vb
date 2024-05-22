@@ -260,7 +260,7 @@ Partial Class SessionHandlingPage
         Me.petsAndProceduresPanel.Location = New System.Drawing.Point(130, 37)
         Me.petsAndProceduresPanel.Name = "petsAndProceduresPanel"
         Me.petsAndProceduresPanel.Padding = New System.Windows.Forms.Padding(5)
-        Me.petsAndProceduresPanel.Size = New System.Drawing.Size(642, 103)
+        Me.petsAndProceduresPanel.Size = New System.Drawing.Size(642, 107)
         Me.petsAndProceduresPanel.TabIndex = 45
         '
         'TableLayoutPanel1

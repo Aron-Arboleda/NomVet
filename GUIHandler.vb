@@ -63,15 +63,19 @@
             Dim lblPetStatusValue As New PetLabel
             lblPetStatusValue.Text = petObject.boolVaccinated
 
+            Dim lblPetNextVisitLabel As New PetLabel
+            lblPetNextVisitLabel.Text = "Next Visit:"
+            Dim lblPetNextVisitValue As New PetLabel
+            lblPetNextVisitValue.Text = petObject.dateOfNextVisit
 
-            Dim PetLabels() As PetLabel = {lblTypeLabel, lblBdayLabel, lblAgeLabel, lblWeightLabel, lblPetStatusLabel}
-            Dim PetValues() As PetLabel = {lblTypeValue, lblBdayValue, lblAgeValue, lblWeightValue, lblPetStatusValue}
+            Dim PetLabels() As PetLabel = {lblTypeLabel, lblBdayLabel, lblAgeLabel, lblWeightLabel, lblPetStatusLabel, lblPetNextVisitLabel}
+            Dim PetValues() As PetLabel = {lblTypeValue, lblBdayValue, lblAgeValue, lblWeightValue, lblPetStatusValue, lblPetNextVisitValue}
 
             Dim propertiesPanel As New TableLayoutPanel
             propertiesPanel.AutoSize = True
             propertiesPanel.Padding = New Padding(5, 5, 5, 5)
             propertiesPanel.ColumnCount = 2
-            propertiesPanel.RowCount = 5
+            propertiesPanel.RowCount = 6
 
             Me.Controls.Add(propertiesPanel, 0, 1)
 
