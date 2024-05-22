@@ -1,17 +1,7 @@
 ﻿Public Class SessionHandlingPage
     Dim sessionsList As List(Of Session)
     Public selectedSession As Session
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
 
-    End Sub
-
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
-
-    End Sub
-
-    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-
-    End Sub
 
     Public Sub loadSessionHandlingPage()
         loadListView()

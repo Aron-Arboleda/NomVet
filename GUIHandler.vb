@@ -487,7 +487,7 @@
             lblPetType.Font = New Font("Tw Cen MT", 12, FontStyle.Regular)
             lblProcedure.Text = petProcedure
             lblProcedure.Font = New Font("Tw Cen MT", 12, FontStyle.Regular)
-            lblTotal.Text = computeTotalBill(petType, petProcedure).ToString("C2", Globalization.CultureInfo.GetCultureInfo("en-PH"))
+            lblTotal.Text = ToPesoFormat(computeTotalBill(petType, petProcedure))
             lblTotal.Font = New Font("Tw Cen MT", 12, FontStyle.Bold)
 
             Dim PetLabels() As Label = {lblPetName, lblPetType, lblProcedure, lblTotal}
@@ -495,12 +495,24 @@
             With Me
                 For i = 0 To PetLabels.Length - 1
                     PetLabels(i).AutoSize = True
-                    PetLabels(i).Anchor = AnchorStyles.Left
+                    PetLabels(i).Anchor = AnchorStyles.None
                     .Controls.Add(PetLabels(i), i, 0)
                 Next
             End With
         End Sub
     End Class
+
+    Public Class ReceiptRowPanel
+        Inherits BillingRowPanel
+
+        Public Sub New(petWithProcedureString As String)
+            MyBase.New(petWithProcedureString)
+
+            Me.Size = New System.Drawing.Size(540, 28)
+
+        End Sub
+    End Class
+
 
     Public Class PetLabel
         Inherits Label
@@ -510,6 +522,10 @@
             Me.AutoSize = True
         End Sub
     End Class
+
+    Public Function ToPesoFormat(ByVal decimalNum As Double) As String
+        Return decimalNum.ToString("C2", Globalization.CultureInfo.GetCultureInfo("en-PH"))
+    End Function
 
 
 End Module

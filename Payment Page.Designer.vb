@@ -49,7 +49,7 @@ Partial Class Payment_Page
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.lblCheckupFee = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnPayAndShowReceipt = New System.Windows.Forms.Button()
         Me.txtPayment = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.lblTotalFee = New System.Windows.Forms.Label()
@@ -321,7 +321,7 @@ Partial Class Payment_Page
         Me.Panel1.Controls.Add(Me.lblPetOwner)
         Me.Panel1.Controls.Add(Me.Label27)
         Me.Panel1.Controls.Add(Me.billRowsPanel)
-        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.btnPayAndShowReceipt)
         Me.Panel1.Controls.Add(Me.txtPayment)
         Me.Panel1.Controls.Add(Me.Label32)
         Me.Panel1.Controls.Add(Me.lblTotalFee)
@@ -457,21 +457,21 @@ Partial Class Payment_Page
         Me.lblCheckupFee.TabIndex = 35
         Me.lblCheckupFee.Text = " 500.00"
         '
-        'Button4
+        'btnPayAndShowReceipt
         '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI Black", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button4.Location = New System.Drawing.Point(181, 452)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(244, 45)
-        Me.Button4.TabIndex = 39
-        Me.Button4.Text = "Pay and Show Receipt"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btnPayAndShowReceipt.BackColor = System.Drawing.Color.Transparent
+        Me.btnPayAndShowReceipt.BackgroundImage = CType(resources.GetObject("btnPayAndShowReceipt.BackgroundImage"), System.Drawing.Image)
+        Me.btnPayAndShowReceipt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnPayAndShowReceipt.FlatAppearance.BorderSize = 0
+        Me.btnPayAndShowReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPayAndShowReceipt.Font = New System.Drawing.Font("Segoe UI Black", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPayAndShowReceipt.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnPayAndShowReceipt.Location = New System.Drawing.Point(181, 452)
+        Me.btnPayAndShowReceipt.Name = "btnPayAndShowReceipt"
+        Me.btnPayAndShowReceipt.Size = New System.Drawing.Size(244, 45)
+        Me.btnPayAndShowReceipt.TabIndex = 39
+        Me.btnPayAndShowReceipt.Text = "Pay and Show Receipt"
+        Me.btnPayAndShowReceipt.UseVisualStyleBackColor = False
         '
         'txtPayment
         '
@@ -799,7 +799,7 @@ Partial Class Payment_Page
     Friend WithEvents lblTotalFee As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Label29 As Label
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnPayAndShowReceipt As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label9 As Label

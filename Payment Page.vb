@@ -5,16 +5,18 @@
         SessionHandlingPage.loadSessionHandlingPage()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Dim dblPayment As Double = txtPayment.Text
-        If dblPayment >= Booking_Page.totalFee Then
-            loadReceipt()
-            FileManipulator.SavePet(activeAccount, Booking_Page.tempPetObject)
-            'FileManipulator.SaveBooking(Booking_Page.tempPetObject.appointment.dateAppointment)
-            NavigatorPage.childForm(Receipt_Page)
-        Else
-            MsgBox("Insufficient funds", vbCritical)
-        End If
+    Private Sub btnPayAndShowReceipt_Click(sender As Object, e As EventArgs) Handles btnPayAndShowReceipt.Click
+        'Dim dblPayment As Double = txtPayment.Text
+        'If dblPayment >= Booking_Page.totalFee Then
+        '    loadReceipt()
+        '    FileManipulator.SavePet(activeAccount, Booking_Page.tempPetObject)
+        '    'FileManipulator.SaveBooking(Booking_Page.tempPetObject.appointment.dateAppointment)
+        '    NavigatorPage.childForm(Receipt_Page)
+        'Else
+        '    MsgBox("Insufficient funds", vbCritical)
+        'End If
+        Rcd_Page.childForm(WalkInReceiptPage)
+        WalkInReceiptPage.loadWalkInReceiptPage()
     End Sub
 
     Public Sub loadPaymentPage()
@@ -30,7 +32,7 @@
             total += computeTotalBill(petType, petProc)
         Next
 
-        lblTotalFee.Text = total.ToString("C2", Globalization.CultureInfo.GetCultureInfo("en-PH"))
+        lblTotalFee.Text = ToPesoFormat(total)
     End Sub
 
     Public Sub loadReceipt()
