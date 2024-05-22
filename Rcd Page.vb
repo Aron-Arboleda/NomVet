@@ -34,4 +34,9 @@ Public Class Rcd_Page
         Me.Hide()
         Login_Page.Show()
     End Sub
+
+    Private Sub btnRecords_Click(sender As Object, e As EventArgs) Handles btnRecords.Click
+        childForm(AdminRecordsPage)
+        AdminRecordsPage.loadAdminRecordsPage()
+    End Sub
 End Class

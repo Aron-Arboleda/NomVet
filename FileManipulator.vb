@@ -71,6 +71,16 @@ Public Class FileManipulator
         End Using
     End Sub
 
+    Public Shared Function ReadPetOwners()
+        Dim lines() As String = readData(accountsDatabaseFilePath)
+        Dim petownersList As New List(Of PetOwner)
+        For Each line As String In lines
+            Dim petOwnerObject As PetOwner = parseAsPetOwner(line)
+            petownersList.Add(petOwnerObject)
+        Next
+        Return petownersList
+    End Function
+
     Public Shared Function parseAsPetOwner(line As String) As PetOwner
         Dim parsedStringsList() As String = line.Split(","c)
         Dim username = parsedStringsList(0)

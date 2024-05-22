@@ -27,8 +27,8 @@ Partial Class Rcd_Page
         Me.btnWalkinForm = New System.Windows.Forms.Button()
         Me.btnRecords = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.rcdDisplayPanel = New System.Windows.Forms.Panel()
         Me.btnLoginPage = New System.Windows.Forms.Button()
+        Me.rcdDisplayPanel = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
@@ -101,14 +101,6 @@ Partial Class Rcd_Page
         Me.Panel7.Size = New System.Drawing.Size(1113, 75)
         Me.Panel7.TabIndex = 33
         '
-        'rcdDisplayPanel
-        '
-        Me.rcdDisplayPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.rcdDisplayPanel.Location = New System.Drawing.Point(-2, 74)
-        Me.rcdDisplayPanel.Name = "rcdDisplayPanel"
-        Me.rcdDisplayPanel.Size = New System.Drawing.Size(1122, 680)
-        Me.rcdDisplayPanel.TabIndex = 41
-        '
         'btnLoginPage
         '
         Me.btnLoginPage.BackColor = System.Drawing.Color.White
@@ -123,6 +115,14 @@ Partial Class Rcd_Page
         Me.btnLoginPage.TabIndex = 24
         Me.btnLoginPage.Text = "Login Page"
         Me.btnLoginPage.UseVisualStyleBackColor = False
+        '
+        'rcdDisplayPanel
+        '
+        Me.rcdDisplayPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.rcdDisplayPanel.Location = New System.Drawing.Point(-2, 74)
+        Me.rcdDisplayPanel.Name = "rcdDisplayPanel"
+        Me.rcdDisplayPanel.Size = New System.Drawing.Size(1122, 680)
+        Me.rcdDisplayPanel.TabIndex = 41
         '
         'Rcd_Page
         '

@@ -26,6 +26,7 @@ Public Class AdmLog_Page
         If username = "admin" And password = "admin" Then
             Rcd_Page.Show()
             Me.Hide()
+            Rcd_Page.btnRecords.PerformClick()
         Else
             MessageBox.Show("Invalid input.")
         End If

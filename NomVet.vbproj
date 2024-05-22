@@ -91,6 +91,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminRecordsPage.Designer.vb">
+      <DependentUpon>AdminRecordsPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRecordsPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AdmLog Page.Designer.vb">
       <DependentUpon>AdmLog Page.vb</DependentUpon>
     </Compile>
@@ -172,12 +178,6 @@
     <Compile Include="Rcd Page.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Receipt Page.Designer.vb">
-      <DependentUpon>Receipt Page.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Receipt Page.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="RegisterPetsPage.Designer.vb">
       <DependentUpon>RegisterPetsPage.vb</DependentUpon>
     </Compile>
@@ -202,12 +202,6 @@
     <Compile Include="TrashForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WalkinBillingPage.Designer.vb">
-      <DependentUpon>WalkinBillingPage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="WalkinBillingPage.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="WalkInForm.Designer.vb">
       <DependentUpon>WalkInForm.vb</DependentUpon>
     </Compile>
@@ -222,6 +216,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AdminRecordsPage.resx">
+      <DependentUpon>AdminRecordsPage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdmLog Page.resx">
       <DependentUpon>AdmLog Page.vb</DependentUpon>
     </EmbeddedResource>
@@ -259,9 +256,6 @@
     <EmbeddedResource Include="Rcd Page.resx">
       <DependentUpon>Rcd Page.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Receipt Page.resx">
-      <DependentUpon>Receipt Page.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RegisterPetsPage.resx">
       <DependentUpon>RegisterPetsPage.vb</DependentUpon>
     </EmbeddedResource>
@@ -273,9 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrashForm.resx">
       <DependentUpon>TrashForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WalkinBillingPage.resx">
-      <DependentUpon>WalkinBillingPage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WalkInForm.resx">
       <DependentUpon>WalkInForm.vb</DependentUpon>
