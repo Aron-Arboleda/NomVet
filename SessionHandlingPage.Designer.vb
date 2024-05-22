@@ -69,7 +69,7 @@ Partial Class SessionHandlingPage
         '
         'nextVisitFlowParentPanel
         '
-        Me.nextVisitFlowParentPanel.AutoSize = True
+        Me.nextVisitFlowParentPanel.AutoScroll = True
         Me.nextVisitFlowParentPanel.BackColor = System.Drawing.Color.White
         Me.nextVisitFlowParentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.nextVisitFlowParentPanel.Controls.Add(Me.FlowLayoutPanel2)

@@ -39,6 +39,7 @@ Partial Class Payment_Page
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label36 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
@@ -68,7 +69,6 @@ Partial Class Payment_Page
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.billRowsPanel.SuspendLayout()
@@ -332,6 +332,18 @@ Partial Class Payment_Page
         Me.Panel1.Size = New System.Drawing.Size(455, 532)
         Me.Panel1.TabIndex = 28
         '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.BackColor = System.Drawing.Color.Transparent
+        Me.Label36.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label36.Location = New System.Drawing.Point(160, 111)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(41, 19)
+        Me.Label36.TabIndex = 46
+        Me.Label36.Text = "Type"
+        '
         'Label35
         '
         Me.Label35.AutoSize = True
@@ -397,9 +409,9 @@ Partial Class Payment_Page
         Me.billRowsPanel.AutoScroll = True
         Me.billRowsPanel.BackColor = System.Drawing.Color.Transparent
         Me.billRowsPanel.Controls.Add(Me.TableLayoutPanel3)
-        Me.billRowsPanel.Location = New System.Drawing.Point(44, 133)
+        Me.billRowsPanel.Location = New System.Drawing.Point(33, 133)
         Me.billRowsPanel.Name = "billRowsPanel"
-        Me.billRowsPanel.Size = New System.Drawing.Size(372, 147)
+        Me.billRowsPanel.Size = New System.Drawing.Size(392, 147)
         Me.billRowsPanel.TabIndex = 40
         '
         'TableLayoutPanel3
@@ -409,7 +421,7 @@ Partial Class Payment_Page
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.06542!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.93458!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label26, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label31, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.lblCheckupFee, 3, 0)
@@ -418,7 +430,7 @@ Partial Class Payment_Page
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(362, 28)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(376, 28)
         Me.TableLayoutPanel3.TabIndex = 0
         '
         'Label26
@@ -427,7 +439,7 @@ Partial Class Payment_Page
         Me.Label26.BackColor = System.Drawing.Color.Transparent
         Me.Label26.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label26.Location = New System.Drawing.Point(97, 0)
+        Me.Label26.Location = New System.Drawing.Point(103, 0)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(71, 19)
         Me.Label26.TabIndex = 36
@@ -451,7 +463,7 @@ Partial Class Payment_Page
         Me.lblCheckupFee.BackColor = System.Drawing.Color.Transparent
         Me.lblCheckupFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCheckupFee.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblCheckupFee.Location = New System.Drawing.Point(284, 0)
+        Me.lblCheckupFee.Location = New System.Drawing.Point(297, 0)
         Me.lblCheckupFee.Name = "lblCheckupFee"
         Me.lblCheckupFee.Size = New System.Drawing.Size(52, 22)
         Me.lblCheckupFee.TabIndex = 35
@@ -738,18 +750,6 @@ Partial Class Payment_Page
         Me.Label33.Size = New System.Drawing.Size(149, 48)
         Me.Label33.TabIndex = 40
         Me.Label33.Text = "PRICING"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.BackColor = System.Drawing.Color.Transparent
-        Me.Label36.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label36.Location = New System.Drawing.Point(160, 111)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(41, 19)
-        Me.Label36.TabIndex = 46
-        Me.Label36.Text = "Type"
         '
         'Payment_Page
         '

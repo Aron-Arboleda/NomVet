@@ -23,8 +23,10 @@ Partial Class WalkInReceiptPage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WalkInReceiptPage))
-        Me.btnBackToHome = New System.Windows.Forms.Button()
+        Me.btnBackToSessionPage = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.receiptRowsPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -53,21 +55,21 @@ Partial Class WalkInReceiptPage
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnBackToHome
+        'btnBackToSessionPage
         '
-        Me.btnBackToHome.BackColor = System.Drawing.Color.Transparent
-        Me.btnBackToHome.BackgroundImage = CType(resources.GetObject("btnBackToHome.BackgroundImage"), System.Drawing.Image)
-        Me.btnBackToHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBackToHome.FlatAppearance.BorderSize = 0
-        Me.btnBackToHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBackToHome.Font = New System.Drawing.Font("Segoe UI Black", 11.25!)
-        Me.btnBackToHome.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBackToHome.Location = New System.Drawing.Point(12, 12)
-        Me.btnBackToHome.Name = "btnBackToHome"
-        Me.btnBackToHome.Size = New System.Drawing.Size(204, 34)
-        Me.btnBackToHome.TabIndex = 41
-        Me.btnBackToHome.Text = "Back to Session Page"
-        Me.btnBackToHome.UseVisualStyleBackColor = False
+        Me.btnBackToSessionPage.BackColor = System.Drawing.Color.Transparent
+        Me.btnBackToSessionPage.BackgroundImage = CType(resources.GetObject("btnBackToSessionPage.BackgroundImage"), System.Drawing.Image)
+        Me.btnBackToSessionPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBackToSessionPage.FlatAppearance.BorderSize = 0
+        Me.btnBackToSessionPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBackToSessionPage.Font = New System.Drawing.Font("Segoe UI Black", 11.25!)
+        Me.btnBackToSessionPage.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBackToSessionPage.Location = New System.Drawing.Point(12, 12)
+        Me.btnBackToSessionPage.Name = "btnBackToSessionPage"
+        Me.btnBackToSessionPage.Size = New System.Drawing.Size(204, 34)
+        Me.btnBackToSessionPage.TabIndex = 41
+        Me.btnBackToSessionPage.Text = "Back to Session Page"
+        Me.btnBackToSessionPage.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -75,6 +77,8 @@ Partial Class WalkInReceiptPage
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.receiptRowsPanel)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label2)
@@ -98,6 +102,27 @@ Partial Class WalkInReceiptPage
         Me.Panel2.Size = New System.Drawing.Size(1009, 574)
         Me.Panel2.TabIndex = 43
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label5.Location = New System.Drawing.Point(670, 211)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(35, 20)
+        Me.Label5.TabIndex = 93
+        Me.Label5.Text = "N/A"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(671, 194)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 17)
+        Me.Label6.TabIndex = 92
+        Me.Label6.Text = "Next Visit"
+        '
         'receiptRowsPanel
         '
         Me.receiptRowsPanel.AutoScroll = True
@@ -115,7 +140,7 @@ Partial Class WalkInReceiptPage
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.02868!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.97132!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.lblCheckupFee, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label1, 2, 0)
@@ -145,7 +170,7 @@ Partial Class WalkInReceiptPage
         Me.lblCheckupFee.BackColor = System.Drawing.Color.Transparent
         Me.lblCheckupFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCheckupFee.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblCheckupFee.Location = New System.Drawing.Point(422, 0)
+        Me.lblCheckupFee.Location = New System.Drawing.Point(421, 0)
         Me.lblCheckupFee.Name = "lblCheckupFee"
         Me.lblCheckupFee.Size = New System.Drawing.Size(52, 22)
         Me.lblCheckupFee.TabIndex = 35
@@ -157,7 +182,7 @@ Partial Class WalkInReceiptPage
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(282, 0)
+        Me.Label1.Location = New System.Drawing.Point(281, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(71, 19)
         Me.Label1.TabIndex = 36
@@ -187,7 +212,7 @@ Partial Class WalkInReceiptPage
         '
         Me.lblSessionDate.AutoSize = True
         Me.lblSessionDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.lblSessionDate.Location = New System.Drawing.Point(582, 211)
+        Me.lblSessionDate.Location = New System.Drawing.Point(475, 211)
         Me.lblSessionDate.Name = "lblSessionDate"
         Me.lblSessionDate.Size = New System.Drawing.Size(106, 20)
         Me.lblSessionDate.TabIndex = 70
@@ -284,7 +309,7 @@ Partial Class WalkInReceiptPage
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Label30.Location = New System.Drawing.Point(583, 194)
+        Me.Label30.Location = New System.Drawing.Point(476, 194)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(42, 17)
         Me.Label30.TabIndex = 69
@@ -294,7 +319,7 @@ Partial Class WalkInReceiptPage
         '
         Me.lblPetOwner.AutoSize = True
         Me.lblPetOwner.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.lblPetOwner.Location = New System.Drawing.Point(313, 211)
+        Me.lblPetOwner.Location = New System.Drawing.Point(241, 211)
         Me.lblPetOwner.Name = "lblPetOwner"
         Me.lblPetOwner.Size = New System.Drawing.Size(149, 20)
         Me.lblPetOwner.TabIndex = 62
@@ -305,7 +330,7 @@ Partial Class WalkInReceiptPage
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Label32.Location = New System.Drawing.Point(314, 194)
+        Me.Label32.Location = New System.Drawing.Point(242, 194)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(83, 17)
         Me.Label32.TabIndex = 61
@@ -350,7 +375,7 @@ Partial Class WalkInReceiptPage
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1114, 674)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.btnBackToHome)
+        Me.Controls.Add(Me.btnBackToSessionPage)
         Me.Name = "WalkInReceiptPage"
         Me.Text = "WalkInReceiptPage"
         Me.Panel2.ResumeLayout(False)
@@ -364,7 +389,7 @@ Partial Class WalkInReceiptPage
 
     End Sub
 
-    Friend WithEvents btnBackToHome As Button
+    Friend WithEvents btnBackToSessionPage As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
@@ -388,4 +413,6 @@ Partial Class WalkInReceiptPage
     Friend WithEvents Label3 As Label
     Friend WithEvents lblCheckupFee As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

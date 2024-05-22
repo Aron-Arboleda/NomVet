@@ -37,14 +37,16 @@ Public Module CoreClasses
         Public dblWeight As Double
         Public strType As String
         Public boolVaccinated As String
+        Public dateOfNextVisit As String = "N/A"
 
-        Public Sub New(ByVal strName As String, ByVal intAge As Integer, ByVal dateBirthday As Date, ByVal dblWeight As Double, ByVal strType As String, ByVal boolVaccinated As String)
+        Public Sub New(ByVal strName As String, ByVal intAge As Integer, ByVal dateBirthday As Date, ByVal dblWeight As Double, ByVal strType As String, ByVal boolVaccinated As String, ByVal dateOfNextVisit As String)
             Me.strName = strName
             Me.intAge = intAge
             Me.dateBirthday = dateBirthday
             Me.dblWeight = dblWeight
             Me.strType = strType
             Me.boolVaccinated = boolVaccinated
+            Me.dateOfNextVisit = dateOfNextVisit
         End Sub
     End Class
 
@@ -63,14 +65,34 @@ Public Module CoreClasses
     End Class
 
     Public Class Session
+        Public sessionId As Integer
         Public petOwner As PetOwner
         Public dateMade As Date
         Public petWithProcedureList As List(Of String)
 
-        Public Sub New(ByVal petOwner As PetOwner, ByVal dateMade As Date, ByVal petWithProcedureList As List(Of String))
+        Public Sub New(ByVal sessionId As Integer, ByVal petOwner As PetOwner, ByVal dateMade As Date, ByVal petWithProcedureList As List(Of String))
+            Me.sessionId = sessionId
             Me.petOwner = petOwner
             Me.dateMade = dateMade
             Me.petWithProcedureList = petWithProcedureList
+        End Sub
+
+        Public Shared Function ranCode()
+            Return Int((4 * Rnd()) + 1)
+        End Function
+    End Class
+
+    Public Class NextVisit
+        Public petName As String
+        Public dateOfNextVisit As String
+        Public vacStatus As String
+        Public procedure As String
+
+        Public Sub New(ByVal petName As String, ByVal dateOfNextVisit As String, ByVal vacStatus As String, ByVal procedure As String)
+            Me.petName = petName
+            Me.dateOfNextVisit = dateOfNextVisit
+            Me.vacStatus = vacStatus
+            Me.procedure = procedure
         End Sub
     End Class
 

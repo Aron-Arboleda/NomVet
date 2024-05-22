@@ -239,7 +239,7 @@
         End Sub
 
         Public Overridable Function getPetObject() As Pet
-            petObject = New Pet(txtPetName.Text, numPetAge.Text, dtpPetBirthday.Value.Date, numPetWeight.Text, cbPetType.SelectedItem, cbPetVacStatus.SelectedItem)
+            petObject = New Pet(txtPetName.Text, numPetAge.Text, dtpPetBirthday.Value.Date, numPetWeight.Text, cbPetType.SelectedItem, cbPetVacStatus.SelectedItem, "N/A")
 
             Return petObject
         End Function
@@ -283,7 +283,7 @@
         End Sub
 
         Public Overrides Function getPetObject() As Pet
-            petObject = New Pet(txtPetName.Text, numPetAge.Text, dtpPetBirthday.Value.Date, numPetWeight.Text, cbPetType.SelectedItem, cbPetVacStatus.SelectedItem)
+            petObject = New Pet(txtPetName.Text, numPetAge.Text, dtpPetBirthday.Value.Date, numPetWeight.Text, cbPetType.SelectedItem, cbPetVacStatus.SelectedItem, "N/A")
 
             Return petObject
         End Function
@@ -402,11 +402,14 @@
 
 
             'Inputs
-
+            rbYes.Select()
             rbYes.Text = "Yes"
             rbNo.Text = "No"
             rbYes.AutoSize = True
             rbNo.AutoSize = True
+
+            AddHandler Me.rbYes.CheckedChanged, AddressOf Me.rbYes_CheckedChanged
+            AddHandler Me.rbNo.CheckedChanged, AddressOf Me.rbNo_CheckedChanged
 
             dtpNextVisitDate.Size = New System.Drawing.Size(196, 20)
 
@@ -443,18 +446,29 @@
                 .Controls.Add(cbPetVacStatus, 2, 1)
                 .Controls.Add(cbPetProcedure, 3, 1)
             End With
-
-
-
-
         End Sub
 
-        'Public Overridable Function getPetObject() As Pet
-        '    petObject = New Pet(txtPetName.Text, numPetAge.Text, dtpPetBirthday.Value.Date, numPetWeight.Text, cbPetType.SelectedItem, cbPetVacStatus.SelectedItem)
+        Public Function getNextVistObject() As NextVisit
+            Dim nextVisitObject As NextVisit
+            If rbYes.Checked Then
+                nextVisitObject = New NextVisit(lblPetName.Text, dtpNextVisitDate.Value.Date, cbPetVacStatus.SelectedItem, cbPetProcedure.SelectedItem)
+            Else
+                nextVisitObject = New NextVisit(lblPetName.Text, "N/A", cbPetVacStatus.SelectedItem, cbPetProcedure.SelectedItem)
+            End If
+            Return nextVisitObject
+        End Function
 
-        '    Return petObject
-        'End Function
+        Private Sub rbYes_CheckedChanged(sender As Object, e As EventArgs)
+            If rbYes.Checked Then
+                dtpNextVisitDate.Enabled = True
+            End If
+        End Sub
 
+        Private Sub rbNo_CheckedChanged(sender As Object, e As EventArgs)
+            If rbNo.Checked Then
+                dtpNextVisitDate.Enabled = False
+            End If
+        End Sub
     End Class
 
     Public Class BillingRowPanel
@@ -469,7 +483,7 @@
         Public Sub New(petWithProcedureString As String)
 
             Me.BackColor = Color.Transparent
-            Me.Size = New System.Drawing.Size(357, 28)
+            Me.Size = New System.Drawing.Size(376, 28)
             Me.ColumnCount = 4
             Me.RowCount = 1
             Me.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25))

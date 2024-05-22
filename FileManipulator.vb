@@ -29,9 +29,10 @@ Public Class FileManipulator
         Return Nothing
     End Function
 
-    Public Shared Function findPetOwnerWithName(lines() As String, petOwnerName As String) As PetOwner
+    Public Shared Function findPetOwnerWithName(petOwnerName As String) As PetOwner
+        Dim linessss() As String = readData(accountsDatabaseFilePath)
         Dim petOwnerObject As PetOwner
-        For Each line As String In lines
+        For Each line As String In linessss
             petOwnerObject = parseAsPetOwner(line)
             If petOwnerObject.strName = petOwnerName Then
                 Return petOwnerObject
@@ -50,29 +51,7 @@ Public Class FileManipulator
         Return lines
     End Function
 
-    Public Shared Function parseAsPetOwner(line As String) As PetOwner
-        Dim parsedStringsList() As String = line.Split(","c)
-        Dim username = parsedStringsList(0)
-        Dim password = parsedStringsList(1)
-        Dim name = parsedStringsList(2)
-        Dim age = parsedStringsList(3)
-        Dim sex = parsedStringsList(4)
-        Dim address = parsedStringsList(5)
-        Dim petOwnerObject As New PetOwner(username, password, name, age, sex, address, New List(Of Pet))
-        Return petOwnerObject
-    End Function
 
-    Public Shared Function parseAsPet(line As String) As Pet
-        Dim parsedStringsList() As String = line.Split(","c)
-        Dim name = parsedStringsList(0)
-        Dim age = parsedStringsList(1)
-        Dim bday = parsedStringsList(2)
-        Dim weight = parsedStringsList(3)
-        Dim type = parsedStringsList(4)
-        Dim vaccineStatus = parsedStringsList(5)
-        Dim petObject As New Pet(name, age, bday, weight, type, vaccineStatus)
-        Return petObject
-    End Function
     Public Shared Sub createDataBaseFile(filename As String)
         Dim databaseFilePath As String = filename
 
@@ -92,14 +71,65 @@ Public Class FileManipulator
         End Using
     End Sub
 
+    Public Shared Function parseAsPetOwner(line As String) As PetOwner
+        Dim parsedStringsList() As String = line.Split(","c)
+        Dim username = parsedStringsList(0)
+        Dim password = parsedStringsList(1)
+        Dim name = parsedStringsList(2)
+        Dim age = parsedStringsList(3)
+        Dim sex = parsedStringsList(4)
+        Dim address = parsedStringsList(5)
+        Dim petOwnerObject As New PetOwner(username, password, name, age, sex, address, New List(Of Pet))
+        Return petOwnerObject
+    End Function
+
     Public Shared Sub ClearPets(petOwnerObject As PetOwner)
         File.WriteAllText(petOwnerObject.getUsername + ".txt", String.Empty)
     End Sub
+
+    Public Shared Function ReadPets(activeAccount As PetOwner)
+        Dim lines() As String = readData(activeAccount.getUsername() & ".txt")
+        Dim petsList As New List(Of Pet)
+        For Each line As String In lines
+            Dim petObject As Pet = parseAsPet(line)
+            petsList.Add(petObject)
+        Next
+        Return petsList
+    End Function
+
+    Public Shared Sub SavePets(petOwner As PetOwner)
+        ClearPets(petOwner)
+        For Each pet In petOwner.petsList
+            SavePet(petOwner, pet)
+        Next
+    End Sub
+
     Public Shared Sub SavePet(petOwnerObject As PetOwner, petObject As Pet)
         Using writer As StreamWriter = File.AppendText(petOwnerObject.getUsername + ".txt")
-            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated)
+            writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & petObject.dateOfNextVisit)
         End Using
     End Sub
+
+    Public Shared Function parseAsPet(line As String) As Pet
+        Dim parsedStringsList() As String = line.Split(","c)
+        Dim name = parsedStringsList(0)
+        Dim age = parsedStringsList(1)
+        Dim bday = parsedStringsList(2)
+        Dim weight = parsedStringsList(3)
+        Dim type = parsedStringsList(4)
+        Dim vaccineStatus = parsedStringsList(5)
+        Dim nextVisit = parsedStringsList(6)
+        Dim petObject As New Pet(name, age, bday, weight, type, vaccineStatus, nextVisit)
+        Return petObject
+    End Function
+
+    Public Shared Function getListOfPetsName(ByVal bookingLists As List(Of Appointment)) As List(Of String)
+        Dim petsNameLists As New List(Of String)
+        For Each book In bookingLists
+            petsNameLists.Add(book.pet)
+        Next
+        Return petsNameLists
+    End Function
 
     'Public Shared Sub SaveAppointment(petOwnerObject As PetOwner, petObject As Pet)
     '    Using writer As StreamWriter = File.AppendText(petOwnerObject.getUsername + ".txt")
@@ -125,14 +155,6 @@ Public Class FileManipulator
         Return bookingsList
     End Function
 
-    Public Shared Function getListOfPetsName(ByVal bookingLists As List(Of Appointment)) As List(Of String)
-        Dim petsNameLists As New List(Of String)
-        For Each book In bookingLists
-            petsNameLists.Add(book.pet)
-        Next
-        Return petsNameLists
-    End Function
-
     Public Shared Function parseAsBooking(line As String) As Appointment
         Dim parsedStringsList() As String = line.Split(","c)
         Dim petOwnerName As String = parsedStringsList(0)
@@ -156,27 +178,28 @@ Public Class FileManipulator
         Next
     End Sub
 
-    Public Shared Function ReadPetOwners()
-        Dim petOwnersList As New List(Of String)
-        Using reader As New System.IO.StreamReader(accountsDatabaseFilePath)
-            Dim line As String
-            Do While reader.Peek() >= 0
-                line = reader.ReadLine()
-                petOwnersList.Add(line)
-            Loop
-        End Using
-        Return petOwnersList
-    End Function
+    'Public Shared Function ReadPetOwners()
+    '    Dim petOwnersList As New List(Of String)
+    '    Using reader As New System.IO.StreamReader(accountsDatabaseFilePath)
+    '        Dim line As String
+    '        Do While reader.Peek() >= 0
+    '            line = reader.ReadLine()
+    '            petOwnersList.Add(line)
+    '        Loop
+    '    End Using
+    '    Return petOwnersList
+    'End Function
 
-    Public Shared Function ReadPets(activeAccount As PetOwner)
-        Dim lines() As String = readData(activeAccount.getUsername() & ".txt")
-        Dim petsList As New List(Of Pet)
-        For Each line As String In lines
-            Dim petObject As Pet = parseAsPet(line)
-            petsList.Add(petObject)
+    Public Shared Sub ClearSessions()
+        File.WriteAllText(sessionsDatabaseFilePath, String.Empty)
+    End Sub
+
+    Public Shared Sub SaveSessions(ByVal sessionsList As List(Of Session))
+        ClearSessions()
+        For Each session In sessionsList
+            SaveSession(session)
         Next
-        Return petsList
-    End Function
+    End Sub
 
     Public Shared Sub SaveSession(ByVal session As Session)
         Using writer As StreamWriter = File.AppendText(sessionsDatabaseFilePath)
@@ -185,7 +208,7 @@ Public Class FileManipulator
             For i = 1 To session.petWithProcedureList.Count - 1
                 str &= ("%" & session.petWithProcedureList.Item(i))
             Next
-            writer.WriteLine(session.petOwner.strName & "," & session.dateMade.Date & "," & str)
+            writer.WriteLine(session.sessionId & "," & session.petOwner.strName & "," & session.dateMade.Date & "," & str)
         End Using
     End Sub
 
@@ -203,14 +226,14 @@ Public Class FileManipulator
 
     Public Shared Function parseAsSession(line As String) As Session
         Dim parsedStringsList() As String = line.Split(","c)
-        Dim petOwnerName As String = parsedStringsList(0)
-        Dim dateMade As String = parsedStringsList(1)
-        Dim petsList As List(Of String) = parsedStringsList(2).Split("%"c).ToList()
+        Dim sessionId As String = parsedStringsList(0)
+        Dim petOwnerName As String = parsedStringsList(1)
+        Dim dateMade As String = parsedStringsList(2)
+        Dim petsList As List(Of String) = parsedStringsList(3).Split("%"c).ToList()
 
-        Dim lines() As String = readData(accountsDatabaseFilePath)
-        Dim petOwnerObject As PetOwner = findPetOwnerWithName(lines, petOwnerName)
+        Dim petOwnerObject As PetOwner = findPetOwnerWithName(petOwnerName)
 
-        Dim sessionObject As New Session(petOwnerObject, dateMade, petsList)
+        Dim sessionObject As New Session(sessionId, petOwnerObject, dateMade, petsList)
         Return sessionObject
     End Function
 End Class

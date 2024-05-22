@@ -2,6 +2,8 @@
     Dim sessionsList As List(Of Session)
     Public selectedSession As Session
 
+    Public nextVisitPanelsList As List(Of SessionNextVisitPanel)
+    Public nextVisitsList As New List(Of NextVisit)
 
     Public Sub loadSessionHandlingPage()
         loadListView()
@@ -27,10 +29,13 @@
         nextVisitFlowParentPanel.Controls.Clear()
         If lstViewSessions.SelectedIndices.Count > 0 Then
             selectedSession = sessionsList.Item(lstViewSessions.SelectedIndices.Item(0))
+            Dim nVPanelsList As New List(Of SessionNextVisitPanel)
             For Each aPetString In selectedSession.petWithProcedureList
                 Dim petPanel As New SessionNextVisitPanel(aPetString)
+                nVPanelsList.Add(petPanel)
                 nextVisitFlowParentPanel.Controls.Add(petPanel)
             Next
+            nextVisitPanelsList = nVPanelsList
         End If
     End Sub
 
@@ -56,9 +61,6 @@
         End With
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
 
     Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles nextVisitFlowParentPanel.Paint
 
@@ -71,7 +73,17 @@
 
     Private Sub btnBookAndPay_Click(sender As Object, e As EventArgs) Handles btnBookAndPay.Click
         Rcd_Page.childForm(Payment_Page)
-
+        storeNextVisitsTemporarily()
         Payment_Page.loadPaymentPage()
     End Sub
+
+    Public Sub storeNextVisitsTemporarily()
+        If lstViewSessions.SelectedIndices.Count > 0 Then
+            nextVisitsList.Clear()
+            For Each nvPanel In nextVisitPanelsList
+                nextVisitsList.Add(nvPanel.getNextVistObject())
+            Next
+        End If
+    End Sub
+
 End Class

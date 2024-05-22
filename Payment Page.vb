@@ -6,17 +6,38 @@
     End Sub
 
     Private Sub btnPayAndShowReceipt_Click(sender As Object, e As EventArgs) Handles btnPayAndShowReceipt.Click
-        'Dim dblPayment As Double = txtPayment.Text
-        'If dblPayment >= Booking_Page.totalFee Then
-        '    loadReceipt()
-        '    FileManipulator.SavePet(activeAccount, Booking_Page.tempPetObject)
-        '    'FileManipulator.SaveBooking(Booking_Page.tempPetObject.appointment.dateAppointment)
-        '    NavigatorPage.childForm(Receipt_Page)
-        'Else
-        '    MsgBox("Insufficient funds", vbCritical)
-        'End If
         Rcd_Page.childForm(WalkInReceiptPage)
         WalkInReceiptPage.loadWalkInReceiptPage()
+        updatePets(SessionHandlingPage.selectedSession.petOwner.strName, SessionHandlingPage.nextVisitsList)
+        updateSessions(SessionHandlingPage.selectedSession)
+    End Sub
+
+    Public Sub updatePets(petOwner As String, nextVisitsList As List(Of NextVisit))
+        Dim owner As PetOwner = FileManipulator.findPetOwnerWithName(petOwner)
+        Dim petsListtt As List(Of Pet) = FileManipulator.ReadPets(owner)
+        owner.petsList = petsListtt
+
+        For Each nv In nextVisitsList
+            For Each pet In petsListtt
+                If nv.petName = pet.strName Then
+                    pet.dateOfNextVisit = nv.dateOfNextVisit
+                    pet.boolVaccinated = nv.vacStatus
+                End If
+            Next
+        Next
+
+        FileManipulator.SavePets(owner)
+    End Sub
+
+    Public Sub updateSessions(ByVal session As Session)
+        Dim sessions As List(Of Session) = FileManipulator.ReadSessions()
+        For Each s As Session In sessions
+            If s.sessionId = session.sessionId Then
+                sessions.Remove(s)
+                Exit For
+            End If
+        Next
+        FileManipulator.SaveSessions(sessions)
     End Sub
 
     Public Sub loadPaymentPage()

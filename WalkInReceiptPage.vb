@@ -22,4 +22,9 @@
         lblAmountPaid.Text = ToPesoFormat(amountPaid)
         lblChange.Text = ToPesoFormat(change)
     End Sub
+
+    Private Sub btnBackToSessionPage_Click(sender As Object, e As EventArgs) Handles btnBackToSessionPage.Click
+        Rcd_Page.childForm(SessionHandlingPage)
+        SessionHandlingPage.loadSessionHandlingPage()
+    End Sub
 End Class

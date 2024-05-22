@@ -22,10 +22,12 @@
         Next
         activeAccount.petsList = registeredPetsList
 
-        FileManipulator.ClearPets(activeAccount)
-        For Each pet In activeAccount.petsList
-            FileManipulator.SavePet(activeAccount, pet)
-        Next
+        FileManipulator.SavePets(activeAccount)
+
+        'FileManipulator.ClearPets(activeAccount)
+        'For Each pet In activeAccount.petsList
+        '    FileManipulator.SavePet(activeAccount, pet)
+        'Next
         MsgBox("Pets Registered!", vbOKOnly + vbInformation, "Pet Registration")
     End Sub
 
