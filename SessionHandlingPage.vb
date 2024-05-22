@@ -1,6 +1,6 @@
 ﻿Public Class SessionHandlingPage
     Dim sessionsList As List(Of Session)
-
+    Public selectedSession As Session
     Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
 
     End Sub
@@ -15,6 +15,7 @@
 
     Public Sub loadSessionHandlingPage()
         loadListView()
+        lblPetOwner.Text = "N/A"
         petsAndProceduresPanel.Controls.Clear()
         nextVisitFlowParentPanel.Controls.Clear()
     End Sub
@@ -23,7 +24,7 @@
         petsAndProceduresPanel.Controls.Clear()
         lblPetOwner.Text = "N/A"
         If lstViewSessions.SelectedIndices.Count > 0 Then
-            Dim selectedSession = sessionsList.Item(lstViewSessions.SelectedIndices.Item(0))
+            selectedSession = sessionsList.Item(lstViewSessions.SelectedIndices.Item(0))
             lblPetOwner.Text = selectedSession.petOwner.strName
             For Each aPetString In selectedSession.petWithProcedureList
                 Dim petPanel As New SessionPetPanel(aPetString)
@@ -35,7 +36,7 @@
     Public Sub loadNextVisits()
         nextVisitFlowParentPanel.Controls.Clear()
         If lstViewSessions.SelectedIndices.Count > 0 Then
-            Dim selectedSession = sessionsList.Item(lstViewSessions.SelectedIndices.Item(0))
+            selectedSession = sessionsList.Item(lstViewSessions.SelectedIndices.Item(0))
             For Each aPetString In selectedSession.petWithProcedureList
                 Dim petPanel As New SessionNextVisitPanel(aPetString)
                 nextVisitFlowParentPanel.Controls.Add(petPanel)
@@ -78,5 +79,9 @@
         loadNextVisits()
     End Sub
 
+    Private Sub btnBookAndPay_Click(sender As Object, e As EventArgs) Handles btnBookAndPay.Click
+        Rcd_Page.childForm(Payment_Page)
 
+        Payment_Page.loadPaymentPage()
+    End Sub
 End Class

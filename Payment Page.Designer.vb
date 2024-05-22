@@ -39,14 +39,20 @@ Partial Class Payment_Page
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.lblPetOwner = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.billRowsPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.lblCheckupFee = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtPayment = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.lblCheckupFee = New System.Windows.Forms.Label()
-        Me.lblVaccineFee = New System.Windows.Forms.Label()
         Me.lblTotalFee = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -62,8 +68,11 @@ Partial Class Payment_Page
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.billRowsPanel.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -295,30 +304,158 @@ Partial Class Payment_Page
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 40.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(31, 33)
+        Me.Label4.Location = New System.Drawing.Point(13, 12)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(296, 48)
+        Me.Label4.Size = New System.Drawing.Size(192, 48)
         Me.Label4.TabIndex = 26
-        Me.Label4.Text = "Booking Summary"
+        Me.Label4.Text = "Session Bill"
         '
         'Panel1
         '
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.Label36)
+        Me.Panel1.Controls.Add(Me.Label35)
+        Me.Panel1.Controls.Add(Me.Label34)
+        Me.Panel1.Controls.Add(Me.Label30)
+        Me.Panel1.Controls.Add(Me.lblPetOwner)
+        Me.Panel1.Controls.Add(Me.Label27)
+        Me.Panel1.Controls.Add(Me.billRowsPanel)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.txtPayment)
         Me.Panel1.Controls.Add(Me.Label32)
-        Me.Panel1.Controls.Add(Me.lblCheckupFee)
-        Me.Panel1.Controls.Add(Me.lblVaccineFee)
         Me.Panel1.Controls.Add(Me.lblTotalFee)
-        Me.Panel1.Controls.Add(Me.Label31)
-        Me.Panel1.Controls.Add(Me.Label30)
         Me.Panel1.Controls.Add(Me.Label29)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Location = New System.Drawing.Point(82, 76)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(455, 532)
         Me.Panel1.TabIndex = 28
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.BackColor = System.Drawing.Color.Transparent
+        Me.Label35.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label35.Location = New System.Drawing.Point(342, 111)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(40, 19)
+        Me.Label35.TabIndex = 45
+        Me.Label35.Text = "Total"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.BackColor = System.Drawing.Color.Transparent
+        Me.Label34.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label34.Location = New System.Drawing.Point(237, 111)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(73, 19)
+        Me.Label34.TabIndex = 44
+        Me.Label34.Text = "Procedure"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.BackColor = System.Drawing.Color.Transparent
+        Me.Label30.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label30.Location = New System.Drawing.Point(75, 111)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(29, 19)
+        Me.Label30.TabIndex = 43
+        Me.Label30.Text = "Pet"
+        '
+        'lblPetOwner
+        '
+        Me.lblPetOwner.AutoSize = True
+        Me.lblPetOwner.BackColor = System.Drawing.Color.Transparent
+        Me.lblPetOwner.Font = New System.Drawing.Font("Tw Cen MT", 23.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
+        Me.lblPetOwner.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblPetOwner.Location = New System.Drawing.Point(159, 73)
+        Me.lblPetOwner.Name = "lblPetOwner"
+        Me.lblPetOwner.Size = New System.Drawing.Size(53, 27)
+        Me.lblPetOwner.TabIndex = 42
+        Me.lblPetOwner.Text = "N/A"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.BackColor = System.Drawing.Color.Transparent
+        Me.Label27.Font = New System.Drawing.Font("Tw Cen MT", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label27.Location = New System.Drawing.Point(39, 73)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(118, 27)
+        Me.Label27.TabIndex = 41
+        Me.Label27.Text = "Pet Owner:"
+        '
+        'billRowsPanel
+        '
+        Me.billRowsPanel.AutoScroll = True
+        Me.billRowsPanel.BackColor = System.Drawing.Color.Transparent
+        Me.billRowsPanel.Controls.Add(Me.TableLayoutPanel3)
+        Me.billRowsPanel.Location = New System.Drawing.Point(44, 133)
+        Me.billRowsPanel.Name = "billRowsPanel"
+        Me.billRowsPanel.Size = New System.Drawing.Size(372, 147)
+        Me.billRowsPanel.TabIndex = 40
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TableLayoutPanel3.ColumnCount = 4
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.06542!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.93458!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.Label26, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label31, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.lblCheckupFee, 3, 0)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 1
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(362, 28)
+        Me.TableLayoutPanel3.TabIndex = 0
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.BackColor = System.Drawing.Color.Transparent
+        Me.Label26.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label26.Location = New System.Drawing.Point(97, 0)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(71, 19)
+        Me.Label26.TabIndex = 36
+        Me.Label26.Text = "Check-Up"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.BackColor = System.Drawing.Color.Transparent
+        Me.Label31.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label31.Location = New System.Drawing.Point(3, 0)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(44, 19)
+        Me.Label31.TabIndex = 32
+        Me.Label31.Text = "Moon"
+        '
+        'lblCheckupFee
+        '
+        Me.lblCheckupFee.AutoSize = True
+        Me.lblCheckupFee.BackColor = System.Drawing.Color.Transparent
+        Me.lblCheckupFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCheckupFee.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblCheckupFee.Location = New System.Drawing.Point(284, 0)
+        Me.lblCheckupFee.Name = "lblCheckupFee"
+        Me.lblCheckupFee.Size = New System.Drawing.Size(52, 22)
+        Me.lblCheckupFee.TabIndex = 35
+        Me.lblCheckupFee.Text = " 500.00"
         '
         'Button4
         '
@@ -339,9 +476,9 @@ Partial Class Payment_Page
         'txtPayment
         '
         Me.txtPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPayment.Location = New System.Drawing.Point(86, 379)
+        Me.txtPayment.Location = New System.Drawing.Point(65, 379)
         Me.txtPayment.Name = "txtPayment"
-        Me.txtPayment.Size = New System.Drawing.Size(283, 38)
+        Me.txtPayment.Size = New System.Drawing.Size(321, 38)
         Me.txtPayment.TabIndex = 37
         '
         'Label32
@@ -350,35 +487,11 @@ Partial Class Payment_Page
         Me.Label32.BackColor = System.Drawing.Color.Transparent
         Me.Label32.Font = New System.Drawing.Font("Tw Cen MT", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label32.Location = New System.Drawing.Point(58, 334)
+        Me.Label32.Location = New System.Drawing.Point(58, 341)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(101, 29)
         Me.Label32.TabIndex = 36
         Me.Label32.Text = "Payment"
-        '
-        'lblCheckupFee
-        '
-        Me.lblCheckupFee.AutoSize = True
-        Me.lblCheckupFee.BackColor = System.Drawing.Color.Transparent
-        Me.lblCheckupFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.lblCheckupFee.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblCheckupFee.Location = New System.Drawing.Point(292, 115)
-        Me.lblCheckupFee.Name = "lblCheckupFee"
-        Me.lblCheckupFee.Size = New System.Drawing.Size(68, 29)
-        Me.lblCheckupFee.TabIndex = 35
-        Me.lblCheckupFee.Text = " 500.00"
-        '
-        'lblVaccineFee
-        '
-        Me.lblVaccineFee.AutoSize = True
-        Me.lblVaccineFee.BackColor = System.Drawing.Color.Transparent
-        Me.lblVaccineFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.lblVaccineFee.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblVaccineFee.Location = New System.Drawing.Point(288, 155)
-        Me.lblVaccineFee.Name = "lblVaccineFee"
-        Me.lblVaccineFee.Size = New System.Drawing.Size(77, 29)
-        Me.lblVaccineFee.TabIndex = 34
-        Me.lblVaccineFee.Text = "1,000.00"
         '
         'lblTotalFee
         '
@@ -386,35 +499,11 @@ Partial Class Payment_Page
         Me.lblTotalFee.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalFee.Font = New System.Drawing.Font("Tw Cen MT Condensed", 25.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, CType(0, Byte))
         Me.lblTotalFee.ForeColor = System.Drawing.Color.DarkCyan
-        Me.lblTotalFee.Location = New System.Drawing.Point(288, 224)
+        Me.lblTotalFee.Location = New System.Drawing.Point(256, 294)
         Me.lblTotalFee.Name = "lblTotalFee"
         Me.lblTotalFee.Size = New System.Drawing.Size(91, 29)
         Me.lblTotalFee.TabIndex = 33
         Me.lblTotalFee.Text = "1,500.00"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.BackColor = System.Drawing.Color.Transparent
-        Me.Label31.Font = New System.Drawing.Font("Tw Cen MT", 23.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label31.Location = New System.Drawing.Point(76, 117)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(142, 27)
-        Me.Label31.TabIndex = 32
-        Me.Label31.Text = "Check-Up Fee"
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.BackColor = System.Drawing.Color.Transparent
-        Me.Label30.Font = New System.Drawing.Font("Tw Cen MT", 23.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label30.Location = New System.Drawing.Point(76, 157)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(124, 27)
-        Me.Label30.TabIndex = 31
-        Me.Label30.Text = "Vaccine Fee"
         '
         'Label29
         '
@@ -422,11 +511,11 @@ Partial Class Payment_Page
         Me.Label29.BackColor = System.Drawing.Color.Transparent
         Me.Label29.Font = New System.Drawing.Font("Tw Cen MT", 23.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label29.Location = New System.Drawing.Point(76, 226)
+        Me.Label29.Location = New System.Drawing.Point(102, 294)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(98, 27)
+        Me.Label29.Size = New System.Drawing.Size(103, 27)
         Me.Label29.TabIndex = 30
-        Me.Label29.Text = "Total Fee"
+        Me.Label29.Text = "Total Fee:"
         '
         'TableLayoutPanel2
         '
@@ -650,6 +739,18 @@ Partial Class Payment_Page
         Me.Label33.TabIndex = 40
         Me.Label33.Text = "PRICING"
         '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.BackColor = System.Drawing.Color.Transparent
+        Me.Label36.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label36.Location = New System.Drawing.Point(160, 111)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(41, 19)
+        Me.Label36.TabIndex = 46
+        Me.Label36.Text = "Type"
+        '
         'Payment_Page
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -667,6 +768,9 @@ Partial Class Payment_Page
         Me.TableLayoutPanel1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.billRowsPanel.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         Me.ResumeLayout(False)
@@ -692,10 +796,8 @@ Partial Class Payment_Page
     Friend WithEvents txtPayment As TextBox
     Friend WithEvents Label32 As Label
     Friend WithEvents lblCheckupFee As Label
-    Friend WithEvents lblVaccineFee As Label
     Friend WithEvents lblTotalFee As Label
     Friend WithEvents Label31 As Label
-    Friend WithEvents Label30 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents Label3 As Label
@@ -713,4 +815,13 @@ Partial Class Payment_Page
     Friend WithEvents Label24 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents Label33 As Label
+    Friend WithEvents billRowsPanel As FlowLayoutPanel
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents Label35 As Label
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents lblPetOwner As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label36 As Label
 End Class

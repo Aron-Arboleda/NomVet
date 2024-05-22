@@ -440,8 +440,8 @@
                 radioPanel.Controls.Add(rbNo)
                 .Controls.Add(radioPanel, 0, 1)
                 .Controls.Add(dtpNextVisitDate, 1, 1)
-                .Controls.Add(cbPetProcedure, 2, 1)
-                .Controls.Add(cbPetVacStatus, 3, 1)
+                .Controls.Add(cbPetVacStatus, 2, 1)
+                .Controls.Add(cbPetProcedure, 3, 1)
             End With
 
 
@@ -455,6 +455,51 @@
         '    Return petObject
         'End Function
 
+    End Class
+
+    Public Class BillingRowPanel
+        Inherits TableLayoutPanel
+
+        Public lblPetName As New PetLabel
+        Public lblPetType As New PetLabel
+        Public lblProcedure As New PetLabel
+        Public lblTotal As New PetLabel
+
+
+        Public Sub New(petWithProcedureString As String)
+
+            Me.BackColor = Color.Transparent
+            Me.Size = New System.Drawing.Size(357, 28)
+            Me.ColumnCount = 4
+            Me.RowCount = 1
+            Me.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25))
+            Me.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25))
+            Me.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 27))
+            Me.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 23))
+            Me.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
+
+            Dim petType As String = petWithProcedureString.Split("#"c)(1)
+            Dim petProcedure As String = petWithProcedureString.Split("#"c)(2)
+
+            lblPetName.Text = petWithProcedureString.Split("#"c)(0)
+            lblPetName.Font = New Font("Tw Cen MT", 12, FontStyle.Regular)
+            lblPetType.Text = petType
+            lblPetType.Font = New Font("Tw Cen MT", 12, FontStyle.Regular)
+            lblProcedure.Text = petProcedure
+            lblProcedure.Font = New Font("Tw Cen MT", 12, FontStyle.Regular)
+            lblTotal.Text = computeTotalBill(petType, petProcedure).ToString("C2", Globalization.CultureInfo.GetCultureInfo("en-PH"))
+            lblTotal.Font = New Font("Tw Cen MT", 12, FontStyle.Bold)
+
+            Dim PetLabels() As Label = {lblPetName, lblPetType, lblProcedure, lblTotal}
+
+            With Me
+                For i = 0 To PetLabels.Length - 1
+                    PetLabels(i).AutoSize = True
+                    PetLabels(i).Anchor = AnchorStyles.Left
+                    .Controls.Add(PetLabels(i), i, 0)
+                Next
+            End With
+        End Sub
     End Class
 
     Public Class PetLabel
