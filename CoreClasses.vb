@@ -51,12 +51,14 @@ Public Module CoreClasses
     End Class
 
     Public Class Appointment
+        Public appointmentId As Integer
         Public strProcedure As String
         Public dateAppointment As Date
         Public petOwner As String
         Public pet As String
 
-        Public Sub New(ByVal petOwner As String, ByVal pet As String, ByVal strProcedure As String, ByVal dateAppointment As Date)
+        Public Sub New(ByVal appointmentId As Integer, ByVal petOwner As String, ByVal pet As String, ByVal strProcedure As String, ByVal dateAppointment As Date)
+            Me.appointmentId = appointmentId
             Me.petOwner = petOwner
             Me.pet = pet
             Me.strProcedure = strProcedure
@@ -78,7 +80,7 @@ Public Module CoreClasses
         End Sub
 
         Public Shared Function ranCode()
-            Return Int((4 * Rnd()) + 1)
+            Return Int((100 * Rnd()) + 1)
         End Function
     End Class
 

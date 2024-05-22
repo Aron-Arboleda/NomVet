@@ -33,11 +33,23 @@
         Dim sessions As List(Of Session) = FileManipulator.ReadSessions()
         For Each s As Session In sessions
             If s.sessionId = session.sessionId Then
+                updateAppointments(s.sessionId)
                 sessions.Remove(s)
                 Exit For
             End If
         Next
         FileManipulator.SaveSessions(sessions)
+    End Sub
+
+    Public Sub updateAppointments(ByVal sessionId As Integer)
+        Dim appointments As List(Of Appointment) = FileManipulator.ReadBookings()
+        For Each a As Appointment In appointments
+            If a.appointmentId = sessionId Then
+                appointments.Remove(a)
+                Exit For
+            End If
+        Next
+        FileManipulator.SaveBookings(appointments)
     End Sub
 
     Public Sub loadPaymentPage()
@@ -55,21 +67,4 @@
 
         lblTotalFee.Text = ToPesoFormat(total)
     End Sub
-
-    Public Sub loadReceipt()
-        Receipt_Page.lblMessage.Text = "Hi " & activeAccount.strName & ", Your appoinment has been confirmed!"
-        Receipt_Page.lblPetOwnerName.Text = activeAccount.strName
-        Receipt_Page.lblPetOwnerAddress.Text = activeAccount.strAddress
-        Receipt_Page.lblPetName.Text = Booking_Page.tempPetObject.strName
-        Receipt_Page.lblPetType.Text = Booking_Page.tempPetObject.strType
-        Receipt_Page.lblDateOfAppointment.Text = 'Booking_Page.tempPetObject.appointment.dateAppointment
-        Receipt_Page.lblPetType2.Text = Booking_Page.tempPetObject.strType
-        Receipt_Page.lblPetType3.Text = Booking_Page.tempPetObject.strType
-        Receipt_Page.lblCheckupFee.Text = Me.lblCheckupFee.Text
-        'Receipt_Page.lblVaccineFee.Text = Me.lblVaccineFee.Text
-        Receipt_Page.lblTotalFee.Text = Me.lblTotalFee.Text
-        Receipt_Page.lblAmountPaid.Text = "₱" & Me.txtPayment.Text
-        Receipt_Page.lblChange.Text = "₱" & (Val(Me.txtPayment.Text) - Booking_Page.totalFee)
-    End Sub
-
 End Class

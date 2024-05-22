@@ -9,7 +9,7 @@
 
     Sub loadProfile()
         Dim lines() As String = FileManipulator.readData(activeAccount.getUsername() & ".txt")
-        Dim listOfBookings As List(Of Appointment) = FileManipulator.ReadBookings()
+        Dim listOfBookings As List(Of Appointment) = FileManipulator.ReadBookings(activeAccount.strName)
         lblPetOwnerName.Text = activeAccount.strName
         lblPetOwnerAge.Text = activeAccount.intAge
         lblPetOwnerSex.Text = activeAccount.strSex

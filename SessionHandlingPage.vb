@@ -48,13 +48,15 @@
             .FullRowSelect = True
 
             .Columns.Clear()
+            .Columns.Add("ID", 40)
             .Columns.Add("Pet Owner", 80)
-            .Columns.Add("Session Created", 150)
+            .Columns.Add("Date of Session", 120)
 
             sessionsList = FileManipulator.ReadSessions()
             counter = 0
             For Each session In sessionsList
-                .Items.Add(session.petOwner.strName)
+                .Items.Add(session.sessionId)
+                .Items(counter).SubItems.Add(session.petOwner.strName)
                 .Items(counter).SubItems.Add(session.dateMade.Date)
                 counter += 1
             Next

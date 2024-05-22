@@ -136,10 +136,20 @@ Public Class FileManipulator
     '        writer.WriteLine(petObject.strName & "," & petObject.intAge & "," & petObject.dateBirthday & "," & petObject.dblWeight & "," & petObject.strType & "," & petObject.boolVaccinated & "," & petObject.appointment.strProcedure & "," & petObject.appointment.dateAppointment)
     '    End Using
     'End Sub
+    Public Shared Sub ClearBookings()
+        File.WriteAllText(bookingsDatabaseFilePath, String.Empty)
+    End Sub
+
+    Public Shared Sub SaveBookings(ByVal apptList As List(Of Appointment))
+        ClearBookings()
+        For Each appointment In apptList
+            SaveBooking(appointment)
+        Next
+    End Sub
 
     Public Shared Sub SaveBooking(appointment As Appointment)
         Using writer As StreamWriter = File.AppendText(bookingsDatabaseFilePath)
-            writer.WriteLine(appointment.petOwner & "," & appointment.pet & "," & appointment.strProcedure & "," & appointment.dateAppointment)
+            writer.WriteLine(appointment.appointmentId & "," & appointment.petOwner & "," & appointment.pet & "," & appointment.strProcedure & "," & appointment.dateAppointment)
         End Using
     End Sub
 
@@ -148,7 +158,17 @@ Public Class FileManipulator
         Dim bookingsList As New List(Of Appointment)
         For Each line As String In lines
             Dim bookingObject As Appointment = parseAsBooking(line)
-            If bookingObject.petOwner = activeAccount.strName Then
+            bookingsList.Add(bookingObject)
+        Next
+        Return bookingsList
+    End Function
+
+    Public Shared Function ReadBookings(ByVal nameOfPetOwner As String) As List(Of Appointment)
+        Dim lines() As String = readData(bookingsDatabaseFilePath)
+        Dim bookingsList As New List(Of Appointment)
+        For Each line As String In lines
+            Dim bookingObject As Appointment = parseAsBooking(line)
+            If bookingObject.petOwner = nameOfPetOwner Then
                 bookingsList.Add(bookingObject)
             End If
         Next
@@ -157,11 +177,12 @@ Public Class FileManipulator
 
     Public Shared Function parseAsBooking(line As String) As Appointment
         Dim parsedStringsList() As String = line.Split(","c)
-        Dim petOwnerName As String = parsedStringsList(0)
-        Dim petName = parsedStringsList(1)
-        Dim procedure = parsedStringsList(2)
-        Dim dateOfAppointment = parsedStringsList(3)
-        Dim bookingObject As New Appointment(petOwnerName, petName, procedure, dateOfAppointment)
+        Dim appointmentId As Integer = parsedStringsList(0)
+        Dim petOwnerName As String = parsedStringsList(1)
+        Dim petName = parsedStringsList(2)
+        Dim procedure = parsedStringsList(3)
+        Dim dateOfAppointment = parsedStringsList(4)
+        Dim bookingObject As New Appointment(appointmentId, petOwnerName, petName, procedure, dateOfAppointment)
         Return bookingObject
     End Function
 

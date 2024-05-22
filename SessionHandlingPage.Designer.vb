@@ -255,6 +255,7 @@ Partial Class SessionHandlingPage
         'petsAndProceduresPanel
         '
         Me.petsAndProceduresPanel.AutoScroll = True
+        Me.petsAndProceduresPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.petsAndProceduresPanel.Controls.Add(Me.TableLayoutPanel1)
         Me.petsAndProceduresPanel.Location = New System.Drawing.Point(130, 37)
         Me.petsAndProceduresPanel.Name = "petsAndProceduresPanel"
