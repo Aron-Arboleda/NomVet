@@ -16,6 +16,14 @@
     End Sub
 
     Private Sub btnRegisterPets_Click(sender As Object, e As EventArgs) Handles btnRegisterPets.Click
+
+        Dim textBoxList() = petPanelsList.Select(Function(panel) panel.txtPetName).ToArray()
+        Dim validFields As Boolean = ConflictChecker.checkForEmptyFields(textBoxList)
+        If validFields = False Then
+            MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Pet Registration")
+            Exit Sub
+        End If
+
         Dim registeredPetsList As New List(Of Pet)
         For Each petPanel In petPanelsList
             registeredPetsList.Add(petPanel.getPetObject())

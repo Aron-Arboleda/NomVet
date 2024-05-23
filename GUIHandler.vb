@@ -205,7 +205,7 @@
             lblPetName.Text = "Pet Name:"
             lblPetBirthday.Text = "Pet Birthday: "
             lblPetType.Text = "Type: "
-            lblPetAge.Text = "Pet Age:"
+            lblPetAge.Text = "Pet Age(yr):"
             lblPetWeight.Text = "Pet Weight(kg):"
             lblPetVaccineStatus.Text = "Vaccine Status: "
 
@@ -219,17 +219,21 @@
             dtpPetBirthday.Size = New System.Drawing.Size(196, 20)
 
             cbPetType.Size = New System.Drawing.Size(145, 28)
+            cbPetType.DropDownStyle = ComboBoxStyle.DropDownList
             cbPetType.Items.Add("Feline")
             cbPetType.Items.Add("Canine")
             cbPetType.Items.Add("Reptile")
+            cbPetType.SelectedItem = "Feline"
 
             numPetAge.Size = New System.Drawing.Size(64, 20)
 
             numPetWeight.Size = New System.Drawing.Size(64, 20)
 
             cbPetVacStatus.Size = New System.Drawing.Size(150, 28)
+            cbPetVacStatus.DropDownStyle = ComboBoxStyle.DropDownList
             cbPetVacStatus.Items.Add("Complete")
             cbPetVacStatus.Items.Add("Incomplete")
+            cbPetVacStatus.SelectedItem = "Incomplete"
 
             With Me
                 For i = 0 To PetLabels.Length - 1

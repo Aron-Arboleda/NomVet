@@ -30,7 +30,6 @@ Public Class Login_Page
         activeAccount = petOwnerloggedIn
         activeAccount.petsList = FileManipulator.ReadPets(activeAccount)
         clearAllFields(fields)
-        MessageBox.Show("Log-in Succesful!")
         loadActiveAccount(activeAccount)
         NavigatorPage.Show()
         NavigatorPage.btnHome.PerformClick()
