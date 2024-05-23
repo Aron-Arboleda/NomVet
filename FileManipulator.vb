@@ -201,7 +201,7 @@ Public Class FileManipulator
         createDataBaseFile(petOwnerFileName)
 
         Using writer As StreamWriter = File.AppendText(accountsDatabaseFilePath)
-            writer.WriteLine(petOwner.getUsername() & "," & petOwner.getPassword() & "," & petOwner.strName & "," & petOwner.intAge & "," & petOwner.strSex & "," & petOwner.strAddress)
+            writer.WriteLine(petOwner.getUsername() & "|" & petOwner.getPassword() & "|" & petOwner.strName & "|" & petOwner.intAge & "|" & petOwner.strSex & "|" & petOwner.strAddress)
         End Using
 
         For Each pet In petOwner.petsList

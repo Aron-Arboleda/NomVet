@@ -285,15 +285,33 @@
             Me.Controls.Add(lblPetProcedure, 7, 0)
 
             cbPetProcedure.Size = New System.Drawing.Size(100, 28)
+            cbPetProcedure.DropDownStyle = ComboBoxStyle.DropDownList
             cbPetProcedure.Items.Add("Check-Up")
             cbPetProcedure.Items.Add("Vaccine")
             cbPetProcedure.Items.Add("Both")
+            cbPetProcedure.SelectedItem = "Check-Up"
             Me.Controls.Add(cbPetProcedure, 7, 1)
 
             cbPetType.Size = New System.Drawing.Size(125, 28)
             cbPetVacStatus.Size = New System.Drawing.Size(125, 28)
 
+            AddHandler Me.cbPetVacStatus.SelectedIndexChanged, AddressOf Me.cbPetVacStatus_SelectedIndexChanged
 
+
+        End Sub
+
+        Private Sub cbPetVacStatus_SelectedIndexChanged(sender As Object, e As EventArgs)
+            If cbPetVacStatus.SelectedItem = "Complete" Then
+                cbPetProcedure.Items.Clear()
+                cbPetProcedure.Items.Add("Check-Up")
+                cbPetProcedure.SelectedItem = "Check-Up"
+            ElseIf cbPetVacStatus.SelectedItem = "Incomplete" Then
+                cbPetProcedure.Items.Clear()
+                cbPetProcedure.Items.Add("Check-Up")
+                cbPetProcedure.Items.Add("Vaccine")
+                cbPetProcedure.Items.Add("Both")
+                cbPetProcedure.SelectedItem = "Vaccine"
+            End If
         End Sub
 
         Public Overrides Function getPetObject() As Pet
@@ -500,9 +518,9 @@
         Public Sub New(petWithProcedureString As String)
 
             Me.BackColor = Color.Transparent
-            Me.AutoSize = True
-            Me.Width = 376
-            'Me.Size = New System.Drawing.Size(376, 28)
+            Me.AutoSize = False
+            'Me.Width = 376
+            Me.Size = New System.Drawing.Size(376, 40)
             Me.ColumnCount = 4
             Me.RowCount = 1
             Me.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25))
@@ -541,7 +559,8 @@
         Public Sub New(petWithProcedureString As String)
             MyBase.New(petWithProcedureString)
 
-            Me.Width = 800
+            Me.AutoSize = False
+            Me.Size = New System.Drawing.Size(540, 30)
 
         End Sub
     End Class

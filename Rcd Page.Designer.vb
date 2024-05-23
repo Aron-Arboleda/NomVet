@@ -22,6 +22,7 @@ Partial Class Rcd_Page
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Rcd_Page))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnWalkinForm = New System.Windows.Forms.Button()
@@ -133,6 +134,7 @@ Partial Class Rcd_Page
         Me.ClientSize = New System.Drawing.Size(1114, 749)
         Me.Controls.Add(Me.rcdDisplayPanel)
         Me.Controls.Add(Me.Panel7)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Rcd_Page"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TableLayoutPanel1.ResumeLayout(False)

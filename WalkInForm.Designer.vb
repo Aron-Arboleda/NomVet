@@ -25,7 +25,7 @@ Partial Class WalkInForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WalkInForm))
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.parentPanelInput = New System.Windows.Forms.Panel()
         Me.petFormPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnAddPetInput = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -45,7 +45,7 @@ Partial Class WalkInForm
         Me.Label22 = New System.Windows.Forms.Label()
         Me.btnSaveSession = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.parentPanelInput.SuspendLayout()
         CType(Me.numUIPetOwnerAge, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,36 +64,36 @@ Partial Class WalkInForm
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.parentPanelInput)
         Me.Panel1.Location = New System.Drawing.Point(33, 91)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1050, 529)
         Me.Panel1.TabIndex = 19
         '
-        'Panel2
+        'parentPanelInput
         '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.petFormPanel)
-        Me.Panel2.Controls.Add(Me.btnAddPetInput)
-        Me.Panel2.Controls.Add(Me.Label11)
-        Me.Panel2.Controls.Add(Me.txtPetOwnerPassword)
-        Me.Panel2.Controls.Add(Me.txtPetOwnerUsername)
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.txtPetOwnerAddress)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.numUIPetOwnerAge)
-        Me.Panel2.Controls.Add(Me.txtPetOwnerName)
-        Me.Panel2.Controls.Add(Me.Label19)
-        Me.Panel2.Controls.Add(Me.cbPetOwnerSex)
-        Me.Panel2.Controls.Add(Me.Label20)
-        Me.Panel2.Controls.Add(Me.Label24)
-        Me.Panel2.Controls.Add(Me.Label25)
-        Me.Panel2.Controls.Add(Me.Label23)
-        Me.Panel2.Controls.Add(Me.Label22)
-        Me.Panel2.Location = New System.Drawing.Point(28, 21)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1005, 474)
-        Me.Panel2.TabIndex = 42
+        Me.parentPanelInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.parentPanelInput.Controls.Add(Me.petFormPanel)
+        Me.parentPanelInput.Controls.Add(Me.btnAddPetInput)
+        Me.parentPanelInput.Controls.Add(Me.Label11)
+        Me.parentPanelInput.Controls.Add(Me.txtPetOwnerPassword)
+        Me.parentPanelInput.Controls.Add(Me.txtPetOwnerUsername)
+        Me.parentPanelInput.Controls.Add(Me.Label2)
+        Me.parentPanelInput.Controls.Add(Me.txtPetOwnerAddress)
+        Me.parentPanelInput.Controls.Add(Me.Label1)
+        Me.parentPanelInput.Controls.Add(Me.numUIPetOwnerAge)
+        Me.parentPanelInput.Controls.Add(Me.txtPetOwnerName)
+        Me.parentPanelInput.Controls.Add(Me.Label19)
+        Me.parentPanelInput.Controls.Add(Me.cbPetOwnerSex)
+        Me.parentPanelInput.Controls.Add(Me.Label20)
+        Me.parentPanelInput.Controls.Add(Me.Label24)
+        Me.parentPanelInput.Controls.Add(Me.Label25)
+        Me.parentPanelInput.Controls.Add(Me.Label23)
+        Me.parentPanelInput.Controls.Add(Me.Label22)
+        Me.parentPanelInput.Location = New System.Drawing.Point(28, 21)
+        Me.parentPanelInput.Name = "parentPanelInput"
+        Me.parentPanelInput.Size = New System.Drawing.Size(1005, 474)
+        Me.parentPanelInput.TabIndex = 42
         '
         'petFormPanel
         '
@@ -218,6 +218,7 @@ Partial Class WalkInForm
         '
         'cbPetOwnerSex
         '
+        Me.cbPetOwnerSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbPetOwnerSex.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbPetOwnerSex.FormattingEnabled = True
         Me.cbPetOwnerSex.Items.AddRange(New Object() {"Male", "Female"})
@@ -314,8 +315,8 @@ Partial Class WalkInForm
         Me.Name = "WalkInForm"
         Me.Text = "WalkInForm"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.parentPanelInput.ResumeLayout(False)
+        Me.parentPanelInput.PerformLayout()
         CType(Me.numUIPetOwnerAge, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -324,7 +325,7 @@ Partial Class WalkInForm
 
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents parentPanelInput As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents numUIPetOwnerAge As NumericUpDown
     Friend WithEvents txtPetOwnerName As TextBox

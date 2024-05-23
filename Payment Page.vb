@@ -1,17 +1,33 @@
 ﻿Public Class Payment_Page
-
+    Dim total As Double = 0
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Rcd_Page.childForm(SessionHandlingPage)
         SessionHandlingPage.loadSessionHandlingPage()
     End Sub
 
     Private Sub btnPayAndShowReceipt_Click(sender As Object, e As EventArgs) Handles btnPayAndShowReceipt.Click
+        Dim validPayment As Boolean = checkIfPaymentIsValid(Val(txtPayment.Text))
+        If validPayment = False Then
+            MsgBox("Insufficient funds.", vbOKOnly + vbExclamation, "Payment")
+            txtPayment.Clear()
+            Exit Sub
+        End If
+
         Rcd_Page.childForm(WalkInReceiptPage)
         WalkInReceiptPage.loadWalkInReceiptPage()
         updatePets(SessionHandlingPage.selectedSession.petOwner.strName, SessionHandlingPage.nextVisitsList)
         updateSessions(SessionHandlingPage.selectedSession)
         makeNewSessionOrBookIfNeeded(SessionHandlingPage.nextVisitsList)
     End Sub
+
+    Public Function checkIfPaymentIsValid(payment As Double)
+        Dim valid As Boolean = True
+        If payment < total Then
+            valid = False
+            Return valid
+        End If
+        Return valid
+    End Function
 
     Public Sub makeNewSessionOrBookIfNeeded(nextVisitsList As List(Of NextVisit))
         For Each nextVisit In nextVisitsList
@@ -91,14 +107,14 @@
 
         lblPetOwner.Text = SessionHandlingPage.selectedSession.petOwner.strName
 
-        Dim total As Double = 0
         For Each petProcedureString In SessionHandlingPage.selectedSession.petWithProcedureList
             billRowsPanel.Controls.Add(New BillingRowPanel(petProcedureString))
             petType = petProcedureString.Split("#"c)(1)
             petProc = petProcedureString.Split("#"c)(2)
-            total += computeTotalBill(petType, petProc)
+            total = computeTotalBill(petType, petProc)
         Next
 
         lblTotalFee.Text = ToPesoFormat(total)
+        txtPayment.Clear()
     End Sub
 End Class
