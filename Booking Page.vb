@@ -34,6 +34,7 @@
                     cbProcedure.Items.Add("Check-Up")
                     cbProcedure.Items.Add("Vaccine")
                     cbProcedure.Items.Add("Both")
+                    cbProcedure.SelectedItem = "Vaccine"
                 End If
                 Exit For
             End If
@@ -72,7 +73,14 @@
         Dim petName As String = cbPet.SelectedItem
 
         If lblErrorMessage.Visible = True Then
-            MsgBox("Please resolve all invalid inputs.")
+            MsgBox("Please resolve all invalid inputs.", vbOKOnly + vbExclamation, "Booking")
+            Exit Sub
+        End If
+
+        Dim comboBoxes() As ComboBox = {cbPet, cbProcedure}
+        Dim comboBoxesAreEmpty As Boolean = checkIfComboBoxesAreEmpty(comboBoxes)
+        If comboBoxesAreEmpty = True Then
+            MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Booking")
             Exit Sub
         End If
 
@@ -122,4 +130,17 @@
             Next
         End If
     End Sub
+
+    Public Shared Function checkIfComboBoxesAreEmpty(fields() As ComboBox) As Boolean
+        Dim empty = False
+
+        For Each field In fields
+            If field.SelectedIndex = -1 Then
+                empty = True
+                Exit For
+            End If
+        Next
+
+        Return empty
+    End Function
 End Class

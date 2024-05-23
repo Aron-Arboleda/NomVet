@@ -257,10 +257,10 @@ Partial Class SessionHandlingPage
         Me.petsAndProceduresPanel.AutoScroll = True
         Me.petsAndProceduresPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.petsAndProceduresPanel.Controls.Add(Me.TableLayoutPanel1)
-        Me.petsAndProceduresPanel.Location = New System.Drawing.Point(130, 37)
+        Me.petsAndProceduresPanel.Location = New System.Drawing.Point(114, 37)
         Me.petsAndProceduresPanel.Name = "petsAndProceduresPanel"
         Me.petsAndProceduresPanel.Padding = New System.Windows.Forms.Padding(5)
-        Me.petsAndProceduresPanel.Size = New System.Drawing.Size(642, 107)
+        Me.petsAndProceduresPanel.Size = New System.Drawing.Size(658, 107)
         Me.petsAndProceduresPanel.TabIndex = 45
         '
         'TableLayoutPanel1
@@ -295,7 +295,7 @@ Partial Class SessionHandlingPage
         Me.lblPetOwner.BackColor = System.Drawing.Color.Transparent
         Me.lblPetOwner.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPetOwner.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lblPetOwner.Location = New System.Drawing.Point(14, 37)
+        Me.lblPetOwner.Location = New System.Drawing.Point(109, 5)
         Me.lblPetOwner.Name = "lblPetOwner"
         Me.lblPetOwner.Size = New System.Drawing.Size(51, 26)
         Me.lblPetOwner.TabIndex = 44
@@ -307,11 +307,11 @@ Partial Class SessionHandlingPage
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(126, 11)
+        Me.Label11.Location = New System.Drawing.Point(14, 37)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(288, 20)
+        Me.Label11.Size = New System.Drawing.Size(54, 20)
         Me.Label11.TabIndex = 40
-        Me.Label11.Text = "Pets Registered with their Procedures:"
+        Me.Label11.Text = "Pet(s):"
         '
         'Label10
         '
@@ -319,7 +319,7 @@ Partial Class SessionHandlingPage
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(14, 11)
+        Me.Label10.Location = New System.Drawing.Point(14, 8)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(89, 20)
         Me.Label10.TabIndex = 39

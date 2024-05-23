@@ -496,7 +496,9 @@
         Public Sub New(petWithProcedureString As String)
 
             Me.BackColor = Color.Transparent
-            Me.Size = New System.Drawing.Size(376, 28)
+            Me.AutoSize = True
+            Me.Width = 376
+            'Me.Size = New System.Drawing.Size(376, 28)
             Me.ColumnCount = 4
             Me.RowCount = 1
             Me.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25))
@@ -535,7 +537,7 @@
         Public Sub New(petWithProcedureString As String)
             MyBase.New(petWithProcedureString)
 
-            Me.Size = New System.Drawing.Size(540, 28)
+            Me.Width = 800
 
         End Sub
     End Class
