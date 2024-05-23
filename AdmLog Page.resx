@@ -5774,7 +5774,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAdminLogin.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJsAAAAtCAYAAAC58hnkAAAABGdBTUEAALGPC/xhBQAAA7BJREFUeF7t
         nbFypDAMhvcN7jGvzkvtzlxzb5FmYXNFuu3yDGlzCbAQDLZjyZZk2YaZbzIDrLGkX5Ipgk/m8afrfl2u

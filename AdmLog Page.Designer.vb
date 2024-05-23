@@ -33,7 +33,7 @@ Partial Class AdmLog_Page
         Me.txt_admUsername = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAdminLogin = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,7 +83,7 @@ Partial Class AdmLog_Page
         Me.Panel1.Controls.Add(Me.txt_admUsername)
         Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btnAdminLogin)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Location = New System.Drawing.Point(59, 97)
         Me.Panel1.Name = "Panel1"
@@ -121,8 +121,10 @@ Partial Class AdmLog_Page
         Me.txt_admPassword.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.txt_admPassword.Location = New System.Drawing.Point(175, 250)
         Me.txt_admPassword.Name = "txt_admPassword"
+        Me.txt_admPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_admPassword.Size = New System.Drawing.Size(262, 43)
         Me.txt_admPassword.TabIndex = 28
+        Me.txt_admPassword.UseSystemPasswordChar = True
         '
         'txt_admUsername
         '
@@ -158,20 +160,20 @@ Partial Class AdmLog_Page
         Me.Label13.TabIndex = 25
         Me.Label13.Text = "Username:"
         '
-        'Button1
+        'btnAdminLogin
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(157, 332)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(155, 45)
-        Me.Button1.TabIndex = 23
-        Me.Button1.Text = "Login"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnAdminLogin.BackColor = System.Drawing.Color.Transparent
+        Me.btnAdminLogin.BackgroundImage = CType(resources.GetObject("btnAdminLogin.BackgroundImage"), System.Drawing.Image)
+        Me.btnAdminLogin.FlatAppearance.BorderSize = 0
+        Me.btnAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdminLogin.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdminLogin.ForeColor = System.Drawing.Color.White
+        Me.btnAdminLogin.Location = New System.Drawing.Point(157, 332)
+        Me.btnAdminLogin.Name = "btnAdminLogin"
+        Me.btnAdminLogin.Size = New System.Drawing.Size(155, 45)
+        Me.btnAdminLogin.TabIndex = 23
+        Me.btnAdminLogin.Text = "Login"
+        Me.btnAdminLogin.UseVisualStyleBackColor = False
         '
         'Label14
         '
@@ -214,7 +216,7 @@ Partial Class AdmLog_Page
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAdminLogin As Button
     Friend WithEvents txt_admPassword As TextBox
     Friend WithEvents txt_admUsername As TextBox
     Friend WithEvents Label12 As Label

@@ -19,9 +19,17 @@ Public Class AdmLog_Page
         Return validLogin
     End Function
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnAdminLogin_Click(sender As Object, e As EventArgs) Handles btnAdminLogin.Click
         Dim username As String = txt_admUsername.Text
         Dim password As String = txt_admPassword.Text
+
+        Dim fields() = {txt_admPassword, txt_admUsername}
+
+        Dim validFields As Boolean = ConflictChecker.checkForEmptyFields(fields)
+        If validFields = False Then
+            MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Log In")
+            Exit Sub
+        End If
 
         If username = "admin" And password = "admin" Then
             Rcd_Page.Show()
