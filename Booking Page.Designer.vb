@@ -37,6 +37,7 @@ Partial Class Booking_Page
         Me.Label16 = New System.Windows.Forms.Label()
         Me.cbPet = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblErrorMessage = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -78,6 +79,7 @@ Partial Class Booking_Page
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.lblErrorMessage)
         Me.Panel3.Controls.Add(Me.lblTotalBill)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.btnBook)
@@ -147,6 +149,7 @@ Partial Class Booking_Page
         '
         'cbProcedure
         '
+        Me.cbProcedure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbProcedure.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbProcedure.FormattingEnabled = True
         Me.cbProcedure.Items.AddRange(New Object() {"Check-Up", "Vaccine", "Both"})
@@ -188,6 +191,7 @@ Partial Class Booking_Page
         '
         'cbPet
         '
+        Me.cbPet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbPet.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbPet.FormattingEnabled = True
         Me.cbPet.Items.AddRange(New Object() {"Complete", "Incomplete"})
@@ -207,6 +211,17 @@ Partial Class Booking_Page
         Me.Label4.Size = New System.Drawing.Size(172, 35)
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "Booking Form"
+        '
+        'lblErrorMessage
+        '
+        Me.lblErrorMessage.AutoSize = True
+        Me.lblErrorMessage.ForeColor = System.Drawing.Color.IndianRed
+        Me.lblErrorMessage.Location = New System.Drawing.Point(20, 137)
+        Me.lblErrorMessage.Name = "lblErrorMessage"
+        Me.lblErrorMessage.Size = New System.Drawing.Size(75, 13)
+        Me.lblErrorMessage.TabIndex = 51
+        Me.lblErrorMessage.Text = "Error Message"
+        Me.lblErrorMessage.Visible = False
         '
         'Booking_Page
         '
@@ -243,4 +258,5 @@ Partial Class Booking_Page
     Friend WithEvents lblTotalBill As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnBook As Button
+    Friend WithEvents lblErrorMessage As Label
 End Class

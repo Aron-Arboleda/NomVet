@@ -21,6 +21,25 @@
         lblTotalBill.Text = ("₱" & dblTotalBill.ToString() & ".00")
     End Sub
 
+    Public Sub refreshProcedureControl()
+        Dim petName As String = cbPet.SelectedItem
+
+        For Each pet In activeAccount.petsList
+            If petName = pet.strName Then
+                cbProcedure.Items.Clear()
+                If pet.boolVaccinated = "Complete" Then
+                    cbProcedure.Items.Add("Check-Up")
+                    cbProcedure.SelectedItem = "Check-Up"
+                Else
+                    cbProcedure.Items.Add("Check-Up")
+                    cbProcedure.Items.Add("Vaccine")
+                    cbProcedure.Items.Add("Both")
+                End If
+                Exit For
+            End If
+        Next
+    End Sub
+
 
     Public Sub refreshBookingPage()
         cbPet.Items.Clear()
@@ -43,6 +62,7 @@
     End Sub
 
     Private Sub cbPet_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPet.SelectedIndexChanged
+        refreshProcedureControl()
         refreshEstimatedTotalBill()
     End Sub
 
@@ -50,6 +70,11 @@
         Dim procedure As String = cbProcedure.SelectedItem
         Dim dateOfApppointment As Date = dtpAppointmentDate.Value.Date
         Dim petName As String = cbPet.SelectedItem
+
+        If lblErrorMessage.Visible = True Then
+            MsgBox("Please resolve all invalid inputs.")
+            Exit Sub
+        End If
 
         For Each pet In activeAccount.petsList
             If petName = pet.strName Then
@@ -69,5 +94,32 @@
 
 
         MsgBox("Appointment has been Booked!", vbOKOnly + vbInformation, "Booking")
+    End Sub
+
+    Private Sub dtpAppointmentDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpAppointmentDate.ValueChanged
+        checkIfDatePickedIsValid()
+    End Sub
+
+    Public Sub checkIfDatePickedIsValid()
+        lblErrorMessage.Visible = False
+
+        Dim bookingsList As List(Of Appointment) = FileManipulator.ReadBookings()
+        Dim datesList As List(Of Date) = bookingsList.Select(Function(appointment) appointment.dateAppointment).ToList()
+
+        If dtpAppointmentDate.Value.Date < DateTime.Now.Date Then
+            lblErrorMessage.Visible = True
+            lblErrorMessage.Text = "Date has passed already. Pick another date."
+        ElseIf dtpAppointmentDate.Value.Date.DayOfWeek = DayOfWeek.Sunday Then
+            lblErrorMessage.Visible = True
+            lblErrorMessage.Text = "Clinic is not open on Sundays. Pick another date."
+        Else
+            For Each dateObj In datesList
+                If dateObj = dtpAppointmentDate.Value.Date Then
+                    lblErrorMessage.Visible = True
+                    lblErrorMessage.Text = "There is already an appointment that day. Pick another date."
+                    Exit For
+                End If
+            Next
+        End If
     End Sub
 End Class

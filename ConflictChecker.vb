@@ -59,4 +59,7 @@ Public Class ConflictChecker
         Dim petOwnerObject As PetOwner = FileManipulator.findPetOwner(lines, username, password)
         Return petOwnerObject
     End Function
+
+
+
 End Class
