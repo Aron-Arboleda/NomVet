@@ -17,9 +17,17 @@
 
     Private Sub btnRegisterPets_Click(sender As Object, e As EventArgs) Handles btnRegisterPets.Click
 
-        Dim textBoxList() = petPanelsList.Select(Function(panel) panel.txtPetName).ToArray()
-        Dim validFields As Boolean = ConflictChecker.checkForEmptyFields(textBoxList)
-        If validFields = False Then
+        'Dim textBoxList() = petPanelsList.Select(Function(panel) panel.txtPetName).ToArray()
+        'MsgBox(textBoxList.Length)
+        'Dim validFields As Boolean = ConflictChecker.checkForEmptyFields(textBoxList)
+        'If validFields = False Then
+        '    MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Pet Registration")
+        '    Exit Sub
+        'End If
+
+        Dim inputControls As List(Of Control) = GetAllInputControls(petInputPanel)
+        Dim fieldsAreEmpty As Boolean = ConflictChecker.checkIfControlsTextIsEmpty(inputControls)
+        If fieldsAreEmpty Then
             MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Pet Registration")
             Exit Sub
         End If
@@ -32,10 +40,6 @@
 
         FileManipulator.SavePets(activeAccount)
 
-        'FileManipulator.ClearPets(activeAccount)
-        'For Each pet In activeAccount.petsList
-        '    FileManipulator.SavePet(activeAccount, pet)
-        'Next
         MsgBox("Pets Registered!", vbOKOnly + vbInformation, "Pet Registration")
     End Sub
 

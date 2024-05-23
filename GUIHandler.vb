@@ -20,6 +20,25 @@
         Next
     End Sub
 
+    Public Function GetAllInputControls(parentControl As Control) As List(Of Control)
+        Dim inputControls As New List(Of Control)
+
+        For Each control As Control In parentControl.Controls
+            If TypeOf control Is TextBox OrElse
+               TypeOf control Is ComboBox OrElse
+               TypeOf control Is NumericUpDown Then
+                inputControls.Add(control)
+            End If
+
+            If control.Controls.Count > 0 Then
+                inputControls.AddRange(GetAllInputControls(control))
+            End If
+        Next
+
+        Return inputControls
+    End Function
+
+
     Public Class PetPanel
         Inherits TableLayoutPanel
 

@@ -61,6 +61,17 @@ Public Class ConflictChecker
         Return petOwnerObject
     End Function
 
+    Public Shared Function checkIfControlsTextIsEmpty(inputControls As List(Of Control)) As Boolean
+        Dim emptyFields As Boolean = False
 
+        For Each control As Control In inputControls
+            If control.Text = "" Then
+                emptyFields = True
+                Exit For
+            End If
+        Next
+
+        Return emptyFields
+    End Function
 
 End Class
