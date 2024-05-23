@@ -18,6 +18,7 @@ Public Class ConflictChecker
             End If
         Next
         Return valid
+
     End Function
 
     Public Shared Function checkForEmptyFields(ByVal fields() As Control) As Boolean
