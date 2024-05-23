@@ -7,20 +7,37 @@ Public Class Login_Page
         Dim username As String = txt_userName.Text
         Dim password As String = txt_userPass.Text
 
-        If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(password) Then
-            If FileManipulator.ValidateLogin(username, password) Then
-                activeAccount.petsList = FileManipulator.ReadPets(activeAccount)
-                loadActiveAccount(activeAccount)
-                NavigatorPage.Show()
-                NavigatorPage.btnHome.PerformClick()
-                Me.Hide()
-            Else
-                MessageBox.Show("Invalid username or password.")
-            End If
-        Else
-            MessageBox.Show("Please enter both username and password.")
+        Dim fields() = {txt_userName, txt_userPass}
+
+        Dim validFields As Boolean = ConflictChecker.checkForEmptyFields(fields)
+        If validFields = False Then
+            MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Log In")
+            Exit Sub
         End If
+
+        Dim databaseIsEmpty As Boolean = ConflictChecker.checkIfDatabaseIsEmpty(FileManipulator.accountsDatabaseFilePath)
+        If databaseIsEmpty = True Then
+            MsgBox("Database is empty. Please create an account first.", vbOKOnly + vbExclamation, "Log In")
+            Exit Sub
+        End If
+
+        Dim petOwnerloggedIn As PetOwner = ConflictChecker.checkCredentialsAndGetPetOwner(username, password)
+        If petOwnerloggedIn Is Nothing Then
+            MsgBox("Invalid username or password.", vbOKOnly + vbExclamation, "Log In")
+            Exit Sub
+        End If
+
+        activeAccount = petOwnerloggedIn
+        activeAccount.petsList = FileManipulator.ReadPets(activeAccount)
+        clearAllFields(fields)
+        MessageBox.Show("Log-in Succesful!")
+        loadActiveAccount(activeAccount)
+        NavigatorPage.Show()
+        NavigatorPage.btnHome.PerformClick()
+        Me.Hide()
     End Sub
+
+
 
     Public Sub loadActiveAccount(activeAcc As PetOwner)
         NavigatorPage.btnProfileDisplayName.Text = activeAcc.strName

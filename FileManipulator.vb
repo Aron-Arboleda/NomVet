@@ -5,18 +5,7 @@ Public Class FileManipulator
     Public Shared bookingsDatabaseFilePath As String = "nomVetBookings.txt"
     Public Shared sessionsDatabaseFilePath As String = "nomVetSessions.txt"
 
-    Public Shared Function ValidateLogin(username As String, password As String) As Boolean
-        Dim validLogin As Boolean = False
 
-        Dim lines() As String = readData(accountsDatabaseFilePath)
-        Dim petOwnerObject As PetOwner = findPetOwner(lines, username, password)
-        If Not (petOwnerObject Is Nothing) Then
-            validLogin = True
-            activeAccount = petOwnerObject
-        End If
-
-        Return validLogin
-    End Function
 
     Public Shared Function findPetOwner(lines() As String, username As String, password As String) As PetOwner
         Dim petOwnerObject As PetOwner
@@ -59,6 +48,17 @@ Public Class FileManipulator
             File.Create(databaseFilePath).Dispose()
         End If
     End Sub
+    Public Shared Sub initializeDataBaseFiles()
+        Dim databaseFilePaths() As String = {accountsDatabaseFilePath, bookingsDatabaseFilePath, sessionsDatabaseFilePath}
+
+        For Each path In databaseFilePaths
+            If Not File.Exists(path) Then
+                File.Create(path).Dispose()
+            End If
+        Next
+    End Sub
+
+
 
     Public Shared Sub SaveUser(petOwnerObject As PetOwner)
         'creating user's own database for pets
@@ -67,7 +67,7 @@ Public Class FileManipulator
 
         'saving to accounts database
         Using writer As StreamWriter = File.AppendText(accountsDatabaseFilePath)
-            writer.WriteLine(petOwnerObject.getUsername & "," & petOwnerObject.getPassword & "," & petOwnerObject.strName & "," & petOwnerObject.intAge & "," & petOwnerObject.strSex & "," & petOwnerObject.strAddress)
+            writer.WriteLine(petOwnerObject.getUsername & "|" & petOwnerObject.getPassword & "|" & petOwnerObject.strName & "|" & petOwnerObject.intAge & "|" & petOwnerObject.strSex & "|" & petOwnerObject.strAddress)
         End Using
     End Sub
 
@@ -82,7 +82,7 @@ Public Class FileManipulator
     End Function
 
     Public Shared Function parseAsPetOwner(line As String) As PetOwner
-        Dim parsedStringsList() As String = line.Split(","c)
+        Dim parsedStringsList() As String = line.Split("|"c)
         Dim username = parsedStringsList(0)
         Dim password = parsedStringsList(1)
         Dim name = parsedStringsList(2)

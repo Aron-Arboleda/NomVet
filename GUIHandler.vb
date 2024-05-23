@@ -14,6 +14,12 @@
         End If
     End Sub
 
+    Public Sub clearAllFields(fields() As Control)
+        For Each field In fields
+            field.Text = ""
+        Next
+    End Sub
+
     Public Class PetPanel
         Inherits TableLayoutPanel
 

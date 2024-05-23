@@ -6,22 +6,34 @@ Public Class Signup_Page
         Dim username As String = txt_signUserName.Text
         Dim password As String = txt_signPassword.Text
         Dim name As String = txt_signName.Text
-        Dim age As Integer = Convert.ToInt16(txt_signAge.Text)
+        Dim age As Integer = Val(txt_signAge.Text)
         Dim sex As String = txt_signSex.Text
         Dim address As String = txt_signAddress.Text
 
-        If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(password) AndAlso
-           Not String.IsNullOrEmpty(name) AndAlso Not String.IsNullOrEmpty(age) AndAlso
-           Not String.IsNullOrEmpty(sex) AndAlso Not String.IsNullOrEmpty(address) Then
+        Dim fields() = {txt_signUserName, txt_signPassword, txt_signName, txt_signAge, txt_signSex, txt_signAddress}
 
-            Dim petOwnerObject As New PetOwner(username, password, name, age, sex, address, Nothing)
-            FileManipulator.SaveUser(petOwnerObject)
-            MessageBox.Show("User created successfully!")
-            Me.Hide()
-            Login_Page.Show()
-        Else
-            MessageBox.Show("Please fill in all fields.")
+        Dim validFields As Boolean = ConflictChecker.checkForEmptyFields(fields)
+        Dim validUsername As Boolean = ConflictChecker.checkForSameUsername(username)
+        Dim validCharacters As Boolean = ConflictChecker.checkForInvalidCharacters(fields, "|")
+
+        If validUsername = False Then
+            MsgBox("Username already exists. PLease use another username.", vbOKOnly + vbExclamation, "Sign Up")
+            txt_signUserName.Text = ""
+            Exit Sub
+        ElseIf validFields = False Then
+            MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Sign Up")
+            Exit Sub
+        ElseIf validCharacters = False Then
+            MsgBox("Please refrain from using these characters (|,#,%,*).", vbOKOnly + vbExclamation, "Sign Up")
+            Exit Sub
         End If
+
+        Dim petOwnerObject As New PetOwner(username, password, name, age, sex, address, Nothing)
+        FileManipulator.SaveUser(petOwnerObject)
+        clearAllFields(fields)
+        MessageBox.Show("User created successfully!")
+        Me.Hide()
+        Login_Page.Show()
     End Sub
 
 

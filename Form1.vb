@@ -2,6 +2,7 @@
 
     Private Sub LoadPg_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
+        FileManipulator.initializeDataBaseFiles()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

@@ -109,6 +109,7 @@
     <Compile Include="Booking Page.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConflictChecker.vb" />
     <Compile Include="CoreClasses.vb" />
     <Compile Include="FileManipulator.vb" />
     <Compile Include="Form1.vb">
