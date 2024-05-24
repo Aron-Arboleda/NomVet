@@ -1,6 +1,4 @@
 ﻿Module LogicHandler
-
-
     Public Function computeTotalBill(ByVal petType As String, ByVal petProcedure As String) As Double
         Dim checkupFee As Double
         Dim vaccineFee As Double
@@ -36,3 +34,4 @@
         Return totalFee
     End Function
 End Module
+

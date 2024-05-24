@@ -5,8 +5,6 @@ Public Class FileManipulator
     Public Shared bookingsDatabaseFilePath As String = "nomVetBookings.txt"
     Public Shared sessionsDatabaseFilePath As String = "nomVetSessions.txt"
 
-
-
     Public Shared Function findPetOwner(lines() As String, username As String, password As String) As PetOwner
         Dim petOwnerObject As PetOwner
         For Each line As String In lines

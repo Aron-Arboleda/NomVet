@@ -1,6 +1,4 @@
-﻿Imports System.IO
-
-Public Module CoreClasses
+﻿Public Module CoreClasses
     Public Class PetOwner
         Private strUsername As String
         Private strPassword As String

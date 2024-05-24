@@ -63,11 +63,6 @@
         End With
     End Sub
 
-
-    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles nextVisitFlowParentPanel.Paint
-
-    End Sub
-
     Private Sub lstViewSessions_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstViewSessions.SelectedIndexChanged
         loadPets()
         loadNextVisits()
@@ -89,3 +84,4 @@
     End Sub
 
 End Class
+

@@ -1,11 +1,4 @@
 ﻿Public Class Profile_Page
-    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles lblPetOwnerName.Click
-
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
 
     Sub loadProfile()
         Dim lines() As String = FileManipulator.readData(activeAccount.getUsername() & ".txt")
@@ -51,20 +44,11 @@
             noApptsLabel.AutoSize = True
             schedulesPanel.Controls.Add(noApptsLabel)
         End If
-
-
-
-        'Dim tempPanel As New Panel
-        'tempPanel.BackColor = Color.White
-        'tempPanel.Size = New System.Drawing.Size(50, 50)
-
-
     End Sub
 
     Private Sub btnBackToHome_Click(sender As Object, e As EventArgs) Handles btnBackToHome.Click
         Login_Page.Show()
         NavigatorPage.Hide()
     End Sub
-
-
 End Class
+
