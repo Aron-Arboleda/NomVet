@@ -36,7 +36,14 @@
                 nextVisitFlowParentPanel.Controls.Add(petPanel)
             Next
             nextVisitPanelsList = nVPanelsList
+            reloadAllDateTimePicker(nextVisitPanelsList)
         End If
+    End Sub
+
+    Public Sub reloadAllDateTimePicker(nextVisitPanelsList As List(Of SessionNextVisitPanel))
+        For Each nvPanel In nextVisitPanelsList
+            SessionNextVisitPanel.checkIfDatePickedIsValid(nvPanel.dtpNextVisitDate, nvPanel.lblErrorMessage)
+        Next
     End Sub
 
     Private Sub loadListView()
@@ -69,6 +76,14 @@
     End Sub
 
     Private Sub btnBookAndPay_Click(sender As Object, e As EventArgs) Handles btnBookAndPay.Click
+        Dim inputControls As List(Of Control) = GetAllInputControls(Me)
+        Dim fieldsAreEmpty As Boolean = ConflictChecker.checkIfControlsTextIsEmpty(inputControls)
+        If fieldsAreEmpty Then
+            MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Walk In Form")
+            Exit Sub
+        End If
+
+
         Rcd_Page.childForm(Payment_Page)
         storeNextVisitsTemporarily()
         Payment_Page.loadPaymentPage()

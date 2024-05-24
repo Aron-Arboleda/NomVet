@@ -36,6 +36,15 @@
             Exit Sub
         End If
 
+        Dim validUsername As Boolean = ConflictChecker.checkForSameUsername(txtPetOwnerUsername.Text)
+        If validUsername = False Then
+            MsgBox("Username already exists. PLease use another username.", vbOKOnly + vbExclamation, "Sign Up")
+            txtPetOwnerUsername.Text = ""
+            Exit Sub
+        End If
+
+
+
         Dim petOwnerName As String = txtPetOwnerName.Text
         Dim petOwnerAge As Integer = numUIPetOwnerAge.Text
         Dim petOwnerSex As String = cbPetOwnerSex.SelectedItem

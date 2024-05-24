@@ -91,7 +91,7 @@
         FileManipulator.SaveSessions(sessions)
     End Sub
 
-    Public Sub updateAppointments(ByVal sessionId As Integer)
+    Public Sub updateAppointments(ByVal sessionId As String)
         Dim appointments As List(Of Appointment) = FileManipulator.ReadBookings()
         For Each a As Appointment In appointments
             If a.appointmentId = sessionId Then
@@ -107,11 +107,12 @@
 
         lblPetOwner.Text = SessionHandlingPage.selectedSession.petOwner.strName
 
+        total = 0
         For Each petProcedureString In SessionHandlingPage.selectedSession.petWithProcedureList
             billRowsPanel.Controls.Add(New BillingRowPanel(petProcedureString))
             petType = petProcedureString.Split("#"c)(1)
             petProc = petProcedureString.Split("#"c)(2)
-            total = computeTotalBill(petType, petProc)
+            total += computeTotalBill(petType, petProc)
         Next
 
         lblTotalFee.Text = ToPesoFormat(total)

@@ -105,10 +105,10 @@
     End Sub
 
     Private Sub dtpAppointmentDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpAppointmentDate.ValueChanged
-        checkIfDatePickedIsValid()
+        checkIfDatePickedIsValid(dtpAppointmentDate, lblErrorMessage)
     End Sub
 
-    Public Sub checkIfDatePickedIsValid()
+    Public Sub checkIfDatePickedIsValid(dtpAppointmentDate As DateTimePicker, lblErrorMessage As Label)
         lblErrorMessage.Visible = False
 
         Dim bookingsList As List(Of Appointment) = FileManipulator.ReadBookings()

@@ -49,4 +49,8 @@ Public Class AdmLog_Page
         closingApplication(e)
     End Sub
 
+    Private Sub AdmLog_Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txt_admUsername.Text = "admin"
+        txt_admPassword.Text = "admin"
+    End Sub
 End Class

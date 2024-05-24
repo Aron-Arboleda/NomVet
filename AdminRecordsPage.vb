@@ -77,10 +77,10 @@
             .Columns.Add("Pet Owner", 80)
             .Columns.Add("Date of Session", 120)
 
-            sessionsList = FileManipulator.ReadSessions()
+            Dim sessionsList As List(Of Session) = FileManipulator.ReadSessions()
             counter = 0
             For Each session In sessionsList
-                .Items.Add(session.sessionId)
+                .Items.Add(session.sessionCodeId)
                 .Items(counter).SubItems.Add(session.petOwner.strName)
                 .Items(counter).SubItems.Add(session.dateMade.Date)
                 counter += 1

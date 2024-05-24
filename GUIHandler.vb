@@ -407,6 +407,8 @@
         Public lblPetVaccineStatus As New PetLabel
         Public lblProcedure As New PetLabel
 
+        Public lblErrorMessage As New Label
+
         Public rbYes As New RadioButton
         Public rbNo As New RadioButton
         Public dtpNextVisitDate As New DateTimePicker
@@ -424,17 +426,6 @@
             Me.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
             Me.ColumnCount = 2
             Me.RowCount = 1
-
-
-            'For i As Integer = 1 To Me.ColumnCount
-            '    Me.ColumnStyles.Add(New ColumnStyle(SizeType.AutoSize))
-            'Next
-
-            'For i As Integer = 1 To Me.RowCount
-            '    Me.RowStyles.Add(New RowStyle(SizeType.AutoSize))
-            'Next
-
-            'Labels
 
             lblPetName.Text = petWithProcedureString.Split("#"c)(0)
             lblPetName.Font = New Font("Microsoft Sans Serif", 18, FontStyle.Bold)
@@ -464,14 +455,34 @@
 
             dtpNextVisitDate.Size = New System.Drawing.Size(196, 20)
 
+            AddHandler Me.dtpNextVisitDate.ValueChanged, AddressOf Me.dtpNextVisitDate_ValueChanged
+
+            lblErrorMessage.Font = New Font("Microsoft Sans Serif", 8.25, FontStyle.Regular)
+            lblErrorMessage.ForeColor = Color.IndianRed
+            lblErrorMessage.Visible = False
+            lblErrorMessage.AutoSize = True
+
+            Dim datepickerGroup As New TableLayoutPanel
+            datepickerGroup.AutoSize = True
+            datepickerGroup.ColumnCount = 1
+            datepickerGroup.RowCount = 2
+            datepickerGroup.Controls.Add(dtpNextVisitDate, 0, 0)
+            datepickerGroup.Controls.Add(lblErrorMessage, 0, 1)
+
+
             cbPetProcedure.Size = New System.Drawing.Size(145, 28)
             cbPetProcedure.Items.Add("Check-Up")
             cbPetProcedure.Items.Add("Vaccine")
             cbPetProcedure.Items.Add("Both")
 
+
+
             cbPetVacStatus.Size = New System.Drawing.Size(150, 28)
             cbPetVacStatus.Items.Add("Complete")
             cbPetVacStatus.Items.Add("Incomplete")
+            cbPetVacStatus.DropDownStyle = ComboBoxStyle.DropDownList
+
+            AddHandler Me.cbPetVacStatus.SelectedIndexChanged, AddressOf Me.cbPetVacStatus_SelectedIndexChanged
 
             Dim propertiesPanel As New TableLayoutPanel
             propertiesPanel.AutoSize = True
@@ -493,11 +504,64 @@
                 radioPanel.Controls.Add(rbYes)
                 radioPanel.Controls.Add(rbNo)
                 .Controls.Add(radioPanel, 0, 1)
-                .Controls.Add(dtpNextVisitDate, 1, 1)
+                .Controls.Add(datepickerGroup, 1, 1)
                 .Controls.Add(cbPetVacStatus, 2, 1)
                 .Controls.Add(cbPetProcedure, 3, 1)
                 rbYes.PerformClick()
             End With
+        End Sub
+
+        Private Sub dtpNextVisitDate_ValueChanged(sender As Object, e As EventArgs)
+            SessionHandlingPage.reloadAllDateTimePicker(SessionHandlingPage.nextVisitPanelsList)
+        End Sub
+
+        Public Shared Sub checkIfDatePickedIsValid(dtpAppointmentDate As DateTimePicker, lblErrorMessage As Label)
+            lblErrorMessage.Visible = False
+
+            Dim bookingsList As List(Of Appointment) = FileManipulator.ReadBookings()
+            Dim datesList As List(Of Date) = bookingsList.Select(Function(appointment) appointment.dateAppointment).ToList()
+
+            If dtpAppointmentDate.Value.Date < DateTime.Now.Date Then
+                lblErrorMessage.Visible = True
+                lblErrorMessage.Text = "Date has passed already. Pick another date."
+                Exit Sub
+            End If
+
+            If dtpAppointmentDate.Value.Date.DayOfWeek = DayOfWeek.Sunday Then
+                lblErrorMessage.Visible = True
+                lblErrorMessage.Text = "Clinic is not open on Sundays. Pick another date."
+                Exit Sub
+            End If
+
+            For Each dateObj In datesList
+                If dateObj = dtpAppointmentDate.Value.Date Then
+                    lblErrorMessage.Visible = True
+                    lblErrorMessage.Text = "There is already an appointment that day. Pick another date."
+                    Exit For
+                End If
+            Next
+
+            For Each nextVisitPanel In SessionHandlingPage.nextVisitPanelsList
+                If dtpAppointmentDate.Value.Date = nextVisitPanel.dtpNextVisitDate.Value.Date And Not (dtpAppointmentDate Is nextVisitPanel.dtpNextVisitDate) Then
+                    lblErrorMessage.Visible = True
+                    lblErrorMessage.Text = "There is already an appointment that day. Pick another date."
+                    Exit For
+                End If
+            Next
+        End Sub
+
+        Private Sub cbPetVacStatus_SelectedIndexChanged(sender As Object, e As EventArgs)
+            If cbPetVacStatus.SelectedItem = "Complete" Then
+                cbPetProcedure.Items.Clear()
+                cbPetProcedure.Items.Add("Check-Up")
+                cbPetProcedure.SelectedItem = "Check-Up"
+            ElseIf cbPetVacStatus.SelectedItem = "Incomplete" Then
+                cbPetProcedure.Items.Clear()
+                cbPetProcedure.Items.Add("Check-Up")
+                cbPetProcedure.Items.Add("Vaccine")
+                cbPetProcedure.Items.Add("Both")
+                cbPetProcedure.SelectedItem = "Vaccine"
+            End If
         End Sub
 
         Public Function getNextVistObject() As NextVisit
