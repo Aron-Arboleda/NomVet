@@ -134,6 +134,7 @@ Partial Class Rcd_Page
         Me.ClientSize = New System.Drawing.Size(1114, 749)
         Me.Controls.Add(Me.rcdDisplayPanel)
         Me.Controls.Add(Me.Panel7)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Rcd_Page"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

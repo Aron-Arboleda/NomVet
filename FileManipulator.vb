@@ -185,7 +185,7 @@ Public Class FileManipulator
 
     Public Shared Function parseAsBooking(line As String) As Appointment
         Dim parsedStringsList() As String = line.Split(","c)
-        Dim appointmentId As Integer = parsedStringsList(0)
+        Dim appointmentId As String = parsedStringsList(0)
         Dim petOwnerName As String = parsedStringsList(1)
         Dim petName = parsedStringsList(2)
         Dim procedure = parsedStringsList(3)
@@ -237,7 +237,7 @@ Public Class FileManipulator
             For i = 1 To session.petWithProcedureList.Count - 1
                 str &= ("%" & session.petWithProcedureList.Item(i))
             Next
-            writer.WriteLine(session.sessionId & "," & session.petOwner.strName & "," & session.dateMade.Date & "," & str)
+            writer.WriteLine(session.sessionCodeId & "," & session.petOwner.strName & "," & session.dateMade.Date & "," & str)
         End Using
     End Sub
 

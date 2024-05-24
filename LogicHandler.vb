@@ -1,4 +1,6 @@
-﻿Module LogicHandler
+﻿Imports System.Text
+
+Module LogicHandler
     Public Function computeTotalBill(ByVal petType As String, ByVal petProcedure As String) As Double
         Dim checkupFee As Double
         Dim vaccineFee As Double
@@ -32,6 +34,18 @@
         End If
         Dim totalFee As Double = checkupFee + vaccineFee
         Return totalFee
+    End Function
+
+
+    Public Function GenerateRandomString(length As Integer) As String
+        Dim random As New Random()
+        Dim charset As String = "abcdefghijklmnopqrstuvwxyz0123456789"
+        Dim sb As New StringBuilder()
+        For i As Integer = 0 To length - 1
+            Dim randomIndex As Integer = random.Next(0, charset.Length)
+            sb.Append(charset(randomIndex))
+        Next
+        Return sb.ToString()
     End Function
 End Module
 

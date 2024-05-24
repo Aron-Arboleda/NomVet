@@ -197,6 +197,7 @@ Partial Class AdmLog_Page
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdmLog_Page"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

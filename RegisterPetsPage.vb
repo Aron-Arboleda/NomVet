@@ -28,6 +28,7 @@
     Public Sub loadRegisterPetsPage()
         NavigatorPage.childForm(Me)
         Me.petInputPanel.Controls.Clear()
+        petPanelsList.Clear()
         If activeAccount.petsList.Count = 0 Then
             Dim petPanel As RegisterPetPanel = New RegisterPetPanel()
             Me.petInputPanel.Controls.Add(petPanel)

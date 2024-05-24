@@ -29,6 +29,7 @@ Public Class Login_Page
 
         activeAccount = petOwnerloggedIn
         activeAccount.petsList = FileManipulator.ReadPets(activeAccount)
+        MsgBox(activeAccount.petsList.Count)
         clearAllFields(fields)
         loadActiveAccount(activeAccount)
         NavigatorPage.Show()

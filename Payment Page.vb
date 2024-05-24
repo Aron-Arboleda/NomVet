@@ -34,7 +34,7 @@
             If nextVisit.boolNextVisit = True Then
                 Dim selectedSession As Session = SessionHandlingPage.selectedSession
 
-                Dim id As Integer = Session.ranCode()
+                Dim id As String = GenerateRandomString(5)
                 Dim petOwner As String = selectedSession.petOwner.strName
                 Dim pet As String = nextVisit.petName
                 Dim procedure As String = nextVisit.procedure
@@ -82,8 +82,8 @@
     Public Sub updateSessions(ByVal session As Session)
         Dim sessions As List(Of Session) = FileManipulator.ReadSessions()
         For Each s As Session In sessions
-            If s.sessionId = session.sessionId Then
-                updateAppointments(s.sessionId)
+            If s.sessionCodeId = session.sessionCodeId Then
+                updateAppointments(s.sessionCodeId)
                 sessions.Remove(s)
                 Exit For
             End If

@@ -54,7 +54,7 @@
         Dim petOwner As New PetOwner(petOwnerUsername, petOwnerPassword, petOwnerName, petOwnerAge, petOwnerSex, petOwnerAddress, petOwnerListOfPets)
         FileManipulator.SavePetOwner(petOwner)
 
-        Dim sessionObj As New Session(Session.ranCode, petOwner, Date.Now, petWithProcedureList)
+        Dim sessionObj As New Session(GenerateRandomString(5), petOwner, Date.Now, petWithProcedureList)
         FileManipulator.SaveSession(sessionObj)
 
         MsgBox("Information Saved.", vbOKOnly + vbInformation, "NOMVC Saving")

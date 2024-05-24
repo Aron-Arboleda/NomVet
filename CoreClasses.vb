@@ -49,13 +49,13 @@
     End Class
 
     Public Class Appointment
-        Public appointmentId As Integer
+        Public appointmentId As String
         Public strProcedure As String
         Public dateAppointment As Date
         Public petOwner As String
         Public pet As String
 
-        Public Sub New(ByVal appointmentId As Integer, ByVal petOwner As String, ByVal pet As String, ByVal strProcedure As String, ByVal dateAppointment As Date)
+        Public Sub New(ByVal appointmentId As String, ByVal petOwner As String, ByVal pet As String, ByVal strProcedure As String, ByVal dateAppointment As Date)
             Me.appointmentId = appointmentId
             Me.petOwner = petOwner
             Me.pet = pet
@@ -65,13 +65,13 @@
     End Class
 
     Public Class Session
-        Public sessionId As Integer
+        Public sessionCodeId As String
         Public petOwner As PetOwner
         Public dateMade As Date
         Public petWithProcedureList As List(Of String)
 
-        Public Sub New(ByVal sessionId As Integer, ByVal petOwner As PetOwner, ByVal dateMade As Date, ByVal petWithProcedureList As List(Of String))
-            Me.sessionId = sessionId
+        Public Sub New(ByVal sessionCodeId As String, ByVal petOwner As PetOwner, ByVal dateMade As Date, ByVal petWithProcedureList As List(Of String))
+            Me.sessionCodeId = sessionCodeId
             Me.petOwner = petOwner
             Me.dateMade = dateMade
             Me.petWithProcedureList = petWithProcedureList

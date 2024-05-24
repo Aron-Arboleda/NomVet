@@ -92,7 +92,7 @@ Partial Class NavigatorPage
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.btnHome, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnBooking, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btnPricing, 3, 0)
@@ -174,6 +174,7 @@ Partial Class NavigatorPage
         Me.ClientSize = New System.Drawing.Size(1114, 749)
         Me.Controls.Add(Me.displayPanel)
         Me.Controls.Add(Me.Panel3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NavigatorPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
