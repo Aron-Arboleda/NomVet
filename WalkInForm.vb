@@ -43,8 +43,6 @@
             Exit Sub
         End If
 
-
-
         Dim petOwnerName As String = txtPetOwnerName.Text
         Dim petOwnerAge As Integer = numUIPetOwnerAge.Text
         Dim petOwnerSex As String = cbPetOwnerSex.SelectedItem
