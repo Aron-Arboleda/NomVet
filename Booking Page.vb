@@ -87,7 +87,7 @@
         For Each pet In activeAccount.petsList
             If petName = pet.strName Then
                 Dim randomId As String = GenerateRandomString(5)
-                Dim petAppointment As New Appointment(randomId, activeAccount.strName, pet.strName, procedure, dateOfApppointment)
+                Dim petAppointment As New Appointment(randomId, activeAccount.strName, pet.strName, pet.boolVaccinated, procedure, dateOfApppointment)
                 FileManipulator.SaveBooking(petAppointment)
 
                 Dim petListWithProcedure As New List(Of String)

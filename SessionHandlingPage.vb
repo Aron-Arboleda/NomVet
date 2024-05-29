@@ -2,7 +2,7 @@
     Dim sessionsList As List(Of Session)
     Public selectedSession As Session
 
-    Public nextVisitPanelsList As List(Of SessionNextVisitPanel)
+    Public nextVisitPanelsList As New List(Of SessionNextVisitPanel)
     Public nextVisitsList As New List(Of NextVisit)
 
     Public Sub loadSessionHandlingPage()
@@ -43,6 +43,14 @@
     Public Sub reloadAllDateTimePicker(nextVisitPanelsList As List(Of SessionNextVisitPanel))
         For Each nvPanel In nextVisitPanelsList
             SessionNextVisitPanel.checkIfDatePickedIsValid(nvPanel.dtpNextVisitDate, nvPanel.lblErrorMessage)
+            If nvPanel.rbYes.Checked Then
+                nvPanel.dtpNextVisitDate.Enabled = True
+                nvPanel.cbPetProcedure.Enabled = True
+            ElseIf nvPanel.rbNo.Checked Then
+                nvPanel.dtpNextVisitDate.Enabled = False
+                nvPanel.cbPetProcedure.Enabled = False
+                nvPanel.lblErrorMessage.Visible = False
+            End If
         Next
     End Sub
 
@@ -80,6 +88,12 @@
         Dim fieldsAreEmpty As Boolean = ConflictChecker.checkIfControlsTextIsEmpty(inputControls)
         If fieldsAreEmpty Then
             MsgBox("Please fill in all fields.", vbOKOnly + vbExclamation, "Walk In Form")
+            Exit Sub
+        End If
+
+        Dim errorMessagesAreVisible As Boolean = ConflictChecker.checkIfErrorMessagesAreActive(nextVisitPanelsList)
+        If errorMessagesAreVisible Then
+            MsgBox("Please resolve all invalid inputs.", vbOKOnly + vbExclamation, "Walk In Form")
             Exit Sub
         End If
 

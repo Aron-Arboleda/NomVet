@@ -157,7 +157,7 @@ Public Class FileManipulator
 
     Public Shared Sub SaveBooking(appointment As Appointment)
         Using writer As StreamWriter = File.AppendText(bookingsDatabaseFilePath)
-            writer.WriteLine(appointment.appointmentId & "," & appointment.petOwner & "," & appointment.pet & "," & appointment.strProcedure & "," & appointment.dateAppointment)
+            writer.WriteLine(appointment.appointmentId & "," & appointment.petOwner & "," & appointment.pet & "," & appointment.petVacStatus & "," & appointment.strProcedure & "," & appointment.dateAppointment)
         End Using
     End Sub
 
@@ -188,9 +188,10 @@ Public Class FileManipulator
         Dim appointmentId As String = parsedStringsList(0)
         Dim petOwnerName As String = parsedStringsList(1)
         Dim petName = parsedStringsList(2)
-        Dim procedure = parsedStringsList(3)
-        Dim dateOfAppointment = parsedStringsList(4)
-        Dim bookingObject As New Appointment(appointmentId, petOwnerName, petName, procedure, dateOfAppointment)
+        Dim petVacStatus = parsedStringsList(3)
+        Dim procedure = parsedStringsList(4)
+        Dim dateOfAppointment = parsedStringsList(5)
+        Dim bookingObject As New Appointment(appointmentId, petOwnerName, petName, petVacStatus, procedure, dateOfAppointment)
         Return bookingObject
     End Function
 

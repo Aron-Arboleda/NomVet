@@ -367,13 +367,18 @@
             Dim lblTypeValue As New PetLabel
             lblTypeValue.Text = petWithProcedureString.Split("#"c)(1)
 
+            Dim lblVacLabel As New PetLabel
+            lblVacLabel.Text = "Vac Status:"
+            Dim lblVacValue As New PetLabel
+            lblVacValue.Text = petWithProcedureString.Split("#"c)(2)
+
             Dim lblProcedureLabel As New PetLabel
             lblProcedureLabel.Text = "Procedure:"
             Dim lblProcedureValue As New PetLabel
-            lblProcedureValue.Text = petWithProcedureString.Split("#"c)(2)
+            lblProcedureValue.Text = petWithProcedureString.Split("#"c)(3)
 
-            Dim PetLabels() As PetLabel = {lblTypeLabel, lblProcedureLabel}
-            Dim PetValues() As PetLabel = {lblTypeValue, lblProcedureValue}
+            Dim PetLabels() As PetLabel = {lblTypeLabel, lblVacLabel, lblProcedureLabel}
+            Dim PetValues() As PetLabel = {lblTypeValue, lblVacValue, lblProcedureValue}
 
             Dim propertiesPanel As New TableLayoutPanel
             propertiesPanel.AutoSize = True
@@ -457,7 +462,7 @@
 
             AddHandler Me.dtpNextVisitDate.ValueChanged, AddressOf Me.dtpNextVisitDate_ValueChanged
 
-            lblErrorMessage.Font = New Font("Microsoft Sans Serif", 8.25, FontStyle.Regular)
+            lblErrorMessage.Font = New Font("Microsoft Sans Serif", 7.5, FontStyle.Regular)
             lblErrorMessage.ForeColor = Color.IndianRed
             lblErrorMessage.Visible = False
             lblErrorMessage.AutoSize = True
@@ -481,8 +486,13 @@
             cbPetVacStatus.Items.Add("Complete")
             cbPetVacStatus.Items.Add("Incomplete")
             cbPetVacStatus.DropDownStyle = ComboBoxStyle.DropDownList
-
-            AddHandler Me.cbPetVacStatus.SelectedIndexChanged, AddressOf Me.cbPetVacStatus_SelectedIndexChanged
+            Dim petProcedure As String = petWithProcedureString.Split("#"c)(3)
+            If petProcedure = "Vaccine" Or petProcedure = "Both" Then
+                cbPetVacStatus.SelectedItem = "Complete"
+            Else
+                cbPetVacStatus.SelectedItem = petWithProcedureString.Split("#"c)(2)
+            End If
+            Call Me.cbPetVacStatus_SelectedIndexChanged(Me.cbPetVacStatus, EventArgs.Empty)
 
             Dim propertiesPanel As New TableLayoutPanel
             propertiesPanel.AutoSize = True
@@ -521,33 +531,37 @@
             Dim bookingsList As List(Of Appointment) = FileManipulator.ReadBookings()
             Dim datesList As List(Of Date) = bookingsList.Select(Function(appointment) appointment.dateAppointment).ToList()
 
-            If dtpAppointmentDate.Value.Date < DateTime.Now.Date Then
-                lblErrorMessage.Visible = True
-                lblErrorMessage.Text = "Date has passed already. Pick another date."
-                Exit Sub
-            End If
+            Dim nvPanelListEnabledDtps As List(Of SessionNextVisitPanel) = SessionHandlingPage.nextVisitPanelsList.Where(Function(nv) nv.dtpNextVisitDate.Enabled).ToList()
 
-            If dtpAppointmentDate.Value.Date.DayOfWeek = DayOfWeek.Sunday Then
-                lblErrorMessage.Visible = True
-                lblErrorMessage.Text = "Clinic is not open on Sundays. Pick another date."
-                Exit Sub
-            End If
-
-            For Each dateObj In datesList
-                If dateObj = dtpAppointmentDate.Value.Date Then
+            If dtpAppointmentDate.Enabled = True Then
+                If dtpAppointmentDate.Value.Date < DateTime.Now.Date Then
                     lblErrorMessage.Visible = True
-                    lblErrorMessage.Text = "There is already an appointment that day. Pick another date."
-                    Exit For
+                    lblErrorMessage.Text = "Date has passed already."
+                    Exit Sub
                 End If
-            Next
 
-            For Each nextVisitPanel In SessionHandlingPage.nextVisitPanelsList
-                If dtpAppointmentDate.Value.Date = nextVisitPanel.dtpNextVisitDate.Value.Date And Not (dtpAppointmentDate Is nextVisitPanel.dtpNextVisitDate) Then
+                If dtpAppointmentDate.Value.Date.DayOfWeek = DayOfWeek.Sunday Then
                     lblErrorMessage.Visible = True
-                    lblErrorMessage.Text = "There is already an appointment that day. Pick another date."
-                    Exit For
+                    lblErrorMessage.Text = "Clinic is not open on Sundays."
+                    Exit Sub
                 End If
-            Next
+
+                For Each dateObj In datesList
+                    If dateObj = dtpAppointmentDate.Value.Date Then
+                        lblErrorMessage.Visible = True
+                        lblErrorMessage.Text = "There is already an appointment that day."
+                        Exit For
+                    End If
+                Next
+
+                For Each nextVisitPanel In nvPanelListEnabledDtps
+                    If dtpAppointmentDate.Value.Date = nextVisitPanel.dtpNextVisitDate.Value.Date And Not (dtpAppointmentDate Is nextVisitPanel.dtpNextVisitDate) Then
+                        lblErrorMessage.Visible = True
+                        lblErrorMessage.Text = "There is already an appointment that day."
+                        Exit For
+                    End If
+                Next
+            End If
         End Sub
 
         Private Sub cbPetVacStatus_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -575,17 +589,12 @@
         End Function
 
         Private Sub rbYes_CheckedChanged(sender As Object, e As EventArgs)
-            If rbYes.Checked Then
-                dtpNextVisitDate.Enabled = True
-                cbPetProcedure.Enabled = True
-            End If
+            SessionHandlingPage.reloadAllDateTimePicker(SessionHandlingPage.nextVisitPanelsList)
+
         End Sub
 
         Private Sub rbNo_CheckedChanged(sender As Object, e As EventArgs)
-            If rbNo.Checked Then
-                dtpNextVisitDate.Enabled = False
-                cbPetProcedure.Enabled = False
-            End If
+            SessionHandlingPage.reloadAllDateTimePicker(SessionHandlingPage.nextVisitPanelsList)
         End Sub
     End Class
 
@@ -613,7 +622,7 @@
             Me.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
 
             Dim petType As String = petWithProcedureString.Split("#"c)(1)
-            Dim petProcedure As String = petWithProcedureString.Split("#"c)(2)
+            Dim petProcedure As String = petWithProcedureString.Split("#"c)(3)
 
             lblPetName.Text = petWithProcedureString.Split("#"c)(0)
             lblPetName.Font = New Font("Tw Cen MT", 12, FontStyle.Regular)

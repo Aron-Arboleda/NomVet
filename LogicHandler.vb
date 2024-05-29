@@ -1,6 +1,7 @@
 ﻿Imports System.Text
 
 Module LogicHandler
+    Private ReadOnly rnd As New Random()
     Public Function computeTotalBill(ByVal petType As String, ByVal petProcedure As String) As Double
         Dim checkupFee As Double
         Dim vaccineFee As Double
@@ -38,11 +39,10 @@ Module LogicHandler
 
 
     Public Function GenerateRandomString(length As Integer) As String
-        Dim random As New Random()
         Dim charset As String = "abcdefghijklmnopqrstuvwxyz0123456789"
         Dim sb As New StringBuilder()
         For i As Integer = 0 To length - 1
-            Dim randomIndex As Integer = random.Next(0, charset.Length)
+            Dim randomIndex As Integer = rnd.Next(0, charset.Length)
             sb.Append(charset(randomIndex))
         Next
         Return sb.ToString()

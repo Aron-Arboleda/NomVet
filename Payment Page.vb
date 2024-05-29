@@ -37,25 +37,24 @@
                 Dim id As String = GenerateRandomString(5)
                 Dim petOwner As String = selectedSession.petOwner.strName
                 Dim pet As String = nextVisit.petName
+                Dim petVacStatus As String = nextVisit.vacStatus
                 Dim procedure As String = nextVisit.procedure
                 Dim dateOfNextVisit As String = nextVisit.dateOfNextVisit
-                Dim appointment As New Appointment(id, petOwner, pet, procedure, dateOfNextVisit)
+                Dim appointment As New Appointment(id, petOwner, pet, petVacStatus, procedure, dateOfNextVisit)
                 FileManipulator.SaveBooking(appointment)
 
                 Dim owner As PetOwner = FileManipulator.findPetOwnerWithName(petOwner)
                 Dim petsProclist As New List(Of String)
-                For Each nv In nextVisitsList
-                    If nv.boolNextVisit = True Then
-                        For Each petProc In selectedSession.petWithProcedureList
-                            Dim petType = petProc.Split("#"c)(1)
-                            If petProc.Split("#"c)(0) = nv.petName Then
-                                petsProclist.Add(Session.createPetProcedure(nv.petName, petType, procedure))
-                                Exit For
-                            End If
-                        Next
 
-                    End If
-                Next
+                If nextVisit.boolNextVisit = True Then
+                    For Each petProc In selectedSession.petWithProcedureList
+                        If petProc.Split("#"c)(0) = nextVisit.petName Then
+                            Dim petType = petProc.Split("#"c)(1)
+                            petsProclist.Add(Session.createPetProcedure(nextVisit.petName, petType, petVacStatus, procedure))
+                            Exit For
+                        End If
+                    Next
+                End If
                 Dim sessionObj As New Session(id, owner, dateOfNextVisit, petsProclist)
                 FileManipulator.SaveSession(sessionObj)
             End If
@@ -111,7 +110,7 @@
         For Each petProcedureString In SessionHandlingPage.selectedSession.petWithProcedureList
             billRowsPanel.Controls.Add(New BillingRowPanel(petProcedureString))
             petType = petProcedureString.Split("#"c)(1)
-            petProc = petProcedureString.Split("#"c)(2)
+            petProc = petProcedureString.Split("#"c)(3)
             total += computeTotalBill(petType, petProc)
         Next
 

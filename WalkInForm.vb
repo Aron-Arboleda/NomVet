@@ -55,7 +55,7 @@
 
         For Each petPanel As WalkInPetInputPanel In walkinListOfPetsInput
             petOwnerListOfPets.Add(petPanel.getPetObject())
-            petWithProcedureList.Add(Session.createPetProcedure(petPanel.txtPetName.Text, petPanel.cbPetType.SelectedItem.ToString, petPanel.cbPetProcedure.SelectedItem))
+            petWithProcedureList.Add(Session.createPetProcedure(petPanel.txtPetName.Text, petPanel.cbPetType.SelectedItem.ToString, petPanel.cbPetVacStatus.SelectedItem.ToString, petPanel.cbPetProcedure.SelectedItem))
         Next
 
         Dim petOwner As New PetOwner(petOwnerUsername, petOwnerPassword, petOwnerName, petOwnerAge, petOwnerSex, petOwnerAddress, petOwnerListOfPets)

@@ -50,13 +50,15 @@
 
     Public Class Appointment
         Public appointmentId As String
+        Public petVacStatus As String
         Public strProcedure As String
         Public dateAppointment As Date
         Public petOwner As String
         Public pet As String
 
-        Public Sub New(ByVal appointmentId As String, ByVal petOwner As String, ByVal pet As String, ByVal strProcedure As String, ByVal dateAppointment As Date)
+        Public Sub New(ByVal appointmentId As String, ByVal petOwner As String, ByVal pet As String, ByVal petVacStatus As String, ByVal strProcedure As String, ByVal dateAppointment As Date)
             Me.appointmentId = appointmentId
+            Me.petVacStatus = petVacStatus
             Me.petOwner = petOwner
             Me.pet = pet
             Me.strProcedure = strProcedure
@@ -81,8 +83,8 @@
             Return Int((100 * Rnd()) + 1)
         End Function
 
-        Public Shared Function createPetProcedure(petName As String, petType As String, petProcedure As String) As String
-            Return (petName & "#" & petType & "#" & petProcedure)
+        Public Shared Function createPetProcedure(petName As String, petType As String, petVacStatus As String, petProcedure As String) As String
+            Return (petName & "#" & petType & "#" & petVacStatus & "#" & petProcedure)
         End Function
     End Class
 

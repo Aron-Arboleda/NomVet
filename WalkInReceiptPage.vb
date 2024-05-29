@@ -11,7 +11,7 @@
         For Each petProcedureString In sessionReference.petWithProcedureList
             receiptRowsPanel.Controls.Add(New ReceiptRowPanel(petProcedureString))
             petType = petProcedureString.Split("#"c)(1)
-            petProc = petProcedureString.Split("#"c)(2)
+            petProc = petProcedureString.Split("#"c)(3)
             total += computeTotalBill(petType, petProc)
         Next
 

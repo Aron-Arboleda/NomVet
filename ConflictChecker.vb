@@ -74,4 +74,17 @@ Public Class ConflictChecker
         Return emptyFields
     End Function
 
+    Public Shared Function checkIfErrorMessagesAreActive(nextVisitPanels As List(Of SessionNextVisitPanel)) As Boolean
+        Dim errorMessagesAreActive As Boolean = False
+
+        For Each nvPanel As SessionNextVisitPanel In nextVisitPanels
+            If nvPanel.lblErrorMessage.Visible = True Then
+                errorMessagesAreActive = True
+                Exit For
+            End If
+        Next
+
+        Return errorMessagesAreActive
+    End Function
+
 End Class
