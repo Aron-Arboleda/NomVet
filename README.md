@@ -11,9 +11,8 @@
 
 ## Instructions
 ### To use the app
-* Download Visual Studio 2022 and set it up to run VB.NET programs
-* Clone the repository on your client using git and open the solution (.sln file) with Visual Studio
-* After booting, Run the project and the app should open.
+* Download and run the [NOMVeterinaryClinic_Installer.exe]() file from the "dist" folder to access the app.
+* it will redirect you to the installer file's directory in this repository. Click the download button on the right side, wait for a few seconds, and the download progress should pop up at the top. It will display a lot of caution and warning messages because i don't know for the life of me how to make the program to be recognized as a safe application (sorry i'm a noob at deploying apps) but just click the "keep anyway" button or anything else to continue downloading the file. Then when the file is downloaded, you can run the installer, it will ask for admin priviledges to run the file(because it will place the program on the Program Files folder of your pc, it needs permission to do that), then windows defender thing will pop up, saying it's not a safe file or something, just click "More info" and continue the application installment. Go through the installer and after that, the program should be installed on your end.
 
 ## Features still in development
 * Bugs Fixing

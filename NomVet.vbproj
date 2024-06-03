@@ -62,6 +62,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nom vet clinic logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -323,6 +326,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nom vet clinic logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
